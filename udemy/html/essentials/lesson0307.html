@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Web page output</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/styles.css" />
+</head>
+<body>
+    <h3>Web page output</h3>
+    <p id="message">start message</p>
+    <h4>Don't use document.write()</h4>
+    <p> It is very limited<br>
+        It can make your scripts slower<br>
+        Once you've output a message to the browser it's not always easy to change it again<br>
+    </p>
+    <h4> Better to examine HTML tags and examine their content</h4>
+    <p>
+        This techinque returns a DOM node<br>
+        Grab a node by using document.getElementById<br>
+        Change it using innerHTML or textContent<br>
+        This is the best way to insert something into your HTML document
+    </p>
+    <script type="text/javascript">
+        /* set up variables
+         */
+        var n = 42;
+        var msg = n+" squared is "+(n*n);
+        <!-- console.log(msg); -->
+        <!-- document.write(msg); -->
+
+        //output message
+        var p = document.getElementById("message");
+        p.innerHTML = "<em>+msg+</em>";
+    </script>
+</body>
+</html>

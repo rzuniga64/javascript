@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Function scope</title>
+    <link rel="stylesheet" type="text/css" media="all" href="css/styles.css" />
+</head>
+<body>
+    <h1>Function scope</h1>
+    <script>
+        var x = 1;
+
+        function ChangeXto2() {
+            x = 2;
+        }
+
+        function ChangeXto3() {
+            var x = 3;
+        }
+
+        console.log("x = " + x);
+
+        ChangeXto2();
+        console.log("x = " + x);
+
+        ChangeXto3();
+        console.log("x = " + x);
+
+    </script>
+</body>
+</html>

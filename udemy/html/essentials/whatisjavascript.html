@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>when does Javascript run?</title>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<link href="../../css/basics.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="masthead">
+	</div>
+	<div id="top_nav">
+    </div>
+	<div id="container">
+		<div id="left_col">
+		</div>
+		<div id="page_content">
+			<p> The javascipt is loaded, parsed and executed.<br>
+			    When loading multiple scripts you need to load your dependencies first.<br>
+			    Javascript blocks all other browser actions so best to load it at the very ened of the page<br>
+			    When you do that your scripts can reference any HTML in the page and make any changes<br>
+			</p>
+            <p> The Three layers of Web Developement:<br>
+                First you have your content layer written in HTML<br>
+                Second layer is CSS but not all browsers have the same level of CSS support<br>
+                Finally, JavaScript is the third layer which implements functionality. It can be disabled<br>
+            </p>
+			<p> Use Progressive Enhancement<br>
+			 	Make your site work in HTML first<br>
+			 	Then add CSS and code IF the browser supports a particular feature<br>
+			 </p>
+			 
+			 <p> Avoid Javascript when any other technology could be used instead<br>
+			     CSS3 has a wide range of effects. They are often more impressive, use<br>
+			     less code, are easier to write, and run far faster than any javascript equivalent<br>
+			     HTML5 can handle client side form validation<br>
+			     HTML5 or Javascript client side form validation is never a substitute for server side validation<br>
+			 </p>
+            <p> Parameters<br>
+                a = a "" ""; means a will equate to a if it's truthy (not null, undefined, 0, or an empty string)<br>
+                If it is any of those a will be set to an empty string<br>
+                There is a special variable names 'arguments' which hols all the values you pass to the function (an array)<br>
+            </p>
+		</div>
+	</div>
+	<footer>
+	</footer>
+</body>
+</html>
