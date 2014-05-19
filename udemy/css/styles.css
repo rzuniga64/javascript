@@ -1,97 +1,90 @@
-*
-{
+* {
 	padding: 0;
 	margin: 0;
 }
 
-body
-{
+body {
 	font: normal 200%/1.3em sans-serif; 
 	color: #333;
 	background-color: #fff;
 }
 
-header, article
-{
+header, article {
 	display: block;
 	margin: 10px;
 }
 
-header
-{
+header {
 	padding: 6px;
 	color: #fff;
 	background-color: #666;
 	border: 3px double #fff;
 }
 
-h1
-{
+h1 {
 	font-size: 1.4em;
 	text-align: center;
 	font-weight: normal;
 	margin-bottom: 4px;
 }
 
-header p
-{
+header p {
 	text-align: center;
 	margin: 0;
 }
 
-p
-{
+p {
 	margin: 0 0 0.2em 0;
 }
 
-p strong
-{
+p strong {
 	color: #c00;
 }
 
-ul
-{
+ul {
 	padding: 0;
 	margin: 0 0 1em 3em;
 }
 
-li
-{
+li {
 	padding: 0;
 	margin: 0 0 0.2em 0;
 }
 
-a
-{
+a {
 	text-decoration: none;
 }
 
-.animate
-{
-	-webkit-animation: flash 1s ease 3;
-	-moz-animation: flash 1s ease 3;
-	-ms-animation: flash 1s ease 3;
-	-o-animation: flash 1s ease 3;
-	animation: flash 1s ease 3;
+table {
+	font-size: 1em;
+	margin: 1em auto;
+	border-collapse: collapse;
 }
 
-/* animation */
-@-webkit-keyframes flash {
-	50% { opacity: 0; }
+th, td {
+	width: 1.2em;
+	line-height: 2em;
+	text-align: right;
+	padding: 0 0.4em;
+	color: #333;
+	border: 2px solid #666;
+	cursor: pointer;
 }
 
-@-moz-keyframes flash {
-	50% { opacity: 0; }
+th {
+	color: #fff;
+	background-color: #333;
 }
 
-@-ms-keyframes flash {
-	50% { opacity: 0; }
+col.active {
+	background-color: #ddd;
 }
 
-@-o-keyframes flash {
-	50% { opacity: 0; }
+tr.active td {
+	background-color: #ddd;
 }
 
-@keyframes flash {
-	50% { opacity: 0; }
+tr td:hover, tr td:focus {
+	color: #f00;
+	background-color: #ffc;
 }
