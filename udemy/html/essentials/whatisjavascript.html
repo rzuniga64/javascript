@@ -80,6 +80,29 @@
                 Use feature detection(i.e. XMLHTTPRequest<br>
                 var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActivieXObject("Microsoft.XMLHTTP");
             </p>
+            <p>
+                Form Event Types
+                1.  Submit which applied to the form element which is the most important one I'll need.
+                    It runs a function when the form is submitted either by pressing the Submit button or
+                    pressing Enter on the form.  If there is an error, you can capture, share an error message
+                    and prevent the default action so it's never posted to the server.
+                    for.addEventListener("submit", validationFunction);
+                2.  Change which his applied to an individual field.  It's triggered when the user focuses
+                    on another part of the page after changing that field's value.
+                    field.addEventListener("change", validationFunction);
+                3.  Keypress which captures the press key so you could, for example, prevent the user from
+                    entering a certain character.
+                    field.addEventListener("keypress", validationFunction);
+
+            </p>
+            <p>
+                Alternative Animation Options
+                - Animated GIFS/PNGs
+                - CSS3
+                - SVG
+                - Canvas
+                - Video
+            </p>
 		</div>
 	</div>
 	<footer>
