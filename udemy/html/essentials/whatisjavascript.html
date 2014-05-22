@@ -103,6 +103,33 @@
                 - Canvas
                 - Video
             </p>
+            <p>
+                AJAX IS... Asynchronous JavaScript and XML (or JSON - JavaScript Object Notation)
+                A technique which loads data from a server and changes parts of the page without requiring a full refresh.
+                How does Ajax work?
+                - XMLHttpRequest and XMLHttpRequest2.  It allows you to send a request to a server
+                and receive a response. You can only contact a server which is on the same domain for security reasons.
+                - dynamic <!-- <script> --> injection. You can load scripts from any domain.
+                - iframes, plugins, etc
+                - HTML5 web sockets and server-sent events
+            </p>
+            <p>
+                Web Service is a system that functions like any other web page but instead of returning a full
+                HTML document it returns data.
+                - JSON (JavaScript Object Notation) is simplay a JavaScript Object wrapped up inside of a string.
+                - JavaScript can parse JSON very quickly.
+                - JSONP (JSON with padding). If you are using the script injection method of JavaScript the browser
+                  will download a script but it has got to execute something when it is finished to do anything
+                  useful. So JSONP takes an object in JSON format and passes it to a function. The function
+                  name is defined in our URL in the callback parameter.  So when the script loads it runs the
+                  callback function and passes the JSON object.
+                Script Insertion Techniques are an alternative to calling web services from JavaScript.
+                It's simple, it's fast and it works on any browser and the web service does not need to be
+                on the same domain as your calling page. Script insertion means we can create elements and
+                insert them into our HTML documents.  You can do the exact same thing with script tags.
+                You can create one, set a script URL snd insert it somewhere into the DOM.  The browser will
+                fetch that file and execute it.
+            </p>
 		</div>
 	</div>
 	<footer>
