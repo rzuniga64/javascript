@@ -4,7 +4,7 @@ console.log( "intro ID", document.getElementById("intro") );
 
 console.log( "p tags", document.getElementsByTagName("p") );
 
-// not supporeted by IE8-IE6
+// not supported by IE8-IE6
 console.log( "highlight class", document.getElementsByClassName("highlight") );
 
 // not supported by IE6-7

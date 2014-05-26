@@ -1,5 +1,5 @@
 // events and handlers
-// Don't ever use inline javascript.
+// Don't ever use inline javascript_examples.
 
 // find first link on the page
 var link = document.getElementsByTagName("a")[0];
