@@ -18,9 +18,9 @@ body {
 }
 .col-main {
     margin-left: 0;
-    width: 937px;
+    width: 900px;
     position: relative;
-    float: right;
+    float: left;
 }
 
 .sidebar {
