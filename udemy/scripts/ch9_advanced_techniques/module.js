@@ -36,7 +36,7 @@ Lib.Output = (function() {
 		return '<p style="color:'+color+'">'+msg+'</p>';
 	}
 
-    // return an object which points to the ch5_functions that we want available outside the code
+    // return an object which points to the functions that we want available outside the code
 	// returns an alias name and the function name (kept the same here)
     return {
 		Write: Write,

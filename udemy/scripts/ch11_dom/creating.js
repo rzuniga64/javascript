@@ -40,12 +40,12 @@ article.insertBefore(q, article.getElementsByTagName("p")[2]);
 
 // We have this fragment in memory.  Can we use it in multiple places?
 // The answer is no because the fourth paragraph was inserted the top
-// but when we said insert it before paragraph 3 ut actually moved it
+// but when we said insert it before paragraph 3 it actually moved it
 // to the location which was paragraph 3
 
 // A node is a single reference to a HTML DOM object
 // It cannot exist in two places at the same time
-// When you create new nodes in the DOM or in a fragement they can only be used once.
+// When you create new nodes in the DOM or in a fragment they can only be used once.
 // We can fix this by cloning nodes and creating separate duplicates
 
 // clone node and children and modify
