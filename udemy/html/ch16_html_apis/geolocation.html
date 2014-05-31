@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>HTML5 Geolocation</title>
+    <link rel="stylesheet" media="all" href="../../css/styles.css" />
+</head>
+<body>
+	<header>
+		<h1>An Introduction to JavaScript</h1>
+		<p>HTML5 Geolocation</p>
+	</header>
+
+    <div id="mapholder"></div>
+    <script>
+        var geo = document.getElementById("geo");
+
+        // do geolocation
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition, showError);
+            //navigator.geolocation.getCurrentPosition(showPosition);
+        }
+        else {
+            geo.textContent = "Geolocation is not supported by this browser.";
+        }
+
+        // geolocation successful
+        function showPosition(position) {
+                var latlon=position.coords.latitude+","+position.coords.longitude;
+
+                var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
+                        +latlon+"&zoom=14&size=400x300&sensor=false";
+                document.getElementById("mapholder").innerHTML="<img src='"+img_url+"'>";
+         }
+
+        // geolocation failed
+        function showError(error)
+        {
+            switch(error.code)
+            {
+                case error.PERMISSION_DENIED:
+                    geo.innerHTML="User denied the request for Geolocation.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    geo.innerHTML="Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    geo.innerHTML="The request to get user location timed out.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    geo.innerHTML="An unknown error occurred.";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
