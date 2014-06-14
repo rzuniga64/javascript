@@ -1,8 +1,10 @@
 ﻿  /* CSS layout */
 body {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
+    width: 800px;
 }
+
 p {
 	font-size: 12px;
 	font-family: "Museo Slab 500", "Museo 500"

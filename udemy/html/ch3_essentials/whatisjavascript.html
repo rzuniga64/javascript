@@ -13,7 +13,7 @@
 	<div id="container">
 		<div id="left_col">
 		</div>
-		<div id="page_content">
+		<div id="page_content" style="width: 960px">
 			<p> The javascript is loaded, parsed and executed.<br>
 			    When loading multiple scripts you need to load your dependencies first.<br>
 			    Javascript blocks all other browser actions so best to load it at the very ened of the page<br>
@@ -81,54 +81,76 @@
                 var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActivieXObject("Microsoft.XMLHTTP");
             </p>
             <p>
-                Form Event Types
-                1.  Submit which applied to the form element which is the most important one I'll need.
-                    It runs a function when the form is submitted either by pressing the Submit button or
-                    pressing Enter on the form.  If there is an error, you can capture, share an error message
-                    and prevent the default action so it's never posted to the server.
-                    for.addEventListener("submit", validationFunction);
-                2.  Change which his applied to an individual field.  It's triggered when the user focuses
-                    on another part of the page after changing that field's value.
-                    field.addEventListener("change", validationFunction);
-                3.  Keypress which captures the press key so you could, for example, prevent the user from
-                    entering a certain character.
+                Form Event Types<br>
+                1.  Submit which applied to the form element which is the most important one I'll need.<br>
+                    It runs a function when the form is submitted either by pressing the Submit button or<br>
+                    pressing Enter on the form.  If there is an error, you can capture, share an error message<br>
+                    and prevent the default action so it's never posted to the server.<br>
+                    for.addEventListener("submit", validationFunction);<br>
+                2.  Change which his applied to an individual field.  It's triggered when the user focuses<br>
+                    on another part of the page after changing that field's value.<br>
+                    field.addEventListener("change", validationFunction);<br>
+                3.  Keypress which captures the press key so you could, for example, prevent the user from<br>
+                    entering a certain character.<br>
                     field.addEventListener("keypress", validationFunction);
 
             </p>
             <p>
-                Alternative Animation Options
-                - Animated GIFS/PNGs
-                - CSS3
-                - SVG
-                - Canvas
+                Alternative Animation Options<br>
+                - Animated GIFS/PNGs<br>
+                - CSS3<br>
+                - SVG<br>
+                - Canvas<br>
                 - Video
             </p>
             <p>
-                AJAX IS... Asynchronous JavaScript and XML (or JSON - JavaScript Object Notation)
-                A technique which loads data from a server and changes parts of the page without requiring a full refresh.
-                How does Ajax work?
-                - XMLHttpRequest and XMLHttpRequest2.  It allows you to send a request to a server
-                and receive a response. You can only contact a server which is on the same domain for security reasons.
-                - dynamic <!-- <script> --> injection. You can load scripts from any domain.
-                - iframes, plugins, etc
+                AJAX IS... Asynchronous JavaScript and XML (or JSON - JavaScript Object Notation)<br>
+                A technique which loads data from a server and changes parts of the page without requiring a full refresh.<br>
+                How does Ajax work?<br>
+                - XMLHttpRequest and XMLHttpRequest2.  It allows you to send a request to a server<br>
+                and receive a response. You can only contact a server which is on the same domain for security reasons.<br>
+                - dynamic <!-- <script> --> injection. You can load scripts from any domain.<br>
+                - iframes, plugins, etc<br>
                 - HTML5 web sockets and server-sent events
             </p>
             <p>
-                Web Service is a system that functions like any other web page but instead of returning a full
-                HTML document it returns data.
-                - JSON (JavaScript Object Notation) is simplay a JavaScript Object wrapped up inside of a string.
-                - JavaScript can parse JSON very quickly.
+                Web Service is a system that functions like any other web page but instead of returning a full HTML document it returns data.<br>
+                - JSON (JavaScript Object Notation) is simplay a JavaScript Object wrapped up inside of a string.<br>
+                - JavaScript can parse JSON very quickly.<br>
                 - JSONP (JSON with padding). If you are using the script injection method of JavaScript the browser
                   will download a script but it has got to execute something when it is finished to do anything
                   useful. So JSONP takes an object in JSON format and passes it to a function. The function
                   name is defined in our URL in the callback parameter.  So when the script loads it runs the
-                  callback function and passes the JSON object.
+                  callback function and passes the JSON object.<br>
                 Script Insertion Techniques are an alternative to calling web services from JavaScript.
                 It's simple, it's fast and it works on any browser and the web service does not need to be
                 on the same domain as your calling page. Script insertion means we can create elements and
                 insert them into our HTML documents.  You can do the exact same thing with script tags.
                 You can create one, set a script URL snd insert it somewhere into the DOM.  The browser will
-                fetch that file and execute it.
+                fetch that file and execute it.<br>
+            </p>
+            <p>
+                Cookies are specific to domain, e.g. domain1.com and optionally, a path on that domain, e.g.<br>
+                domain1.com/path1/.<br>
+                Cookies can expire at a set date and time or when the browser is closed (session cookie).<br>
+                Cookies can be secure.<br>
+                Domains are limited to 20 cookies.<br>
+                No cookies can be greater than 4KB.<br>
+                Cookies are needed because the Web is stateless.  What that means is that every request that
+                a browser makes to a web server is independent.  So if I load page X.html from the server
+                it doesn't know if it loaded Y.html before that.  So cookies allow us to maintain state.
+                The browser sends cookie data to the server when it makes a request and the server responds
+                with the same cookie data or changed cookie data in the HTTP header when it returns the file
+                or the image or whatever.<br>
+                Cookie handling is awful because everything is handles using a single document cookie property.
+                You need to create a few cookie handling utilities.
+            </p>
+            <p>
+                Instead of using cookies try these ideas:<br>
+                1. Write a cookie library that stores multiple values in one cookie. You can do that be defining
+                values in an object and then serialize and deserialize that object to a string using
+                JSON.stringify() and JSON.parse()<br>
+                Also, you can have a window.onload event which only saves the cookie when the page is reloaded or changed.
             </p>
 		</div>
 	</div>
