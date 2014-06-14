@@ -35,4 +35,8 @@ http://javascriptweekly.com/
 
 Search
 http://www.google.com/ 
-http://www.bing.com/ 
+http://www.bing.com/
+
+Shims
+modernizr.com
+https://github.com/Modernizr/Modernizr
