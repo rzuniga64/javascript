@@ -10,7 +10,7 @@ kid_movie_price = kid_movie_price.toFixed(2);
 adult_price = adult_price.toFixed(2);
 new_release_late_fee = new_release_late_fee.toFixed(2);
 catalog_late_fee = catalog_late_fee.toFixed(2);
-kid_movie_price = kids_late_fee.toFixed(2);
+kids_late_fee = kids_late_fee.toFixed(2);
 
 var span1 = document.getElementsByTagName("span")[0];
 span1.appendChild(document.createTextNode(new_release_price.toString()));
