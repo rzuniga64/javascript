@@ -14,6 +14,7 @@ console.log(p);
 // we can add another appendChild method on it.
 p.appendChild( document.createElement("strong") ).appendChild( document.createTextNode("third") );
 
+
 // append text
 p.appendChild( document.createTextNode(" paragraph.") );
 

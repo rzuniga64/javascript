@@ -7,4 +7,4 @@ var
 
 var mean = (v1 + v2 + v3 + v4 + v5) / 5;
 
-alert(mean);
+document.getElementById("content").innerHTML += '<p>'+mean+'</p>';
