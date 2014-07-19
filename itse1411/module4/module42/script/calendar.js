@@ -16,7 +16,21 @@ function displayCalendar(whichMonth) {
 
     // This is step 4 on page 326
     calendarWin.document.write("<colgroup span='7' width='50' \/>");
-    calendarWin.document.write("<tr><td colspan='7' align='center'><strong>" + monthArray[month] + " " + dateObject.getFullYear() + "<\/strong><\/td></tr>");
+
+    if (whichMonth == -1)
+        dateObject.setMonth(dateObject.getMonth() - 1);
+    else if (whichMonth == 1)
+        dateObject.setMonth(dateObject.getMonth() + 1);
+
+    var month = dateObject.getMonth();
+    calendarWin.document.write("<tr><td colspan='2'> <a href= ' ' "
+        + " onclick = 'self.opener.displayCalendar(-1); return false'>Previous</a></td>"
+        + " <td colspan = '3' align = 'center'><strong>"
+        + monthArray[month] + " " + dateObject.getFullYear()
+        + "</strong></td><td colspan = '2' align='right'>"
+        + "<a href='' onclick='self.opener.displayCalendar(1); return false'>"
+        + "Next</a></td></tr>");
+
     calendarWin.document.write("<tr align='center'><td>Sun<\/td><td>Mon<\/td><td>Tue<\/td><td>Wed<\/td><td>Thu<\/td><td>Fri<\/td><td>Sat<\/td><\/tr>");
     calendarWin.document.write("<tr align='center'>");
     // This ends step 4 on page 326
