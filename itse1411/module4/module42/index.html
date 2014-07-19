@@ -4,8 +4,22 @@
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <title>Coast City Windsurfing</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var dateObject = new Date();
+        var month = dateObject.getMonth();
+        var monthArray = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+        function getTodayDate() {
+            var dateToday = monthArray[month] + " " + dateObject.getDate() + ", " + dateObject.getFullYear();
+            document.forms[0].reservationDate.value= dateToday;
+        }
+        /* ]]> */
+    </script>
+
 </head>
-<body>
+<body onload="getTodayDate()">
     <div align="center">
         <div style="width: 778px; height: 780px;" align="left">
             <div style="width: 778px; height: 175px;">
@@ -40,15 +54,41 @@
                             <div style="padding-top: 10px" class="home1">CONTACT US</div>
                         </div>
 
-                        <div class="linktxt">http://www.cswindsurfing.com</div></div>
+                        <div class="linktxt">http://www.cswindsurfing.com</div>
+                    </div>
                 </div>
             </div>
 
             <div class="mid_img">
                 <div class="content">
-                    <!--[Add code here]-->
+                    <form action="WindProcessor.html" method="get" enctype="application/x-www-form-urlencoded">
+                        <table border="0">
+                            <tr valign="top">
+                                <td>
+                                    <h3>Windsurfing Date</h3>
+                                    <p>
+                                        <input type="text" name="reservationDate" id="reservationDate" onclick="displayCalendar()" />
+                                        <a href="" onclick="displayCalendar(); return false">Select Date</a>
+                                    </p>
+                                    <h3>Group Leader</h3>
+                                    <label for="leaderLastName">Last name</label>
+                                    <br /><input type="text" name="leaderLastName" id="leaderLastName" size="40" /><br />
+                                    <label for="leaderFirstName">First Name</label>
+                                    <br /><input type="text" name="leaderFirstName" id="leaderFirstName" size="40" /><br />
+                                    <label for="leaderTelephone">Telephone</label>
+                                    <br /><input type="text" name="leaderTelephone" id="leaderTelephone" size="40" /><br />
+                                    <label for="leaderAddress">Address</label>
+                                    <br /><input type="text" name="leaderAddress" id="leaderAddress" size="40" /><br />
+                                    <label for="leaderCity">City, State, Zip</label>
+                                    <br /><input type="text" name="leaderCity" id="leaderCity" size="23" />
+                                    <input type = "text" name="leaderState" size="2" maxlength="2" />
+                                    <input type = "text" name="leaderZip" size="5" maxlength="5" />
+                                    <p><input type="submit" value="Submit Group Reservation" /></p>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
                 </div>
-
             </div>
             <div class="footer">
                 <div class="copy">Copyright &copy; 2010. Coast City Windsurfing. All rights reserved</div>
