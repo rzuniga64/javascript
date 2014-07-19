@@ -3,14 +3,14 @@
  */
 // This is step 3 on page 326 (I am adding the parameter whichMonth here rather than later when the author tells you to do it.)
 function displayCalendar(whichMonth) {
-    calendarWin = window.open("", "CalWindow", "status=no,resizable=yes,width=400,height=220,left=200,top=200");
+    var calendarWin = window.open("", "CalWindow", "status=no,resizable=yes,width=400,height=220,left=200,top=200");
     calendarWin.focus();
     calendarWin.document.write("<!DOCTYPE html PUBLIC '-\/\/W3C\/\/DTD XHTML 1.0 Strict\/\/EN' ");
     calendarWin.document.write("'http:\/\/www.w3.org\/TR\/xhtml1\/DTD\/xhtml1-strict.dtd'>");
     calendarWin.document.write("<html xmlns='http:\/\/www.w3.org\/1999\/xhtml'>");
     calendarWin.document.write("<head><title>Coast City Windsurfing<\/title>");
     calendarWin.document.write("<meta http-equiv='content-type' content='text\/html;charset=iso-8859-1' \/>");
-    calendarWin.document.write("<link rel='stylesheet' href='js_styles.css' type='text\/css' \/><\/head><body>");
+    calendarWin.document.write("<link rel='stylesheet' href='../style.css' type='text\/css' \/><\/head><body>");
     calendarWin.document.write("<table cellspacing='0' border='1' width='100%'>");
     // This ends step 3 on page 326 -- the closing brace goes at the end of the function
 
@@ -46,7 +46,7 @@ function displayCalendar(whichMonth) {
     // This is step 6 on page 327
     var daysWithDates = 7 - dayOfWeek;
     var dateCounter = 1;
-    for (var i=0; i<daysWithDates; ++i) {
+    for (var j=0; j<daysWithDates; ++j) {
         var curDate = monthArray[month] + " " + dateCounter + ", " + dateObject.getFullYear();
         calendarWin.document.write("<td><a href='' onclick='self.opener.document.forms[0].reservationDate.value=\"" + curDate + "\";self.close()'>" + dateCounter + "<\/a><\/td>");
         ++dateCounter;
@@ -75,7 +75,7 @@ function displayCalendar(whichMonth) {
 
         // This is step 9 on pages 328 - 329.  After the href looks like a double quote on the monitor, but it is 2 single quotes.
         while (weekDayCounter < 7) {
-            var curDate = monthArray[month] + " " + dateCounter + ", " + dateObject.getFullYear();
+            curDate = monthArray[month] + " " + dateCounter + ", " + dateObject.getFullYear();
             if (dateCounter <= numDays)
                 calendarWin.document.write("<td><a href='' onclick='self.opener.document.forms[0].reservationDate.value=\"" + curDate + "\";self.close()'>" + dateCounter + "<\/a><\/td>");
             else
