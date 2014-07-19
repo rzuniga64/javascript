@@ -68,8 +68,8 @@
                                 <td>
                                     <h3>Windsurfing Date</h3>
                                     <p>
-                                        <input type="text" name="reservationDate" id="reservationDate" onclick="displayCalendar()" />
-                                        <a href="" onclick="displayCalendar(); return false">Select Date</a>
+                                        <input type="text" name="reservationDate" id="reservationDate" onclick="displayCalendar(getTodayDate())" />
+                                        <a href="" onclick="displayCalendar(getTodayDate()); return false">Select Date</a>
                                     </p>
                                     <h3>Group Leader</h3>
                                     <label for="leaderLastName">Last name</label>
@@ -84,6 +84,43 @@
                                     <br /><input type="text" name="leaderCity" id="leaderCity" size="23" />
                                     <input type = "text" name="leaderState" size="2" maxlength="2" />
                                     <input type = "text" name="leaderZip" size="5" maxlength="5" />
+                                    <h3>Group Discounts</h3>
+                                    <ul>
+                                        <li>Daily Rate: $49</li>
+                                        <li>5-10 windsurfers: 10% discount</li>
+                                        <li>11-24 windsurfers: 20% discount</li>
+                                        <li>25+ windsurfers: 25% discount</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <h3>Group Members</h3>
+                                    <p>
+                                        <input type="button" value="Add Windsurfer" onclick = "addContact()" />
+                                        <input type="button" value="Delete Windsurfer" onclick = "deleteContact()"/>
+                                        <input type="button" value="Update Info"
+                                               onclick="contactList['contact' + document.forms[0].contacts.selectedIndex].updateContact(document.forms[0].contacts.selectedIndex);" />
+                                    </p>
+
+                                    <table border="0">
+                                        <tr>
+                                            <td>
+                                                <select name="contacts" size="13" style="width: 150px"
+                                                        onclick="contactList['contact' + this.selectedIndex].getContacts();">
+                                                <option value="contacts">Group Members</option></select>
+                                            </td>
+                                            <td>Last name<br />
+                                                <input type="text" name="lastname" size="50" /><br />First name<br />
+                                                <input type="text" name="firstname" size="50" /><br />Telephone<br />
+                                                <input type="text" name="telephone" size="50" /><br />Address<br />
+                                                <input type="text" name="address" size="50" /><br />City, State, Zip<br />
+                                                <input type="text" name="city" size="29" />
+                                                <input type="text" name="state" size="2" maxlength="2" />
+                                                <input type="text" name="zip" size="5" maxlength="5" />
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <p>Your group rate is $<input type="text" name="discount" size="60" value="0" class="total" /></p>
                                     <p><input type="submit" value="Submit Group Reservation" /></p>
                                 </td>
                             </tr>
@@ -93,9 +130,10 @@
             </div>
             <div class="footer">
                 <div class="copy">Copyright &copy; 2010. Coast City Windsurfing. All rights reserved</div>
+                <script type="text/javascript" src="../../scripts/validation.js"></script>
             </div>
-
         </div>
     </div>
+
 </body>
 </html>

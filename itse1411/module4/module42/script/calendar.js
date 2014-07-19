@@ -1,6 +1,98 @@
-/**
- * Created by Roy on 7/18/2014.
- */
+var contactList = new Object();
+
+function Contact() {
+    this.lastName = "";
+    this.firstName = "";
+    this.telephone = "";
+    this.address = "";
+    this.city = "";
+    this.state = "";
+    this.getContacts = getContactInfo;
+    this.updateContact = updateSelectedContact;
+}
+
+function getContactInfo() {
+    document.forms[0].lastname.value = this.lastName;
+    document.forms[0].firstname.value = this.firstName;
+    document.forms[0].telephone.value = this.telephone;
+    document.forms[0].address.value = this.address;
+    document.forms[0].city.value = this.city;
+    document.forms[0].state.value = this.state;
+    document.forms[0].zip.value = this.zip;
+}
+
+function updateSelectedContact(curIndex) {
+    this.lastName = document.forms[0].lastname.value;
+    this.firstName = document.forms[0].firstname.value;
+    this.telephone = document.forms[0].telephone.value;
+    this.address = document.forms[0].address.value;
+    this.city = document.forms[0].city.value;
+    this.state = document.forms[0].state.value;
+    this.zip = document.forms[0].zip.value;
+    document.forms[0].contacts.options[curIndex].value = this.lastName + "," + this.firstName;
+    document.forms[0].contacts.options[curIndex].text = this.lastName + "," + this.firstName;
+    window.alert("Contact information updated.");
+}
+
+function addContact() {
+    var newContact = 0;
+    for (contact in contactList)
+        ++newContact;
+
+    if (document.forms[0].lastname.value == "" || document.forms[0].firstname.value == "")
+        window.alert("You must enter the contact's first and last names.");
+    else {
+        contactList["contact" + newContact] = new Contact();
+        contactList["contact" + newContact].lastName = document.forms[0].lastname.value;
+        contactList["contact" + newContact].firstName = document.forms[0].firstname.value;
+        contactList["contact" + newContact].telephone = document.forms[0].telephone.value;
+        contactList["contact" + newContact].address = document.forms[0].address.value;
+        contactList["contact" + newContact].city = document.forms[0].city.value;
+        contactList["contact" + newContact].state = document.forms[0].state.value;
+        contactList["contact" + newContact].zip = document.forms[0].zip.value;
+    }
+
+    var createContact = new Option();
+    createContact.value = contactList["contact" + newContact].lastName + "," + contactList["contact" + newContact].firstName;
+    createContact.text = contactList["contact" + newContact].lastName + "," + contactList["contact" + newContact].firstName;
+    document.forms[0].contacts.options[newContact] = createContact;
+
+    calcGroupDiscount(newContact + 1);
+}
+
+function deleteContact() {
+    var contactSelected = false;
+    var selectedContact = 0;
+    for (var i=0; i < document.forms[0].contacts.options.length; ++i) {
+        if (document.forms[0].contacts.options[i].selected== true) {
+            contactSelected = true;
+            selectedContact = i;
+            calcGroupDiscount(document.forms[0].contacts.options.length);
+            break;
+        }
+    }
+    document.forms[0].contacts.options[i] = null;
+
+    if (contactSelected == true) {
+        for (prop in contactList) {
+            delete contactList[prop]
+        }
+        for (var i=0; i < document.forms[0].contacts.options.length;++i) {
+            contactList["contact" + i] = new Contact();
+            contactList["contact" + i].lastName = document.forms[0].lastname.value;
+            contactList["contact" + i].firstName= document.forms[0].firstname.value;
+            contactList["contact" + i].telephone = document.forms[0].telephone.value;
+            contactList["contact" + i].address = document.forms[0].address.value;
+            contactList["contact" + i].city = document.forms[0].city.value;
+            contactList["contact" + i].state = document.forms[0].state.value;
+            contactList["contact" + i].zip = document.forms[0].zip.value;
+        }
+    }
+    else
+        window.alert(
+            "You must select a contact in the list.");
+}
+
 // This is step 3 on page 326 (I am adding the parameter whichMonth here rather than later when the author tells you to do it.)
 function displayCalendar(whichMonth) {
     var calendarWin = window.open("", "CalWindow", "status=no,resizable=yes,width=400,height=220,left=200,top=200");
@@ -95,4 +187,18 @@ function displayCalendar(whichMonth) {
     // This ends step 10 on page 329
 
     // This closes the function which was originally given in step 3 on page 326
+}
+
+function calcGroupDiscount(groupSize) {
+    var dailyRate = 49;
+    var groupRate;
+    if (groupSize >= 5 && groupSize <= 10)
+        dailyRate /= 1.1;
+    else if (groupSize > 10 && groupSize < 25)
+        dailyRate /= 1.2;
+    else if (groupSize > 24)
+        dailyRate /= 1.25;
+    groupRate = groupSize * dailyRate;
+    groupRate = Math.round(groupRate);
+    document.forms[0].discount.value = groupRate.toLocaleString();
 }
