@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>MyMail Web Portal</title>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+     /* ]]> */
+    </script>
+
+</head>
+<body>
+    <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td width="260" height="100%" valign="top">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td colspan="2"><img src="images/namesp1.jpg" alt="Visual formatting image" /></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td><a href=""><img src="images/inbox.jpg" border="0" alt="Visual formatting image" /></a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="">img src="images/outbox.jpg" border="0" alt="Visual formatting image" /></a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href=""><img src="images/draft.jpg" border="0" alt="Visual formatting image" /></a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href=""><img src="images/sent.jpg" border="0" alt="Visual formatting image" /></a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href=""><img src="images/deleted.jpg" border="0" alt="Visual formatting image" /></a></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="96" height="204" valign="top" align="center" style="background-image: url('images/bgmessages.jpg');
+                            padding-top: 55px; padding-right: 35px; color: #C10017"><font size="4"><b>18</b></font><br />
+                            new messages</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><img src="images/best.jpg" alt="Visual formatting image" /></td>
+                    </tr>
+                    <tr>
+                        <td height="100%"></td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="top" height="100%" width="520" bgcolor="#ffffff">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td><img src="images/topsp1.jpg" alt="Visual formatting image" /></td>
+                    </tr>
+                    <tr>
+                        <td width="100%" height="30" style="background-image: url('images/bgdatesp1.gif');">
+                            <table>
+                                <tr>
+                                    <td style="color: #ffffff">You've used 35% of your 10Mb limit</td>
+                                    <td style="padding-left: 5px;"><img src="images/line.gif" alt="Visual formatting image" /></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="100%" valign="top" style="padding-top: 7px; padding-left: 11px;">
+                            <form action="FormProcessor.html" method="get" onsubmit="return validateSubmission()">
+                            <table>
+                                <tr>
+                                    <td valign="top">
+                                        <h2>Sender</h2>
+                                        <p>Name<br /><input type="text" name="sender_name" size="30" /></p>
+                                        <p> E-Mail Address<br /><input type="text" name="sender_email" size="30" /> </p>
+                                        <h2>Recipients</h2>
+                                        <p>Name<br /><input type="text" name="recipient_name" size="30" /></p>
+                                        <p>E-Mail Address<br /><input type="text" name="recipient_email" size="30" /></p>
+                                        <p>
+                                            <input type="button" value="Add" onclick="addRecipient()" />&nbsp;
+                                            <input type="button" value="Remove" onclick="deleteRecipient()" />&nbsp;
+                                            <input type="button" value="Update" onclick="updateSelectedRecipient()" />
+                                        </p>
+                                        <select name="recipients" size="4" style="width: 200px" onclick="getRecipientInfo()">
+                                            <option value="recipients">Recipients</option>
+                                        </select>
+                                    </td>
+                                    <td valign="top">
+                                        <h2>Message Details</h2>
+                                        <p>Subject<br /><input type="text" name="subject" size="42" /></p>
+                                        <p>Message<br /><textarea name="message" rows="14" cols="32"></textarea></p>
+                                        <p style="text-align: center">
+                                            <input type="submit" value="Send" />
+                                            <input type="reset" />
+                                            <input type="hidden" name="recipientsList" />
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td width="100%" style="background-image: url('images/tilesp1.gif'); background-repeat: repeat-x"></td>
+        </tr>
+        <tr>
+            <td colspan="2" width="780" height="30" style="background-image: url('images/bgm.gif')"
+                align="center" class="menu"><a href="" class="menu">Sign up!</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                    href="" class="menu">About us</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="" class="menu">FAQ</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                        href="" class="menu">Help</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="" class="menu">Virus
+                            protection</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="" class="menu">Partners</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+                                href="" class="menu">Contact us</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="" class="menu">Languages</a>
+            </td>
+            <td width="100%" style="background-image: url('images/bgm.gif');"></td>
+        </tr>
+        <tr>
+            <td colspan="2" width="780" height="50" style="background-image: url('images/bgf.gif');
+                color: #ffffff; padding-left: 25px;">Copyright &copy; 2008-2010 <b>MyMailWebPortal.com</b>.<br />
+                All rights reserved. &bull;
+                <a href="" style="color: #ffffff; text-decoration: none;">Privacy Policy</a> &bull;
+                <a href="" style="color: #ffffff; text-decoration: none;">Terms Of Use</a>
+            </td>
+            <td width="100%" style="background-image: url('images/bgf.gif');"></td>
+        </tr>
+    </table>
+</body>
+</html>
