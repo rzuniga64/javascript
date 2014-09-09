@@ -7,6 +7,54 @@
 
     <script type="text/javascript">
     /* <![CDATA[ */
+
+    function validateSubmission(){
+        var retValue = true;
+
+        if (document.forms[0].subject.value.length > 40) {
+            window.alert("The subject must be 40 characters or less");
+            return false;
+        } else if (document.forms[0].sender_email.value == ""
+                    || document.forms[0].recipient_email.value == ""
+                    || document.forms[0].subject.value == "") {
+            window.alert("You did not fill in one of the following required fields: sender_email," +
+                    "recipient e-mail, or subject.");
+            return false;
+        }
+
+        retValue = validateEmail(document.forms[0].sender_email);
+        if (retValue == false)
+            return retValue;
+
+        retValue = validateEmail(document.forms[0].recipient_email);
+        if (retValue == false)
+            return retValue;
+
+        retValue = compareAddresses(document.forms[0].sender_email,document.forms[0].recipient_email);
+        return retValue;
+    }
+
+    function validateEmail(formObject) {
+        var email = formObject.value;
+        if (email.search(/@/.test(email)) == false || /\....$/.test(email) == false) {
+            window.alert("one or more of the e-mail addresses you entered does not appear to be valid");
+            return false;
+        }
+        formObject.value = email.toLocaleLowerCase();
+        return true;
+
+    }
+
+    function compareAddresses(senderObject, recipientObject) {
+        var senderEmail = senderObject.value;
+        var recipientEmail = recipientObject.value;
+        senderEmail = senderEmail.toLowerCase();
+        if (senderEmail.localeCompare(recipientEmail) == false) {
+            window.alert("You entered the same e-mail address for sender and recipient.");
+            return false;
+        } else
+            return true;
+    }
      /* ]]> */
     </script>
 
@@ -26,7 +74,7 @@
                                     <td><a href=""><img src="images/inbox.jpg" border="0" alt="Visual formatting image" /></a></td>
                                 </tr>
                                 <tr>
-                                    <td><a href="">img src="images/outbox.jpg" border="0" alt="Visual formatting image" /></a></td>
+                                    <td><a href=""><img src="images/outbox.jpg" border="0" alt="Visual formatting image" /></a></td>
                                 </tr>
                                 <tr>
                                     <td><a href=""><img src="images/draft.jpg" border="0" alt="Visual formatting image" /></a></td>
@@ -40,7 +88,7 @@
                             </table>
                         </td>
                         <td width="96" height="204" valign="top" align="center" style="background-image: url('images/bgmessages.jpg');
-                            padding-top: 55px; padding-right: 35px; color: #C10017"><font size="4"><b>18</b></font><br />
+                            font-size: 4px; padding-top: 55px; padding-right: 35px; color: #C10017"><em>18</em><br />
                             new messages</td>
                     </tr>
                     <tr>
@@ -73,24 +121,43 @@
                                 <tr>
                                     <td valign="top">
                                         <h2>Sender</h2>
-                                        <p>Name<br /><input type="text" name="sender_name" size="30" /></p>
-                                        <p> E-Mail Address<br /><input type="text" name="sender_email" size="30" /> </p>
+                                        <p>Name<br />
+                                            <label for = "sender_name">Sender Name</label>
+                                            <input type="text" name="sender_name" id="sender_name" size="30" />
+                                        </p>
+                                        <p> E-Mail Address<br />
+                                            <label for = "sender_email">Sender E-Mail Address</label>
+                                            <input type="text" name="sender_email" id="sender_email" size="30" />
+                                        </p>
                                         <h2>Recipients</h2>
-                                        <p>Name<br /><input type="text" name="recipient_name" size="30" /></p>
-                                        <p>E-Mail Address<br /><input type="text" name="recipient_email" size="30" /></p>
+                                        <p>Name<br />
+                                            <label for = "recipient_name">Recipient Name</label>
+                                            <input type="text" name="recipient_name" id="recipient_name" size="30" />
+                                        </p>
+                                        <p>E-Mail Address<br />
+                                            <label for = "recipient_email">Recipient E-Mail</label>
+                                            <input type="text" name="recipient_email" id="recipient_email" size="30" />
+                                        </p>
                                         <p>
                                             <input type="button" value="Add" onclick="addRecipient()" />&nbsp;
                                             <input type="button" value="Remove" onclick="deleteRecipient()" />&nbsp;
                                             <input type="button" value="Update" onclick="updateSelectedRecipient()" />
                                         </p>
-                                        <select name="recipients" size="4" style="width: 200px" onclick="getRecipientInfo()">
+                                        <label for="recipients">Recipients</label>
+                                        <select name="recipients" id="recipients" size="4" style="width: 200px" onclick="getRecipientInfo()">
                                             <option value="recipients">Recipients</option>
                                         </select>
                                     </td>
                                     <td valign="top">
                                         <h2>Message Details</h2>
-                                        <p>Subject<br /><input type="text" name="subject" size="42" /></p>
-                                        <p>Message<br /><textarea name="message" rows="14" cols="32"></textarea></p>
+                                        <p>Subject<br />
+                                            <label for="subject">Subject</label>
+                                            <input type="text" name="subject" id="subject" size="42" />
+                                        </p>
+                                        <p>Message<br />
+                                            <label for="message">Message</label>
+                                            <textarea name="message" id="message" rows="14" cols="32"></textarea>
+                                        </p>
                                         <p style="text-align: center">
                                             <input type="submit" value="Send" />
                                             <input type="reset" />
@@ -118,7 +185,7 @@
         </tr>
         <tr>
             <td colspan="2" width="780" height="50" style="background-image: url('images/bgf.gif');
-                color: #ffffff; padding-left: 25px;">Copyright &copy; 2008-2010 <b>MyMailWebPortal.com</b>.<br />
+                color: #ffffff; padding-left: 25px;">Copyright &copy; 2008-2010 <em>MyMailWebPortal.com</em>.<br />
                 All rights reserved. &bull;
                 <a href="" style="color: #ffffff; text-decoration: none;">Privacy Policy</a> &bull;
                 <a href="" style="color: #ffffff; text-decoration: none;">Terms Of Use</a>
