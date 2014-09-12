@@ -4,7 +4,7 @@ body{
 margin:0px;}
 
 .header{
-background-image:url(../image/header_left.jpg);
+background-image:url(../Competency%20%201.1/image/header_left.jpg);
 background-repeat:no-repeat;
 width:298px;
 height:175px;
@@ -12,7 +12,7 @@ float: left;
 }
 
 .header1{
-background-image:url(../image/header_right.jpg);
+background-image:url(../Competency%20%201.1/image/header_right.jpg);
 background-repeat:no-repeat;
 width:480px;
 height:175px;
@@ -20,7 +20,7 @@ float: right
 }
 
 .menu{
-background-image:url(../image/menu.jpg);
+background-image:url(../Competency%20%201.1/image/menu.jpg);
 background-repeat:no-repeat;
 width:298px;
 height:201px;
@@ -28,7 +28,7 @@ float: left
 }
 
 .img{
-background-image:url(../image/middle_right.jpg);
+background-image:url(../Competency%20%201.1/image/middle_right.jpg);
 background-repeat:no-repeat;
 width:480px;
 height:201px;
@@ -36,14 +36,14 @@ float: right
 }
 
 .mid_img {
-background-image:url(../image/mid_img.jpg);
+background-image:url(../Competency%20%201.1/image/mid_img.jpg);
 background-repeat:no-repeat;
 width:778px;
 height:499px;
 }
 
 .footer {
-background-image:url(../image/footer.jpg);
+background-image:url(../Competency%20%201.1/image/footer.jpg);
 background-repeat:no-repeat;
 width:778px;
 height:67px;
@@ -91,11 +91,11 @@ color:#ffffff;
 padding-left: 60px
 }
 
-
 .home{
 font-family:Verdana, Arial, Helvetica, sans-serif;
 font-size:10px;
 color:#3B4350;
+padding-left: 60px
 }
 
 .home a{
@@ -254,7 +254,7 @@ font-size:10px;
 color:#000000;
 }
 .send{
-background-image:url(../image/submit.jpg);
+background-image:url(../Competency%20%201.1/image/submit.jpg);
 background-repeat:no-repeat;
 font-family:Verdana, Arial, Helvetica, sans-serif;
 font-size:10px;

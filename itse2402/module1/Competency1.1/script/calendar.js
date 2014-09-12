@@ -7,6 +7,7 @@ function Contact() {
     this.address = "";
     this.city = "";
     this.state = "";
+    this.zip = "";
     this.getContacts = getContactInfo;
     this.updateContact = updateSelectedContact;
 }
@@ -67,7 +68,6 @@ function deleteContact() {
         if (document.forms[0].contacts.options[i].selected== true) {
             contactSelected = true;
             selectedContact = i;
-            calcGroupDiscount(document.forms[0].contacts.options.length);
             break;
         }
     }
@@ -87,6 +87,7 @@ function deleteContact() {
             contactList["contact" + i].state = document.forms[0].state.value;
             contactList["contact" + i].zip = document.forms[0].zip.value;
         }
+        calcGroupDiscount(document.forms[0].contacts.options.length);
     }
     else
         window.alert(
@@ -143,20 +144,24 @@ function displayCalendar(whichMonth) {
         calendarWin.document.write("<td><a href='' onclick='self.opener.document.forms[0].reservationDate.value=\"" + curDate + "\";self.close()'>" + dateCounter + "<\/a><\/td>");
         ++dateCounter;
     }
+    calendarWin.document.write("</tr>");
     // This ends step 6 on page 327
 
 
     // This is step 7 on page 328
     var numDays = 0;
-    // January, March, May, July, August, October, December
-    if (month == 0 || month == 2 || month == 4 || month == 6 || month == 7 || month == 9 || month == 11)
-        numDays = 31;
-    // February
-    if (month == 1)
-        numDays = 28;
-    // April, June, September, November
-    else if (month == 3 || month == 5 || month == 8 || month == 10)
-        numDays = 30;
+    numDays = daysInMonth(month, dateObject.getFullYear());
+
+    // ********************************************************
+    // the code specified for getting days of month on pg 328
+    // is flawed. It does not take into account whether the year
+    // is leap year which changes the number of days in Feb
+    // daysInMonth function takes care of days in leap and nonleap years
+    // this snippet came from http://snippets.dzone.com/posts/show/2099
+    function daysInMonth(iMonth, iYear)
+    {
+        return 32 - new Date(iYear, iMonth, 32).getDate();
+    }
     // This ends step 7 on page 328
 
     //This is step 8 on page 328
@@ -193,11 +198,11 @@ function calcGroupDiscount(groupSize) {
     var dailyRate = 49;
     var groupRate;
     if (groupSize >= 5 && groupSize <= 10)
-        dailyRate /= 1.1;
+        dailyRate *= 0.9;
     else if (groupSize > 10 && groupSize < 25)
-        dailyRate /= 1.2;
+        dailyRate *= 0.8;
     else if (groupSize > 24)
-        dailyRate /= 1.25;
+        dailyRate *= 0.75;
     groupRate = groupSize * dailyRate;
     groupRate = Math.round(groupRate);
     document.forms[0].discount.value = groupRate.toLocaleString();
