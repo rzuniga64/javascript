@@ -156,7 +156,7 @@ function displayCalendar(whichMonth) {
     // the code specified for getting days of month on pg 328
     // is flawed. It does not take into account whether the year
     // is leap year which changes the number of days in Feb
-    // daysInMonth function takes care of days in leap and nonleap years
+    // daysInMonth function takes care of days in leap and non-leap years
     // this snippet came from http://snippets.dzone.com/posts/show/2099
     function daysInMonth(iMonth, iYear)
     {

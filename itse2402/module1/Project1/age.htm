@@ -20,11 +20,11 @@
              return retValue;
          }
 
-         function checkName(formObject) {
-            var nameCheck = /^[a-zA-Z]+[a-zA-Z]+$/;
-            var name = formObject.value;
-            if (nameCheck.test(name) == false)
-                window.alert("The name you entered does not appear to be valid");
+         function checkName(fieldValue) {
+            var nameCheck = /^[a-zA-Z]+[' ']+[a-zA-Z]+$/;
+            var index = fieldValue.indexOf(' ');
+            if (nameCheck.test(fieldValue) == false)
+                window.alert("The name you entered does not appear to be valid. Please enter:First Name+Space+Last Name.");
              return false;
          }
 
@@ -56,13 +56,13 @@
             <div id="left_col"></div>
             <div id="page_content">
                 <h1>Your Information </h1>
-                <p><span class="dropcap">W</span>e take reservations for lunch and dinner for any size party. You may
-                make a reservation for the dining room or the lounge. </p>
+                <p><span class="dropcap">P</span>lease enter your name and age. </p>
                 <form action="processAge.htm" method="get" onsubmit="setRetirement();return validateSubmission()">
-                    <fieldset name="Group1"><legend>Your Information</legend>
+                    <fieldset><legend>Your Information</legend>
                         <p>
                             <label for="name">Name</label><br />
                             <input type="text" name="name" id="name" size="60" onblur="return checkName(this.value)"/>
+                        </p>
                         <p>
                             <label for="age">Age</label><br />
                             <input type="text" name="age" id="age"  size="3" maxlength="3" onblur="return checkForNumber(this.value)"/>
@@ -76,7 +76,7 @@
             </div>
         </div>
         <div id="footer">
-            &copy; 2013 Raul Zuniga | <a href="mailto:raul.zuniga@g.austincc.edu?subject=Web Site Contact">raul.zuniga@g.austincc.edu</a>
+            &copy; 2014 Raul Zuniga | <a href="mailto:raul.zuniga@g.austincc.edu?subject=Web Site Contact">raul.zuniga@g.austincc.edu</a>
             <script type="text/javascript" src="../../scripts/validation.js"></script>
         </div>
     </body>

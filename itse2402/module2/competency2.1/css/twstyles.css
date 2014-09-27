@@ -1,0 +1,64 @@
+﻿  /* CSS layout */
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #000000;
+	background-color: #9BDBEB;
+}
+#masthead {
+	background: url('../assets/us_header.png') no-repeat;
+	height: 189px;
+    margin-bottom: 0;
+}
+
+#container {
+	min-width: 600px;
+    background: url('../assets/us_bg.png') repeat-y;
+}
+
+#page_content {
+	padding: 15px;
+    margin-top: 0;
+	margin-left: 300px;
+    background-color: #F60305;
+    border: solid 2px #FFFFEE;
+	width: 600px;
+}
+#footer {
+	clear: both;
+	font-size: 11px;
+	font-weight: bold;
+	margin-top: 20px;
+    margin-left: 240px;
+}
+li {
+	list-style-type: square;
+}
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 22px;
+	font-weight: bold;
+    color: #FFFFEE;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #FFFFEE;
+	margin: 0px;
+}
+
+a:visited {
+	color: #18677A;
+}
+p {
+	line-height: 150%;
+}
+.dropcap {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 50px;
+	color: #FFFFEE;
+	line-height: 55%;
+	padding-top: 2px;
+	float: left;
+}
+

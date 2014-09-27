@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta content="en-us" http-equiv="Content-Language" />
+        <title>Express Conversion Currency Converter</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+        <meta content="currency converter" name="keywords" />
+        <meta content="currency converter." name="description" />
+        <link href="css/twstyles.css" rel="stylesheet" type="text/css" />
+        <script type = "text/javascript" src="js/tomorrow.js"></script>
+        <script type = "text/javascript" src="js/validate.js"></script>
+        <script type = "text/javascript" src="js/jquery-1.11.1.js"></script>
+        <script type = "text/javascript">
+            $(document).ready(function(){
+                // Select British Pound
+                $(document.getElementById("currency1")).click(function() {
+                    $('body').css("color","#fffffe");
+                    $('#masthead').css("background", "url('assets/gb_header.png') no-repeat");
+                    $('#container').css("background", "url('assets/gb_bg.png') repeat-y");
+                    $('#page_content').css("border", "solid 2px #fffffe");
+                    $('#page_content').css("background-color", "#11145b");
+                    $('h1').css("color", "#F60305");
+                    $('.dropcap').css("color", "#F60305");
+                 });
+
+                // Select Euro
+                $(document.getElementById("currency2")).click(function() {
+                    $('body').css("color", "#000000");2
+                    $('#masthead').css("background", "url('assets/euro_header.png') no-repeat");
+                    $('#container').css("background", "url('assets/euro_bg.png') repeat-y");
+                    $('#page_content').css("background-color", "#fdd513");
+                    $('#page_content').css("border", "solid 2px #FE8402");
+                    $('h1').css("color", "#FE8402");
+                    $('.dropcap').css("color", "#FE8402");
+                });
+
+                // Select Peso
+                $(document.getElementById("currency3")).click(function() {
+                    $('body').css("color", "#7E3D0B");
+                    $('#masthead').css("background", "url('assets/mexico_header.png') no-repeat");
+                    $('#container').css("background", "url('assets/mexico_bg.png') repeat-y");
+                    $('#page_content').css("background-color", "#329B00");
+                    $('#page_content').css("border", "solid 2px #ffffff");
+                    $('h1').css("color", "#ffffee");
+                    $('h1').css("border-bottom-color", "#ffffee");
+                    $('.dropcap').css("color", "#ffffee");
+                });
+            });
+        </script>
+    </head>
+    <body onload="getTodayDate()">
+        <div id="masthead" class="auto-style1"></div>
+        <div id="container">
+            <div id="page_content">
+                <h1>Currency Converter </h1>
+                <p><span class="dropcap">P</span>lease enter the amount to convert. </p>
+                <form action="conversion.htm" method="get" onsubmit="return validateSubmission()">
+                <fieldset><legend>Currency Converter</legend>
+                    <p>
+                        <label for="dateToday">Today's Date</label>
+                        <input type="text" name="dateToday" id="dateToday"/>
+                        <label for="dateTomorrow" style="margin-left: 10px">Tomorrow's Date</label>
+                        <input type="text" name="dateTomorrow" id="dateTomorrow"/>
+                    </p>
+                    <p>
+                        <label for="amount">What is the amount of U.S dollars you want to convert?</label><br />
+                        <input type="text" name="amount" id="amount" onblur="return checkForNumber(this.value)"/>
+                    </p>
+                    <p>
+                        <label for="currency1">To which currency would you like to convert?</label><br />
+                        <input type="radio" name="currency" id="currency1" value="British Pound"/>British Pound<br />
+                        <input type="radio" name="currency" id="currency2" value="Euro" />Euro<br />
+                        <input type="radio" name="currency" id="currency3" value="Peso" />Peso<br />
+                    </p>
+                    <p>
+                        <input name="convert" type="submit" value="Convert" />
+                    </p>
+                </fieldset>
+            </form>
+            </div> <!--page content-->
+        </div> <!--container-->
+        <div id="footer">
+            &copy; 2013 Raul Zuniga | <a href="mailto:raul.zuniga@g.austincc.edu?subject=Web Site Contact">raul.zuniga@g.austincc.edu</a>
+            <script type = "text/javascript" src="../../scripts/validation.js"></script>
+        </div>
+    </body>
+</html>
