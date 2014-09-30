@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>View Source to see Code from Page 601</title>    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <link href="../css/drgaviation.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript">
+/* <![CDATA[ */
+var plane = new Array(24);
+var curPlane = 0;
+
+
+
+for (var imagesLoaded=0; imagesLoaded < 16; ++imagesLoaded) {
+     plane[imagesLoaded] = new Image();
+     plane[imagesLoaded].src = "airplane" + imagesLoaded
+           + ".gif";
+           
+         
+  if (imagesLoaded == 23)
+     setInterval("fly()", 150);
+}
+
+
+
+function fly() {
+     if (curPlane == 23)
+           curPlane = 0;
+     else
+           ++curPlane;
+           
+<!-- step 3 change -->
+     document.getElementsByTagName("img")[4].src = plane[curPlane].src;
+<!-- end of step 3 change -->
+
+}
+/* ]]> */
+</script>
+</head>
+
+
+<body >
+
+<!-- Your page here -->  
+<table border="0" width="100%">
+  <colgroup span="1" width="25%" />
+  <colgroup span=" 1" width="75%" />
+  <tr>
+    <td>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+   document.write("<h1>" + document.title + "</h1>");
+    /* ]]> */
+    </script>
+
+    </td>
+    <!-- step 4 change -->
+    <td><img src="../images/airplane0.gif" id="airplaneImage" height="200" width="300" alt="Image of an airplane." />
+</td>
+  </tr>
+</table>
+<!--these are your validation icons-->  
+ <p>
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="http://www.w3.org/Icons/valid-xhtml10"
+        alt="Valid XHTML 1.0 Strict" height="31" width="88" style="border: 0;" /></a>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+    <img src="http://www.austincc.edu/jscholl/images/vcss.png" 
+    alt="Valid CSS!" height="31" width="88" style="border: 0;" /></a>
+</p> 
+  </body>
+  </html>
