@@ -1,0 +1,56 @@
+<!DOCTYPE html >
+<html lang="en" >
+    <head>
+        <link rel="SHORTCUT ICON" href="program-01/assets/favicon.ico" />
+        <title>ITSE 1394: jQuery - Raul Zuniga </title>
+        <meta charset="utf-8" />
+        <style>
+            h1, h2 {text-align:center}
+            h3 {text-align: center; margin-bottom:0;}
+            p  {margin-top:0;}
+        </style>
+        <script>
+         /* <![CDATA[ */
+            var dateObject = new Date();
+            var month = dateObject.getMonth();
+            var monthArray = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+            function getTodayDate() {
+                // Use the date class to get the current time/date
+                var dateToday = monthArray[month] + " " + dateObject.getDate() + ", " + dateObject.getFullYear() + " " +
+                                dateObject.getHours() + ":" + dateObject.getMinutes() + ":" + dateObject.getSeconds();
+                document.getElementById("dateTime").innerHTML = dateToday;
+            }
+        /* ]]> */
+        </script>
+    </head>
+    <body onload="getTodayDate()"> <!--#2 load the current time on page load-->
+        <hr />
+        <h1>ITSE 1394: jQuery</h1>
+        <h2>Raul Zuniga</h2>
+        <!-- #2 include the current time/date as an <h3> after "Your Name Here"-->
+        <h3 id="dateTime"></h3>
+        <hr />
+        <p>
+            <!--#3 The program 01 link on your site should open an index.html page in the
+            program-01 folder which displays a welcome message-->
+            <a href="program-01/index.html">Program 01</a><br /><br />
+            <a href="program-02/index.html">Program-02</a><br /><br />
+            <a href="program-03/index.html">Program-03</a><br /><br />
+            <a href="program-04/index.html">Program-04</a><br /><br />
+            <a href="program-05/index.html">Program-05</a><br /><br />
+            <a href="program-06/index.html">Program-06</a><br /><br />
+            <a href="program-07/index.html">Program-07</a><br /><br />
+            <a href="program-08/index.html">Program-08</a><br /><br />
+            <a href="program-09/index.html">Program-09</a><br /><br />
+            <a href="program-10/index.html">Program-10</a><br /><br />
+            <a href="program-11/index.html">Program-11</a><br /><br />
+            <a href="program-12/index.html">Program-12</a><br /><br />
+            <a href="program-13/index.html">Program-13</a><br /><br />
+            <a href="program-14/index.html">Program-14</a><br /><br />
+            <a href="extra_credit_program/index.html">Extra Credit Program</a><br />
+        </p>
+        <!-- external javascript for validation -->
+        <script type="text/javascript" src="program-01/scripts/validation.js"></script>
+    </body>
+</html>

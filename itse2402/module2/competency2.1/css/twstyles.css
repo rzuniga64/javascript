@@ -41,10 +41,8 @@ h1 {
 	font-size: 22px;
 	font-weight: bold;
     color: #FFFFEE;
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
-	border-bottom-color: #FFFFEE;
-	margin: 0px;
+	border-bottom: solid 1px #FFFFEE;
+	margin: 0;
 }
 
 a:visited {

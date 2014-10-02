@@ -1,24 +1,20 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
 <html>
     <head lang="en">
-        <meta charset="UTF-8">
+        <meta content="en-us" http-equiv="Content-Language" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
         <title>JQuery Example</title>
         <script type="text/javascript">
+            /* <![CDATA[ */
             function myfun() {
                 // once all the files are loaded then this message will be displayed.
                 // This is a disadvantage of JavaScript.
-                alert("javascript is running")
+                window.alert("javascript is running")
             }
+            /* ]]> */
         </script>
     </head>
     <body onload="myfun()">
-
-        <!-- First try for the online product version of jQuery using jQuery CDN-->
-        <!--script src="http://code.jquery.com/jquery.js"></script-->
-        <!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script-->
-        <!--script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script-->
-
-        <!-- If no online access, fallback to our hardcoded version of jQuery -->
-        <script>window.jQuery || document.write('<script src="../js/jquery-1.11.1.js"><\/script>')</script>
     </body>
 </html>
