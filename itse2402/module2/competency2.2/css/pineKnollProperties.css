@@ -6,18 +6,7 @@ body {
 	color: #996E5C;
 	background-color: #BFCCB8;
 }
-#masthead {
-	height: 189px;
-    margin-bottom: 0;
-}
 
-#page_content {
-	padding: 15px;
-    margin-top: 0;
-	margin-left: 300px;
-    border: solid 2px #FFFFEE;
-	width: 600px;
-}
 footer {
 	font-size: 12px;
 	margin-top: 20px;
@@ -25,6 +14,7 @@ footer {
 li {
 	list-style-type: square;
 }
+
 h1 {
 	font-family: "Times New Roman", Times, serif;
 	font-size: 22px;
@@ -32,6 +22,7 @@ h1 {
 	margin: 0;
 	text-align: center;
 }
+
 h2 {
 	font-family: "Times New Roman", Times, serif;
 	font-size: 18px;
@@ -40,11 +31,6 @@ h2 {
 	text-align: center;
 }
 
-
-
-a:visited {
-	color: #18677A;
-}
 p {
 	line-height: 150%;
     font-size: 16px;
@@ -52,8 +38,8 @@ p {
   /* --------------------------------------
      Typography
      -------------------------------------- */
-.well {margin: 20px 0 0 0; padding-bottom: 0}
+.well {margin: 20px 0 0 0; padding-bottom: 0; background-color: #E5E5CF}
 .well > .page-header { margin-top:0; border: none;  margin-bottom:0 }
 .well > .page-header h1 {margin-top:0 }
 .well >  p {text-align:center }
-.page-header > a {text-decoration: underline; text-align: center }
+p > a {text-decoration: underline; text-align: center }
