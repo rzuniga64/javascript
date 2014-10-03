@@ -3,9 +3,56 @@
     <head>
         <title>Raul Zuniga ITSE 2402 Assignment Index Page</title>
         <meta charset="utf-8" />
+        <!-- Mobile viewport optimized -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <!-- Bootstrap CSS -->
+		<link href="css/bootstrap.css" rel="stylesheet">
+        <!-- Custom CSS -->
         <link href="css/pineKnollProperties.css" type="text/css" rel="stylesheet" />
+
+        <!-- Include Modernizr in the head, before any other Javascript -->
+        <!--script src="js/modernizr-2.6.2.min.js"></script-->
+
         <script type="text/javascript">
         /* <![CDATA[ */
+            var images = new Array(2);
+            var images2 = new Array(2);
+            var isSmallImage = true;
+            var isSmallPerson = true;
+            images[0] = new Image();
+            images[1] = new Image();
+            images[0].src = "images/cottage_small.jpg";
+            images[1].src = "images/cottage_large.jpg";
+
+            images2[0] = new Image();
+            images2[1] = new Image();
+            images2[0].src = "images/raul_zuniga.jpg";
+            images2[1].src = "images/raul_zuniga_thumbnail.jpg";
+
+        function changeSize() {
+            if (isSmallImage) {
+                document.getElementById("cottageLink").innerHTML = "View smaller image";
+                document.getElementsByTagName("img")[0].src = images[1].src;
+                isSmallImage = false;
+            }
+            else {
+                document.getElementById("cottageLink").innerHTML = "View larger image";
+                document.getElementsByTagName("img")[0].src = images[0].src;
+                isSmallImage = true;
+            }
+        }
+
+        function changePersonSize() {
+            if (isSmallPerson) {
+                document.getElementsByTagName("img")[1].src = images2[1].src;
+                isSmallPerson = false;
+            }
+            else {
+                document.getElementsByTagName("img")[1].src = images2[0].src;
+                isSmallPerson = true;
+            }
+        }
         /* ]]> */
         </script>
     </head>
@@ -16,11 +63,48 @@
             document.getElementById("mainHeading").innerHTML = document.getElementsByTagName("title")[0].innerHTML;
             /* ]]> */
         </script>
-         <div>
-        <!-- Your XHTML here -->
+        <div class="container" id="main">
+            <div class="row" id="bigCallout">
+                <div class="col-12">
+                    <div class="well well-lg">
+                        <div class="page-header">
+                            <h1>Pine Knoll Properties</h1><br />
+                            <h2>Single Family homes</h2>
+                        </div><!-- end page-header -->
 
-        <!-- external javascript for validation -->
-        <script type="text/javascript" src="../scripts/validation.js"></script>
-        </div>
+                        <p><a href="#" id="cottageLink" onclick="changeSize(); return false;">View larger image</a><br />
+                        <img src="images/cottage_small.jpg" alt="picture of cottage"></p>
+                        <p>
+                            Cottage: <strong>$149,000</strong><br />2 bed, 1 bath 1,189 square feet, 1.11 acres
+                        </p>
+                    </div><!-- end well -->
+
+                    <div class="well">
+                        <div class="page-header">
+                            <h2>Listing provided by:</h2><br />
+                        </div><!-- end page-header -->
+
+                        <p>
+                            <a href="#" id="personLink" onclick="changePersonSize(); return false;">
+                            <img alt="picture of raul zuniga" src="images/raul_zuniga_thumbnail.jpg"/><br /></a>Raul Zuniga:
+                            <a href="mailto:raul.zuniga@gmail.com?subject=1708 Travis Height Blvd">Pine Knoll Properies</a>
+                        </p>
+                    </div><!-- end well -->
+                </div><!-- end col-12 -->
+            </div><!-- end row -->
+
+        </div><!-- end container -->
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        &copy; 2014 Pine Knoll Properties
+                        <!-- external javascript for validation -->
+                        <script type="text/javascript" src="../../scripts/validation.js"></script>
+                    </div> <!--col-12-->
+                </div><!--row-->
+            </div><!--container-->
+         </footer>
     </body>
 </html>
