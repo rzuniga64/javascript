@@ -34,10 +34,9 @@ body {
 #left-sidebar { background-color:#485A28; float:left; width:150px;height:500px;}
 #left-side-nav {list-style: none; position: fixed; padding:0;}
 #left-side-nav a {color: white; text-decoration:none; text-transform:uppercase;}
-#left-side-nav a:hover {background-color:#B28000; }
+#left-side-nav a:visited { text-decoration:underline; color:#DDAFE9; }
 #left-side-nav li{ padding: 10px 10px;}
 #left-side-nav li:hover {background-color:#B28000; }
-#left-side-nav a:visited { text-decoration:underline; color:#DDAFE9; }
 
 .col-right { width:810px; display:inline-table}
 .col-right td, th { padding:5px; font-family:Arial, sans-serif; }
