@@ -21,11 +21,6 @@ body {
     background: url('../assets/tw_bg.gif') repeat-y;
 }
 
-#left_col {
-    width: 200px;
-    float: left;
-}
-
 #page_content {
     padding: 15px;
     margin-left: 200px;
@@ -44,12 +39,17 @@ li {
     list-style-type: square;
 }
 h1 {
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 22px;
-    font-weight: bold;
     color: #FE8402;
-    margin: 0px;
-    text-align:center
+    text-align:center;
+    margin:0;
+}
+
+h2 {
+    font-size: 18px;
+    color: #FE8402;
+    text-align:center;
+    margin:0;
 }
 
 a:visited {

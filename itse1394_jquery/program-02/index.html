@@ -1,24 +1,21 @@
 <!DOCTYPE html >
 <html lang="en" >
     <head>
-        <title>Raul Zuniga</title>
+        <title>Raul Zuniga ITSE 1394 jQuery</title>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Project 2 for ITSE 1394 jQuery">
         <meta name="author" content="Raul Zuniga">
-        <link href="css/program-02.css" rel="stylesheet" type="text/css" />
+        <link href="css/program-02.css" rel="stylesheet" type="text/css">
         <!-- Bootstrap CSS -->
         <link href="../css/bootstrap.min.css" rel="stylesheet"  type="text/css">
         <!-- Include Modernizr in the head, before any other Javascript -->
-        <script src="../js/modernizr-2.6.2.min.js"></script>
-        <script type="text/javascript">
-        /* <![CDATA[ */
-
-        /* ]]> */
-        </script>
+        <!--script src="../js/modernizr-2.6.2.min.js"></script-->
+        <script type="text/javascript" src="js/program-02.js"></script>
     </head>
-    <body id="body">
+    <body id="body" onload="getTodayDate()">
+
         <div id="navbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
@@ -48,42 +45,253 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">Change button color</a></li>
-                    <li><a href="#">Write current date/time</a></li>
-                    <li><a href="#">Aircraft object</a></li>
-                    <li><a href="#">String replace</a></li>
-                    <li><a href="#">Round a number</a></li>
-                    <li><a href="#">Modululs</a></li>
-                    <li><a href="#">Contcatenate two strings</a></li>
-                    <li><a href="#">Random Number</a></li>
-                    <li><a href="#">Set Date/day of week</a></li>
-                    <li><a href="#">Compare Strings</a></li>
-                    <li><a href="#">Smallest/largest number</a></li>
+                    <li><a href="#" id="1" onclick="requirement1()">Change button color"</a></li>
+                    <li><a href="#" id="2" onclick="requirement2()">Write current date/time</a></li>
+                    <li><a href="#" id="3" onclick="requirement3()">Use Aircraft object</a></li>
+                    <li><a href="#" id="4" onclick="requirement4()">String replace</a></li>
+                    <li><a href="#" id="5" onclick="requirement5()">Round a number</a></li>
+                    <li><a href="#" id="6" onclick="requirement6()">Modulus</a></li>
+                    <li><a href="#" id="7" onclick="requirement7()">Concatenate two strings</a></li>
+                    <li><a href="#" id="8" onclick="requirement8()">Random Number</a></li>
+                    <li><a href="#" id="9" onclick="requirement9()">Set Date/day of week</a></li>
+                    <li><a href="#" id="10" onclick="requirement10()">Compare Strings</a></li>
+                    <li><a href="#" id="11" onclick="requirement11()">Smallest/largest number</a></li>
                 </ul>
             </nav>
         </aside>
-        <!--div id="left-sidebar">
-
-            <ul id="left-side-nav">
-                <li><a href="#">Change button color</a></li>
-                <li><a href="#">Write current date/time</a></li>
-                <li><a href="#">Aircraft object</a></li>
-                <li><a href="#">String replace</a></li>
-                <li><a href="#">Round a number</a></li>
-                <li><a href="#">Modululs</a></li>
-                <li><a href="#">Contcatenate two strings</a></li>
-                <li><a href="#">Random Number</a></li>
-                <li><a href="#">Set Date/day of week</a></li>
-                <li><a href="#">Compare Strings</a></li>
-                <li><a href="#">Smallest/largest number</a></li>
-            </ul>
-        </div-->
 
         <div class="container" style="margin-top: 30px">
             <div class="starter-template">
-                <h1>Bootstrap starter template</h1>
-                <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-            </div>
+                <script type="text/javascript">
+                    /* <![CDATA[ */
+                    document.write("<h1 id='mainHeading'></h1>");
+                    document.getElementById("mainHeading").innerHTML = document.getElementsByTagName("title")[0].innerHTML;
+                    /* ]]> */
+                </script>
+
+                    <!--#1 Change button color when button is clicked-->
+                    <p class="hide" id="para1">1. Call a function when a button is clicked that changes the color and text content (innerHTML) of the button.</p>
+                    <a id="clickMe" href="#" class="hide btn btn-primary" onclick="changeButtonColor(); return false;">Click me!</a>
+
+                    <!--#2 Write the current date/time in U.S. central time-->
+                    <p class="hide" id="para2">2. Write the current date/time in U.S. central time format directly to the HTML document. </p>
+                    <p class="hide" id="dateTime"></p>
+
+                    <!--3.	Write an aircraft object that contains the following data and functionality:
+                            -	Data: type, manufacturer, maxPassengers, maxRange
+                            -	Functionality: takeOff(), climb(), descend(), land()
+                        4.	HTML element events to get and set the aircraft object data and display the results.
+                        5.	HTML element events that call the member functions and display confirmation of the calls.
+                        6.	Include a global variable with the value “Safe Landing” that is accessed and displayed by the land() function.-->
+
+                    <p class="hide"  id="para2_5" style="text-align: left; margin-left: 300px">3. Write an aircraft object that contains the following data and functionality:<br />
+                        -	Data: type, manufacturer, maxPassengers, maxRange<br />
+                        -	Functionality: takeOff(), climb(), descend(), land()<br />
+                        4.	HTML element events to get and set the aircraft object data and display the results.<br />
+                        5.	HTML element events that call the member functions and display confirmation of the calls.<br/>
+                        6.	Include a global variable with the value “Safe Landing” that is accessed and displayed by the land() function.
+                    </p>
+
+                    <div class="hide" id="message" style="text-align: left; margin-left: 300px"></div>
+
+                <!--#7.	User can enter a sentence. Use string methods to replace the word “purple”
+                    (if it exists) with “yellow”. Display the original and altered sentence. -->
+                    <p class="hide" id="para3">7. User can enter a sentence. Use string methods to replace the word “purple”
+                        (if it exists) with “yellow”. <br /> Display the original and altered sentence.  </p>
+                    <form role="form" class="hide" id="form1" onsubmit="return validateStringAndReplace();">
+                        <div class = "form-group">
+                            <label for="original" class="col-sm-2 control-label">Sentence</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name=original id="original" placeholder="Sentence" onblur="clearModifiedSentenceField()"/>
+                            </div>
+                        </div>
+
+                        <div class = "form-group">
+                            <label for="modified" class="col-sm-2 control-label">Modified Sentence</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="modified" placeholder="Modified Sentence" readonly/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-success">Submit</button>&nbsp;
+                                <button type="reset" class="btn btn-warning">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+
+                <!--#8.	User can enter a number and it is rounded to 2 decimal places
+                    (like dollars and cents). Display results including a preceding $.  -->
+                <p class="hide" id="para4">8. User can enter a number and it is rounded to 2 decimal places
+                    (like dollars and cents). <br /> Display results including a preceding $.  </p>
+                <form role="form" class="hide" id="form2" onsubmit="return roundNumber(this.value);">
+
+                    <div class = "form-group">
+                        <div class="col-sm-3"></div>
+                        <label for="number" class="col-sm-2 control-label">Enter Number</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" name=number id="number" placeholder="number" onblur="return checkForNumber(this.value)"/>
+                        </div>
+                        <div class="col-sm-5"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-5 col-sm-4">
+                            <button type="submit" class="btn btn-success">Submit</button>&nbsp;
+                            <button type="reset" class="btn btn-warning">Cancel</button>
+                        </div>
+                        <div class="col-sm-3"></div>
+                    </div>
+                </form>
+
+                <!--#9.	User can enter two numbers. HTML element event which calls a function you wrote named
+                        performModulus() which performs the modulus operation and displays the result.  -->
+                <p class="hide" id="para5">9. User can enter two numbers. HTML element event which calls a function you wrote<br />named
+                    performModulus() which performs the modulus operation and displays the result.  </p>
+                <form role="form" class="hide" id="form3" onsubmit="return performModulus();">
+
+                    <div class = "form-group">
+                        <div class="col-sm-3"></div>
+                        <label for="numerator" class="col-sm-2 control-label">Numerator</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" name=numerator id="numerator" placeholder="Numerator" onblur="return checkForNumber(this.value)"/>
+                        </div>
+                        <div class="col-sm-5"></div><br />
+                    </div>
+
+                    <div class = "form-group">
+                        <div class="col-sm-3"></div>
+                        <label for="denominator" class="col-sm-2 control-label">Denominator</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" name=denominator id="denominator" placeholder="Denominator" onblur="return checkForNumber(this.value)"/>
+                        </div>
+                        <div class="col-sm-5"></div><br />
+                    </div>
+
+                    <div class = "form-group">
+                        <div class="col-sm-3"></div>
+                        <label for="modulus" class="col-sm-2 control-label">Modulus</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" name=modulus id="modulus" placeholder="Modulus" readonly/>
+                        </div>
+                        <div class="col-sm-5"></div><br />
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-5 col-sm-4">
+                            <button type="submit" class="btn btn-success">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="reset" class="btn btn-warning">Cancel</button>
+                        </div>
+                        <div class="col-sm-3"></div>
+                    </div>
+                </form>
+
+                <!--#10 User can enter two strings. Call a function you wrote named stringConcat()
+                        that concatenates the strings and displays the results.  -->
+                <p class="hide" id="para6">10. User can enter two strings. Call a function you wrote named stringConcat()
+                    that concatenates the strings and displays the results.  </p>
+                <form role="form" class="hide" id="form4" onsubmit="return stringConcat();">
+                    <div class = "form-group">
+                        <label for="string1" class="col-sm-2 control-label">Enter string</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="string1"/>
+                        </div>
+                    </div>
+
+                    <div class = "form-group">
+                        <label for="string2" class="col-sm-2 control-label">Enter another string</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="string2" />
+                        </div>
+                    </div>
+
+                    <div class = "form-group">
+                        <label for="string3" class="col-sm-2 control-label">Concatenated String</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="string3" readonly />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-success">Submit</button>&nbsp;
+                            <button type="reset" class="btn btn-warning">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+
+                <!--#11 HTML element event which calls a function you wrote named randomRun()
+                        which displays a random number between and including 25 to 75.-->
+                <p class="hide" id="para7">11. HTML element event which calls a function you wrote named randomRun()
+                    which displays a random number between and including 25 to 75.</p>
+                <form role="form" class="hide" id="form5" onsubmit="randomRun();">
+
+                    <div class = "form-group">
+                        <div class="col-sm-3"></div>
+                        <label for="random" class="col-sm-2 control-label">Random Number</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" name=random id="random" placeholder="number" onblur="return checkForNumber(this.value)"/>
+                        </div>
+                        <div class="col-sm-5"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-5 col-sm-4">
+                            <button type="submit" class="btn btn-success">Generate</button>
+                            <button type="reset" class="btn btn-warning">Cancel</button>
+                        </div>
+                        <div class="col-sm-3"></div>
+                    </div>
+                </form>
+
+                <!--12.	HTML element event which calls a function you wrote named setMyDate() which creates a Date object and sets the date to 01Jan2020.
+                        Display the day of the week (e.g. Monday) of that date using the Date object get method(s) and an array containing the day names. -->
+                <p class="hide" id="para8">12. HTML element event which calls a function you wrote named setMyDate() which creates a Date object and sets the date to 01Jan2020.<br />
+                                            Display the day of the week (e.g. Monday) of that date using the Date object get method(s) and an array containing the day names. </p>
+                <p class="hide" id="dateDay"></p>
+
+                <!--#10 13.	User can enter two strings. HTML element event which calls a function you wrote named compareStrings()
+                            which determines if the strings are equal and displays the results. .  -->
+                <p class="hide" id="para9">13. User can enter two strings. HTML element event which calls a function you wrote named compareStrings() <br />
+                    which determines if the strings are equal and displays the results.
+                </p>
+                <form role="form" class="hide" id="form6" onsubmit="return compareStrings();">
+                    <div class = "form-group">
+                        <label for="string4" class="col-sm-2 control-label">Enter string</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="string4"/>
+                        </div>
+                    </div>
+
+                    <div class = "form-group">
+                        <label for="string5" class="col-sm-2 control-label">Enter another string</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="string5" />
+                        </div>
+                    </div>
+
+                    <div class = "form-group">
+                        <label for="string6" class="col-sm-2 control-label">Result of String comparison</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="string6" readonly />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-success">Submit</button>&nbsp;
+                            <button type="reset" class="btn btn-warning">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+
+                <!--14.	Display the largest and smallest number possible in JavaScript.   -->
+                <p class="hide" id="para10">14.	Display the largest and smallest number possible in JavaScript.
+                </p>
+                <p class="hide" id="largestAndSmallestNumber"></p>
+
+            </div> <!--starter-template-->
         </div><!-- /.container -->
 
         <footer>
