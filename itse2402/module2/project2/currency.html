@@ -1,0 +1,124 @@
+<!DOCTYPE html >
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="en-us" http-equiv="Content-Language" />
+    <title>Express Conversion Currency Converter</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Project 2 for ITSE 2402">
+    <meta name="author" content="Raul Zuniga">
+    <!-- Bootstrap CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet"  type="text/css">
+    <link href="css/project2.css" rel="stylesheet" type="text/css">
+    <!-- Include Modernizr in the head, before any other Javascript -->
+    <script src="../../js/modernizr-2.6.2.min.js"></script>
+    <script type = "text/javascript" src="js/project2.js"></script>
+    <script type="text/javascript" src="../../js/jquery-1.11.1.js"></script>
+    <script type = "text/javascript">
+        $(document).ready(function(){
+            // Select British Pound
+            $(document.getElementById("currency1")).click(function() {
+                $('form').css("color", "white");
+                $('form').css("border", "solid 2px #fffffe");
+                $('form').css("background-color", "#11145b");
+                $('#dateToday').css("color", "black");
+                $('#dateTomorrow').css("color", "black");
+                $('#amount').css("color", "black");
+                $('#flag').css("background", "url('assets/gb_header.png') no-repeat");
+                $('.starter-template').css("background", "url('assets/gb_bg.png') repeat-y");
+                $('h1').css("color", "#F60305");
+                $('.dropcap').css("color", "#F60305");
+                $('legend').css("color", "#F60305");
+            });
+
+            // Select Euro
+            $(document.getElementById("currency2")).click(function() {
+                $('form').css("color", "black");
+                $('form').css("color", "black");
+                $('form').css("border", "solid 2px #FE8402");
+                $('form').css("background-color", "#FDD513");
+                $('#flag').css("background", "url('assets/euro_header.png') no-repeat");
+                $('.starter-template').css("background", "url('assets/euro_bg.png') repeat-y");
+                $('h1').css("color", "#FE8402");
+                $('.dropcap').css("color", "#FE8402");
+                $('legend').css("color", "#FE8402");
+            });
+
+            // Select Peso
+            $(document.getElementById("currency3")).click(function() {
+                $('form').css("color", "#7E3D0B");
+                $('form').css("background-color", "#329B00");
+                $('form').css("border", "solid 2px #ffffff");
+                $('#flag').css("background", "url('assets/mexico_header.png') no-repeat");
+                $('.starter-template').css("background", "url('assets/mexico_bg.png') repeat-y");
+                $('h1').css("color", "#ffffee");
+                $('h1').css("border-bottom-color", "#ffffee");
+                $('.dropcap').css("color", "#ffffee");
+                $('legend').css("color", "#ffffee");
+            });
+        });
+    </script>
+</head>
+<body id="body" onload="getTodayDate()">
+
+<div class="container">
+    <div id="flag"></div>
+</div>
+<div class="container">
+    <div class="starter-template">
+            <form role="form" action="conversion.htm" method="get" onsubmit="return validateSubmission()">
+                <h1 id="h1">Currency Converter </h1><br />
+                <p style="text-align: center"><span class="dropcap">P</span>lease enter the amount to convert. </p>
+                <fieldset class="scheduler-border">
+                    <legend class="scheduler-border">Currency Converter</legend>
+                    <div class="form-group">
+                        <label for="dateToday" class="col-2">Today's Date</label>
+                        <input type="text" class="col-2" name="dateToday" id="dateToday" readonly/>
+                        <label for="dateTomorrow" class="col-2">Tomorrow's Date</label>
+                        <input type="text" class="col-2" name="dateTomorrow" id="dateTomorrow" readonly/>
+                        <div class="col-2"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount" class="col-12">What is the amount of U.S dollars you want to convert?</label><br />
+                        <input type="text" class="col-2" name="amount" id="amount" onblur="return checkForNumber(this.value)"/>
+                        <div class="col-10"></div>
+                    </div>
+
+                    <label class="control-label col-12">To which currency would you like to convert?</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="currency1" value="British Pound"/>British Pound
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="currency2" value="Euro" />Euro
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="currency3" value="Peso" />Peso
+                        </label>
+                    </div>
+                    <button name="convert" type="submit" class="btn btn-default">Convert</button>
+                </fieldset>
+            </form>
+    </div> <!--starter-template-->
+</div><!-- /.container -->
+
+<footer id="footer">
+    <div class="col-12" style=color:#000000>
+        &copy; 2013 Raul Zuniga | <a href="mailto:raul.zuniga@g.austincc.edu?subject=Web Site Contact">raul.zuniga@g.austincc.edu</a>
+        <script type = "text/javascript" src="../../js/validation.js"></script>
+    </div> <!--col-12-->
+</footer>
+<!-- Bootstrap core JavaScript
+ ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿body {
+    background-color: white;
+    color: black;
+}
+#flag {
+	background: url('../assets/us_header.png') no-repeat;
+	height: 189px;
+    min-width: 1170px;
+}
+
+.starter-template {
+    background: url('../assets/us_bg.png') repeat-y;
+}
+
+form {
+    margin-left: 325px;
+    background-color: #F60305;
+    border: solid 2px #FFFFEE;
+    width: 600px;
+}
+
+fieldset.scheduler-border {
+  border: 1px groove #ddd !important;
+  padding: 0 1.4em 1.4em 1.4em !important;
+  margin: 0 0 1.5em 0 !important;
+}
+
+legend.scheduler-border {
+  font-size: 14px !important;
+  font-weight: normal !important;
+  text-align: left !important;
+
+}
+
+label {
+    font-weight: normal;
+}
+#footer {
+	font-size: 11px;
+	font-weight: bold;
+    margin-left: 270px;
+}
+
+#h1 {
+	font-size: 22px;
+    color: #FFFFEE;
+	border-bottom: solid 1px #FFFFEE;
+	margin: 0;
+    text-align: center;
+}
+
+a:visited {
+	color: #18677A;
+}
+p {
+	line-height: 150%;
+}
+.dropcap {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 25px;
+	color: #FFFFEE;
+	line-height: 55%;
+	padding-top: 2px;
+}
+
