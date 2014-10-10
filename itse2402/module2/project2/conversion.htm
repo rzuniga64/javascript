@@ -24,10 +24,6 @@
     <div class="starter-template">
         <script type="text/javascript">
             /* <![CDATA[ */
-            var britishPoundConverstionRate = 0.61050;
-            var euroConversioRate = 0.77952;
-            var mexicanPesoConversionRate = 13.2889;
-
             var formData = location.search;
             formData = formData.substring(1, formData.length);  // remove the ? at position 0 in the search property
 
@@ -37,22 +33,20 @@
             formData = decodeURI(formData);
 
             var formArray = formData.split("&");                // break the string into array elements at the &
-            document.write("<form>");
+            document.write("<form role='form'>");
             document.write("<h1 id='h1'>Currency Converter </h1><br />");
             document.write("<fieldset class='scheduler-border'>");
             document.write(" <legend class='scheduler-border'>Currency Converter</legend>");
             document.write("<p>");
 
             // get the starting index of the value of each name=value pair
-            startDateToday = formArray[0].indexOf("=");
-            startDateTomorrow = formArray[1].indexOf("=");
-            startDollarAmount = formArray[2].indexOf("=");
-            startCurrency = formArray[3].indexOf("=");
+            startCurrency = formArray[0].indexOf("=");
+            startUsername = formArray[1].indexOf("=");
+            currency = formArray[0].substring(startCurrency+1);
+            username = formArray[1].substring(startUsername+1);
 
-            dollarAmount = formArray[2].substring(startDollarAmount+1);
-            currency = formArray[3].substring(startCurrency+1);
-
-            document.write("Thank you for using Express Conversion<br /><br />");
+            document.write("Hello, " + username +"<br />")
+            document.write("Thank you for using Express Conversion!<br /><br />");
 
             switch(currency){
                 case "British Pound":
@@ -72,7 +66,6 @@
                     break;
                 case "Euro":
                     $(document).ready(function(){
-                        $('form').css("color", "black");
                         $('form').css("color", "black");
                         $('form').css("border", "solid 2px #FE8402");
                         $('form').css("background-color", "#FDD513");
@@ -96,6 +89,7 @@
                         $('h1').css("border-bottom-color", "#ffffee");
                         $('.dropcap').css("color", "#ffffee");
                         $('legend').css("color", "#ffffee");
+                        $('.center').css("color","#7E3D0B");
                     });
                     mexicanPesoAmount = (dollarAmount * mexicanPesoConversionRate).toFixed(2);
                     document.write(dollarAmount+ " US Dollar = " + mexicanPesoAmount+ " Mexican Peso");
@@ -104,6 +98,12 @@
                     break;
             }
             document.write("</p>");
+            document.write("<div class='form-group'>");
+            document.write("<label for='hiddenName' class='col-2 hidden'></label>");
+            document.write("<input type='text'class='col-2 hidden' name='hiddenName' id='hiddenName'/>");
+            document.write("<div class='col-8'></div>");
+            document.write("</div>");
+            document.write("<button name='convert' type='submit' class='btn btn-default'>Submit</button>");
             document.write("</legend>");
             document.write("</fieldset>");
             document.write("</form>");
@@ -113,7 +113,7 @@
 </div>
 <div id="footer">
     &copy; 2014 Raul Zuniga | <a href="mailto:raul.zuniga@g.austincc.edu?subject=Web Site Contact">raul.zuniga@g.austincc.edu</a>
-    <script type="text/javascript" src="../../scripts/validation.js"></script>
+    <script type="text/javascript" src="../../js/validation.js"></script>
 </div>
 </body>
 </html>

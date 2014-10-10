@@ -67,43 +67,72 @@
 </div>
 <div class="container">
     <div class="starter-template">
-            <form role="form" action="conversion.htm" method="get" onsubmit="return validateSubmission()">
-                <h1 id="h1">Currency Converter </h1><br />
-                <p style="text-align: center"><span class="dropcap">P</span>lease enter the amount to convert. </p>
-                <fieldset class="scheduler-border">
-                    <legend class="scheduler-border">Currency Converter</legend>
-                    <div class="form-group">
-                        <label for="dateToday" class="col-2">Today's Date</label>
-                        <input type="text" class="col-2" name="dateToday" id="dateToday" readonly/>
-                        <label for="dateTomorrow" class="col-2">Tomorrow's Date</label>
-                        <input type="text" class="col-2" name="dateTomorrow" id="dateTomorrow" readonly/>
-                        <div class="col-2"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="amount" class="col-12">What is the amount of U.S dollars you want to convert?</label><br />
-                        <input type="text" class="col-2" name="amount" id="amount" onblur="return checkForNumber(this.value)"/>
-                        <div class="col-10"></div>
-                    </div>
+        <form role="form" action="currency.htm" method="get" onsubmit="return validateSubmission()">
+            <h1 id="h1">Express Conversion Currency Converter </h1><br />
+            <p style="text-align: center"><span class="dropcap">P</span>lease enter the amount to convert. </p>
+            <fieldset class="scheduler-border">
+                <legend class="scheduler-border">Currency Converter</legend>
+                <p id="para1"></p>
+                <p>Any transaction will be effective with tomorrow's date.</p>
+                <div class="form-group">
+                    <label for="dateToday" class="col-2">Today's Date</label>
+                    <input type="text" class="col-2" name="dateToday" id="dateToday" readonly/>
+                    <label for="dateTomorrow" class="col-2">Tomorrow's Date</label>
+                    <input type="text" class="col-2" name="dateTomorrow" id="dateTomorrow" readonly/>
+                    <div class="col-2"></div>
+                </div>
+                <div class="form-group">
+                    <label for="username" class="col-2">Username&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                    <input type="text" class="col-2" name="username" id="username" onblur="return validateSubmission(this.value)"/>
+                    <div class="col-8"></div>
+                </div>
+                <div class="form-group">
+                    <label for="amount" class="col-12">What is the amount of U.S dollars you want to convert?</label><br />
+                    <input type="text" class="col-2" name="amount" id="amount" value="0" onblur="return checkForNumber(this.value)"/>
+                    <div class="col-10"></div>
+                </div>
 
-                    <label class="control-label col-12">To which currency would you like to convert?</label>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="currency1" value="British Pound"/>British Pound
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="currency2" value="Euro" />Euro
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="currency3" value="Peso" />Peso
-                        </label>
-                    </div>
-                    <button name="convert" type="submit" class="btn btn-default">Convert</button>
-                </fieldset>
-            </form>
+                <label class="control-label">To which currency would you like to convert?</label><br />
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="currency1" value="British Pound" checked/>British Pound
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="currency2" value="Euro" />Euro
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="currency3" value="Peso" />Peso
+                    </label>
+                </div>
+                <button name="convert" type="submit" class="btn btn-default">Money Exchange</button>
+                <a href="#">
+                    <img class="displayed"  onclick=showLocation() src="assets/atm-services.jpg" alt="picture of ATM machine">
+                </a>
+                <a href="#" class="center" onclick="showLocation()">See nearest location</a>
+            </fieldset>
+        </form>
+        <div class="row" id="map">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-6">
+                <div class="tabbable">
+                    <ul class="nav nav-tabs">
+                        <li class="active hide"><a href="#tab1" data-toggle="tab">Location</a> </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active hide" id="tab1">
+                            <h4>Our Location<small style="color:white">&nbsp;is right on SoCo</small></h4>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3447.134772184985!2d-97.758653!3d30.233233!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b4eb9282ed59%3A0xb727cce3a041b384!2s2910+S+Congress+Ave!5e0!3m2!1sen!2sus!4v1403601115192" width="100%" height="200" style="border:0"></iframe>
+                            <!--iframe src=""></iframe-->
+                        </div><!--tab-pane-->
+                    </div><!--tab-content-->
+                </div><!--tabbable-->
+            </div><!--col-sm-6-->
+            <div class="col-sm-2"></div>
+        </div> <!-- moreInfo -->
     </div> <!--starter-template-->
 </div><!-- /.container -->
 
