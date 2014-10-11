@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Project 2 for ITSE 1394 jQuery">
         <meta name="author" content="Raul Zuniga">
-        <link href="css/program-02.css" rel="stylesheet" type="text/css">
         <!-- Bootstrap CSS -->
         <link href="../css/bootstrap.min.css" rel="stylesheet"  type="text/css">
+        <link href="css/program-02.css" rel="stylesheet" type="text/css">
         <!-- Include Modernizr in the head, before any other Javascript -->
         <!--script src="../js/modernizr-2.6.2.min.js"></script-->
         <script type="text/javascript" src="js/program-02.js"></script>
@@ -46,41 +46,42 @@
                 </span>
             </div>
             <div class="btn-group-vertical" id="radio-group" >
+            <!--div class="btn-group-vertical"  data-toggle="buttons" id="radio-group" -->
                 <!--div class="radio">
                     <label><input type="radio" name="optionsRadios" id="option1"/>Change button color</label>
                 </div-->
 
-                <label >
+                <label class="btn-custom btn">
                     <input type="radio" name="options" id="option1" onclick="displayTest()"> Change button color
                 </label>
-                <label >
+                <label class="btn-custom btn" >
                     <input type="radio" name="options" id="option2" onclick="displayTest()"> Write current date/time
                 </label>
-                <label >
+                <label class="btn-custom btn" >
                     <input type="radio" name="options" id="option3" onclick="displayTest()"> Use Aircraft object
                 </label>
-                <label >
+                <label class="btn-custom btn" >
                     <input type="radio" name="options" id="option4" onclick="displayTest()"> String replace
                 </label>
-                <label >
+                <label class="btn-custom btn" >
                     <input type="radio" name="options" id="option5" onclick="displayTest()"> Round a number
                 </label>
-                <label >
+                <label class="btn-custom btn" >
                     <input type="radio" name="options" id="option6" onclick="displayTest()"> Modulus
                 </label>
-                <label >
+                <label class="btn-custom btn" >
                     <input type="radio" name="options" id="option7" onclick="displayTest()"> Concatenate two strings
                 </label>
-                <label >
+                <label class="btn-custom btn" >
                     <input type="radio" name="options" id="option8" onclick="displayTest()"> Random Number
                 </label>
-                <label >
+                <label class="btn-custom btn" >
                     <input type="radio" name="options" id="option9" onclick="displayTest()"> Set Date/day of week
                 </label>
-                <label >
+                <label class="btn-custom btn" >
                     <input type="radio" name="options" id="option10" onclick="displayTest()"> Compare Strings
                 </label>
-                <label >
+                <label class="btn-custom btn" >
                     <input type="radio" name="options" id="option11" onclick="displayTest()"> Smallest/largest number
                 </label>
             </div>
@@ -342,7 +343,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        &copy; Raul zuniga
+                        &copy; Raul Zuniga
                         <!-- external javascript for validation -->
                         <script type="text/javascript" src="../js/validation.js"></script>
                     </div> <!--col-12-->
