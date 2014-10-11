@@ -128,7 +128,7 @@
                     <div id="test4" class="hidden">
                         <p>7. User can enter a sentence. Use string methods to replace the word “purple”
                             (if it exists) with “yellow”. <br /> Display the original and altered sentence.  </p>
-                        <form role="form" id="form1" onsubmit="return validateStringAndReplace();">
+                        <form role="form" id="form1" onclick="return validateStringAndReplace();">
                             <div class = "form-group">
                                 <label for="original" class="col-sm-2 control-label">Sentence</label>
                                 <div class="col-sm-10">
@@ -145,7 +145,7 @@
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
-                                    <button type="submit" class="btn btn-success">Submit</button>&nbsp;
+                                    <button type="button" class="btn btn-success">Submit</button>&nbsp;
                                     <button type="reset" class="btn btn-warning">Cancel</button>
                                 </div>
                             </div>
@@ -157,7 +157,7 @@
                 <div id="test5" class="hidden">
                     <p>8. User can enter a number and it is rounded to 2 decimal places
                         (like dollars and cents). <br /> Display results including a preceding $.  </p>
-                    <form role="form" id="form2" onsubmit="return roundNumber(this.value);">
+                    <form role="form" id="form2"  onclick="return roundNumber(this.value);">
 
                         <div class = "form-group">
                             <div class="col-sm-3"></div>
@@ -170,7 +170,7 @@
 
                         <div class="form-group">
                             <div class="col-sm-offset-5 col-sm-4">
-                                <button type="submit" class="btn btn-success">Submit</button>&nbsp;
+                                <button type="button" class="btn btn-success">Submit</button>&nbsp;
                                 <button type="reset" class="btn btn-warning">Cancel</button>
                             </div>
                             <div class="col-sm-3"></div>
@@ -184,7 +184,7 @@
                 <div id="test6" class="hidden">
                     <p>9. User can enter two numbers. HTML element event which calls a function you wrote<br />named
                         performModulus() which performs the modulus operation and displays the result.  </p>
-                    <form role="form" id="form3" onsubmit="return performModulus();">
+                    <form role="form" id="form3" onclick="return performModulus();">
 
                         <div class = "form-group">
                             <div class="col-sm-3"></div>
@@ -215,7 +215,7 @@
 
                         <div class="form-group">
                             <div class="col-sm-offset-5 col-sm-4">
-                                <button type="submit" class="btn btn-success">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn btn-success">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
                                 <button type="reset" class="btn btn-warning">Cancel</button>
                             </div>
                             <div class="col-sm-3"></div>
@@ -228,7 +228,7 @@
                 <div id="test7" class="hidden">
                     <p>10. User can enter two strings. Call a function you wrote named stringConcat()
                         that concatenates the strings and displays the results.  </p>
-                    <form role="form" id="form4" onsubmit="return stringConcat();">
+                    <form role="form" id="form4" onclick="return stringConcat();">
                         <div class = "form-group">
                             <label for="string1" class="col-sm-2 control-label">Enter string</label>
                             <div class="col-sm-10">
@@ -252,7 +252,7 @@
 
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-success">Submit</button>&nbsp;
+                                <button type="button" class="btn btn-success">Submit</button>&nbsp;
                                 <button type="reset" class="btn btn-warning">Cancel</button>
                             </div>
                         </div>
@@ -264,7 +264,7 @@
                 <div id="test8" class="hidden">
                     <p>11. HTML element event which calls a function you wrote named randomRun()
                         which displays a random number between and including 25 to 75.</p>
-                    <form role="form" id="form5" onsubmit="randomRun();">
+                    <form role="form" id="form5" onclick="randomRun();">
 
                         <div class = "form-group">
                             <div class="col-sm-3"></div>
@@ -277,7 +277,7 @@
 
                         <div class="form-group">
                             <div class="col-sm-offset-5 col-sm-4">
-                                <button type="submit" class="btn btn-success">Generate</button>
+                                <button type="button" class="btn btn-success">Generate</button>
                                 <button type="reset" class="btn btn-warning">Cancel</button>
                             </div>
                             <div class="col-sm-3"></div>
@@ -299,7 +299,7 @@
                     <p>13. User can enter two strings. HTML element event which calls a function you wrote named compareStrings() <br />
                         which determines if the strings are equal and displays the results.
                     </p>
-                    <form role="form" id="form6" onsubmit="return compareStrings();">
+                    <form role="form" id="form6" onclick="return compareStrings();">
                         <div class = "form-group">
                             <label for="string4" class="col-sm-2 control-label">Enter string</label>
                             <div class="col-sm-10">
@@ -323,7 +323,7 @@
 
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-success">Submit</button>&nbsp;
+                                <button type="button" class="btn btn-success">Submit</button>&nbsp;
                                 <button type="reset" class="btn btn-warning">Cancel</button>
                             </div>
                         </div>
