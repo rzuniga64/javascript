@@ -40,7 +40,7 @@ function Aircraft(type, manufacturer, maxPassengers, maxRange) {
     };
     this.display = function() {
         document.getElementById("message").innerHTML += "<p>Default values: " + this.getType()+" Manufacturer:\t\t\t"+this.manufacturer+" Max Passengers:\t"+this.getMaxPassengers() + " Max Range:\t"+this.getMaxRange()+".</p>";
-    }
+    };
     this.takeoff = function() {
         document.getElementById("message").innerHTML += "<p>Takeoff: In 10...9...8...7...6...5...4...3...2...1...blastoff!</p>";
     };
@@ -55,308 +55,80 @@ function Aircraft(type, manufacturer, maxPassengers, maxRange) {
     };
 }
 
-// Function to show only the test 1
-function requirement1() {
-    document.getElementById("para2").setAttribute("class","hide");
-    document.getElementById("dateTime").setAttribute("class","hide");
-    document.getElementById("para2_5").setAttribute("class","hide" );
-    document.getElementById("message").setAttribute("class","hide" );
-    document.getElementById("para3").setAttribute("class","hide");
-    document.getElementById("form1").setAttribute("class","hide");
-    document.getElementById("para4").setAttribute("class","hide");
-    document.getElementById("form2").setAttribute("class","hide");
-    document.getElementById("para5").setAttribute("class","hide" );
-    document.getElementById("form3").setAttribute("class","hide" );
-    document.getElementById("para6").setAttribute("class","hide" );
-    document.getElementById("form4").setAttribute("class","hide" );
-    document.getElementById("para7").setAttribute("class","hide" );
-    document.getElementById("form5").setAttribute("class","hide" );
-    document.getElementById("para8").setAttribute("class","hide" );
-    document.getElementById("dateDay").setAttribute("class","hide" );
-    document.getElementById("para9").setAttribute("class","hide" );
-    document.getElementById("form6").setAttribute("class","hide" );
-    document.getElementById("para10").setAttribute("class","hide" );
-    document.getElementById("largestAndSmallestNumber").setAttribute("class","hide" );
-
-    document.getElementById("para1").setAttribute("class","show" );
-    document.getElementById("clickMe").setAttribute("class","btn btn-success" );
+function setClassToHidden(options) {
+    for (var i = 0; i < options.length; ++i) {
+        if (options[i].checked) {
+            continue;
+        }
+        document.getElementById("test"+ (i+1).toString()).setAttribute("class","hidden");
+    }
 }
 
-// Function to show only the test 2
-function requirement2() {
-    document.getElementById("clickMe").setAttribute("class","hide btn btn-success" );
-    document.getElementById("para1").setAttribute("class","hide" );
-    document.getElementById("para2_5").setAttribute("class","hide" );
-    document.getElementById("message").setAttribute("class","hide" );
-    document.getElementById("para3").setAttribute("class","hide");
-    document.getElementById("form1").setAttribute("class","hide");
-    document.getElementById("message").setAttribute("class","hide" );
-    document.getElementById("para4").setAttribute("class","hide");
-    document.getElementById("form2").setAttribute("class","hide");
-    document.getElementById("para5").setAttribute("class","hide" );
-    document.getElementById("form3").setAttribute("class","hide" );
-    document.getElementById("para6").setAttribute("class","hide" );
-    document.getElementById("form4").setAttribute("class","hide" );
-    document.getElementById("para7").setAttribute("class","hide" );
-    document.getElementById("form5").setAttribute("class","hide" );
-    document.getElementById("para8").setAttribute("class","hide" );
-    document.getElementById("dateDay").setAttribute("class","hide" );
-    document.getElementById("para9").setAttribute("class","hide" );
-    document.getElementById("form6").setAttribute("class","hide" );
-    document.getElementById("para10").setAttribute("class","hide" );
-    document.getElementById("largestAndSmallestNumber").setAttribute("class","hide" );
+function displayTest()
+{
+    var id;
+    var options = document.getElementsByName("options");
+    for (var i=0; i < options.length; ++i) {
+        if (options[i].checked)
+            id = options[i].getAttribute("id");
+    }
 
-    document.getElementById("para2").setAttribute("class","show" );
-    document.getElementById("dateTime").setAttribute("class","show" );
+    switch (id) {
+        case "option1":
+            setClassToHidden(options);
+            document.getElementById("test1").setAttribute("class","show" );
+            break;
+        case "option2":
+            setClassToHidden(options);
+            document.getElementById("test2").setAttribute("class","show" );
+            break;
+        case "option3":
+            setClassToHidden(options);
+            document.getElementById("test3").setAttribute("class","show" );
+            useAircraftObject();
+            break;
+        case "option4":
+            setClassToHidden(options);
+            document.getElementById("test4").setAttribute("class","show" );
+            break;
+        case "option5":
+            setClassToHidden(options);
+            document.getElementById("test5").setAttribute("class","show" );
+            break;
+        case "option6":
+            setClassToHidden(options);
+            document.getElementById("test6").setAttribute("class","show" );
+            break;
+        case "option7":
+            setClassToHidden(options);
+            document.getElementById("test7").setAttribute("class","show" );
+            break;
+        case "option8":
+            setClassToHidden(options);
+            document.getElementById("test8").setAttribute("class","show" );
+            break;
+        case "option9":
+            setClassToHidden(options);
+            document.getElementById("test9").setAttribute("class","show" );
+            setMyDate();
+            break;
+        case "option10":
+            setClassToHidden(options);
+            document.getElementById("test10").setAttribute("class","show" );
+            break;
+        case "option11":
+            setClassToHidden(options);
+            document.getElementById("test11").setAttribute("class","show" );
+            displayLargestAndSmallestNumber();
+            break;
+        default:
+            setClassToHidden(options);
+            document.getElementById("test1").setAttribute("class","show" );
+            break;
+    }
 }
 
-// Function to show only the test 3-6
-function requirement3() {
-    document.getElementById("clickMe").setAttribute("class","hide btn btn-success" );
-    document.getElementById("para1").setAttribute("class","hide" );
-    document.getElementById("para2").setAttribute("class", "hide");
-    document.getElementById("dateTime").setAttribute("class","hide");
-    document.getElementById("para3").setAttribute("class","hide");
-    document.getElementById("form1").setAttribute("class","hide");
-    document.getElementById("para4").setAttribute("class","hide");
-    document.getElementById("form2").setAttribute("class","hide");
-    document.getElementById("para5").setAttribute("class","hide" );
-    document.getElementById("form3").setAttribute("class","hide" );
-    document.getElementById("para6").setAttribute("class","hide" );
-    document.getElementById("form4").setAttribute("class","hide" );
-    document.getElementById("para7").setAttribute("class","hide" );
-    document.getElementById("form5").setAttribute("class","hide" );
-    document.getElementById("para8").setAttribute("class","hide" );
-    document.getElementById("dateDay").setAttribute("class","hide" );
-    document.getElementById("para9").setAttribute("class","hide" );
-    document.getElementById("form6").setAttribute("class","hide" );
-    document.getElementById("para10").setAttribute("class","hide" );
-    document.getElementById("largestAndSmallestNumber").setAttribute("class","hide" );
-
-    document.getElementById("para2_5").setAttribute("class","show" );
-    document.getElementById("message").setAttribute("class","show" );
-    useAircraftObject();
-}
-
-// Function to show only the test 7
-function requirement4() {
-    document.getElementById("clickMe").setAttribute("class","hide btn btn-success" );
-    document.getElementById("para1").setAttribute("class","hide" );
-    document.getElementById("para2").setAttribute("class","hide");
-    document.getElementById("dateTime").setAttribute("class","hide");
-    document.getElementById("para2_5").setAttribute("class","hide" );
-    document.getElementById("message").setAttribute("class","hide" );
-    document.getElementById("para4").setAttribute("class","hide");
-    document.getElementById("form2").setAttribute("class","hide");
-    document.getElementById("para5").setAttribute("class","hide" );
-    document.getElementById("form3").setAttribute("class","hide" );
-    document.getElementById("para6").setAttribute("class","hide" );
-    document.getElementById("form4").setAttribute("class","hide" );
-    document.getElementById("para7").setAttribute("class","hide" );
-    document.getElementById("form5").setAttribute("class","hide" );
-    document.getElementById("para8").setAttribute("class","hide" );
-    document.getElementById("dateDay").setAttribute("class","hide" );
-    document.getElementById("para9").setAttribute("class","hide" );
-    document.getElementById("form6").setAttribute("class","hide" );
-    document.getElementById("para10").setAttribute("class","hide" );
-    document.getElementById("largestAndSmallestNumber").setAttribute("class","hide" );
-
-    document.getElementById("para3").setAttribute("class","show" );
-    document.getElementById("form1").setAttribute("class","show" );
-}
-
-// Function to show only the test 8
-function requirement5() {
-    document.getElementById("clickMe").setAttribute("class","hide btn btn-success" );
-    document.getElementById("para1").setAttribute("class","hide" );
-    document.getElementById("para2").setAttribute("class","hide");
-    document.getElementById("dateTime").setAttribute("class","hide");
-    document.getElementById("para2_5").setAttribute("class","hide" );
-    document.getElementById("message").setAttribute("class","hide" );
-    document.getElementById("para3").setAttribute("class","hide");
-    document.getElementById("form1").setAttribute("class","hide");
-    document.getElementById("para5").setAttribute("class","hide" );
-    document.getElementById("form3").setAttribute("class","hide" );
-    document.getElementById("para6").setAttribute("class","hide" );
-    document.getElementById("form4").setAttribute("class","hide" );
-    document.getElementById("para7").setAttribute("class","hide" );
-    document.getElementById("form5").setAttribute("class","hide" );
-    document.getElementById("para8").setAttribute("class","hide" );
-    document.getElementById("dateDay").setAttribute("class","hide" );
-    document.getElementById("para9").setAttribute("class","hide" );
-    document.getElementById("form6").setAttribute("class","hide" );
-    document.getElementById("para10").setAttribute("class","hide" );
-    document.getElementById("largestAndSmallestNumber").setAttribute("class","hide" );
-
-    document.getElementById("para4").setAttribute("class","show" );
-    document.getElementById("form2").setAttribute("class","show" );
-}
-
-// Function to show only the test 9
-function requirement6() {
-    document.getElementById("clickMe").setAttribute("class","hide btn btn-success");
-    document.getElementById("para1").setAttribute("class","hide");
-    document.getElementById("para2").setAttribute("class","hide");
-    document.getElementById("dateTime").setAttribute("class","hide");
-    document.getElementById("para2_5").setAttribute("class","hide" );
-    document.getElementById("message").setAttribute("class","hide" );
-    document.getElementById("para3").setAttribute("class","hide");
-    document.getElementById("form1").setAttribute("class","hide");
-    document.getElementById("para4").setAttribute("class","hide");
-    document.getElementById("form2").setAttribute("class","hide");
-    document.getElementById("para6").setAttribute("class","hide" );
-    document.getElementById("form4").setAttribute("class","hide" );
-    document.getElementById("para7").setAttribute("class","hide" );
-    document.getElementById("form5").setAttribute("class","hide" );
-    document.getElementById("para8").setAttribute("class","hide" );
-    document.getElementById("dateDay").setAttribute("class","hide" );
-    document.getElementById("para9").setAttribute("class","hide" );
-    document.getElementById("form6").setAttribute("class","hide" );
-    document.getElementById("para10").setAttribute("class","hide" );
-    document.getElementById("largestAndSmallestNumber").setAttribute("class","hide" );
-
-    document.getElementById("para5").setAttribute("class","show" );
-    document.getElementById("form3").setAttribute("class","show" );
-}
-
-// Function to show only the test 10
-function requirement7() {
-    document.getElementById("clickMe").setAttribute("class","hide btn btn-success");
-    document.getElementById("para1").setAttribute("class","hide");
-    document.getElementById("para2").setAttribute("class","hide");
-    document.getElementById("dateTime").setAttribute("class","hide");
-    document.getElementById("para2_5").setAttribute("class","hide" );
-    document.getElementById("message").setAttribute("class","hide" );
-    document.getElementById("para3").setAttribute("class","hide");
-    document.getElementById("form1").setAttribute("class","hide");
-    document.getElementById("para4").setAttribute("class","hide");
-    document.getElementById("form2").setAttribute("class","hide");
-    document.getElementById("para5").setAttribute("class","hide" );
-    document.getElementById("form3").setAttribute("class","hide" );
-    document.getElementById("para7").setAttribute("class","hide" );
-    document.getElementById("form5").setAttribute("class","hide" );
-    document.getElementById("para8").setAttribute("class","hide" );
-    document.getElementById("dateDay").setAttribute("class","hide" );
-    document.getElementById("para9").setAttribute("class","hide" );
-    document.getElementById("form6").setAttribute("class","hide" );
-    document.getElementById("para10").setAttribute("class","hide" );
-    document.getElementById("largestAndSmallestNumber").setAttribute("class","hide" );
-
-    document.getElementById("para6").setAttribute("class","show" );
-    document.getElementById("form4").setAttribute("class","show" );
-}
-
-// Function to show only the test 11
-function requirement8() {
-    document.getElementById("clickMe").setAttribute("class","hide btn btn-success");
-    document.getElementById("para1").setAttribute("class","hide");
-    document.getElementById("para2").setAttribute("class","hide");
-    document.getElementById("dateTime").setAttribute("class","hide");
-    document.getElementById("para2_5").setAttribute("class","hide" );
-    document.getElementById("message").setAttribute("class","hide" );
-    document.getElementById("para3").setAttribute("class", "hide");
-    document.getElementById("form1").setAttribute("class", "hide");
-    document.getElementById("para4").setAttribute("class", "hide");
-    document.getElementById("form2").setAttribute("class", "hide");
-    document.getElementById("para5").setAttribute("class","hide" );
-    document.getElementById("form3").setAttribute("class","hide" );
-    document.getElementById("para6").setAttribute("class","hide" );
-    document.getElementById("form4").setAttribute("class","hide" );
-    document.getElementById("para8").setAttribute("class","hide" );
-    document.getElementById("dateDay").setAttribute("class","hide" );
-    document.getElementById("para9").setAttribute("class","hide" );
-    document.getElementById("form6").setAttribute("class","hide" );
-    document.getElementById("para10").setAttribute("class","hide" );
-    document.getElementById("largestAndSmallestNumber").setAttribute("class","hide" );
-
-    document.getElementById("para7").setAttribute("class","show" );
-    document.getElementById("form5").setAttribute("class","show" );
-}
-
-// Function to show only the test 12
-function requirement9() {
-    document.getElementById("clickMe").setAttribute("class","hide btn btn-success");
-    document.getElementById("para1").setAttribute("class","hide");
-    document.getElementById("para2").setAttribute("class","hide");
-    document.getElementById("dateTime").setAttribute("class","hide");
-    document.getElementById("para2_5").setAttribute("class","hide" );
-    document.getElementById("message").setAttribute("class","hide" );
-    document.getElementById("para3").setAttribute("class","hide");
-    document.getElementById("form1").setAttribute("class","hide");
-    document.getElementById("para4").setAttribute("class","hide");
-    document.getElementById("form2").setAttribute("class","hide");
-    document.getElementById("para5").setAttribute("class","hide" );
-    document.getElementById("form3").setAttribute("class","hide" );
-    document.getElementById("para6").setAttribute("class","hide" );
-    document.getElementById("form4").setAttribute("class","hide" );
-    document.getElementById("para7").setAttribute("class","hide" );
-    document.getElementById("form5").setAttribute("class","hide" );
-    document.getElementById("para9").setAttribute("class","hide" );
-    document.getElementById("form6").setAttribute("class","hide" );
-    document.getElementById("para10").setAttribute("class","hide" );
-    document.getElementById("largestAndSmallestNumber").setAttribute("class","hide" );
-
-    document.getElementById("para8").setAttribute("class","show" );
-    document.getElementById("dateDay").setAttribute("class","show" );
-    setMyDate();
-}
-
-// Function to show only the test 13
-function requirement10() {
-    document.getElementById("clickMe").setAttribute("class","hide btn btn-success");
-    document.getElementById("para1").setAttribute("class","hide");
-    document.getElementById("para2").setAttribute("class","hide");
-    document.getElementById("dateTime").setAttribute("class","hide");
-    document.getElementById("para2_5").setAttribute("class","hide" );
-    document.getElementById("message").setAttribute("class","hide" );
-    document.getElementById("para3").setAttribute("class","hide");
-    document.getElementById("form1").setAttribute("class","hide");
-    document.getElementById("para4").setAttribute("class","hide");
-    document.getElementById("form2").setAttribute("class","hide");
-    document.getElementById("para5").setAttribute("class","hide" );
-    document.getElementById("form3").setAttribute("class","hide" );
-    document.getElementById("para6").setAttribute("class","hide" );
-    document.getElementById("form4").setAttribute("class","hide" );
-    document.getElementById("para7").setAttribute("class","hide" );
-    document.getElementById("form5").setAttribute("class","hide" );
-    document.getElementById("para8").setAttribute("class","hide" );
-    document.getElementById("dateDay").setAttribute("class","hide" );
-    document.getElementById("para10").setAttribute("class","hide" );
-    document.getElementById("largestAndSmallestNumber").setAttribute("class","hide" );
-
-    document.getElementById("para9").setAttribute("class","show" );
-    document.getElementById("form6").setAttribute("class","show" );
-}
-
-// Function to show only the test 14
-function requirement11() {
-    document.getElementById("clickMe").setAttribute("class","hide btn btn-success");
-    document.getElementById("para1").setAttribute("class","hide");
-    document.getElementById("para2").setAttribute("class","hide");
-    document.getElementById("dateTime").setAttribute("class","hide");
-    document.getElementById("para2_5").setAttribute("class","hide" );
-    document.getElementById("message").setAttribute("class","hide" );
-    document.getElementById("para3").setAttribute("class","hide");
-    document.getElementById("form1").setAttribute("class","hide");
-    document.getElementById("para4").setAttribute("class","hide");
-    document.getElementById("form2").setAttribute("class","hide");
-    document.getElementById("para5").setAttribute("class","hide" );
-    document.getElementById("form3").setAttribute("class","hide" );
-    document.getElementById("para6").setAttribute("class","hide" );
-    document.getElementById("form4").setAttribute("class","hide" );
-    document.getElementById("para7").setAttribute("class","hide" );
-    document.getElementById("form5").setAttribute("class","hide" );
-    document.getElementById("para8").setAttribute("class","hide" );
-    document.getElementById("dateDay").setAttribute("class","hide" );
-    document.getElementById("para9").setAttribute("class","hide" );
-    document.getElementById("form6").setAttribute("class","hide" );
-
-    document.getElementById("para10").setAttribute("class","show" );
-    document.getElementById("largestAndSmallestNumber").setAttribute("class","show" );
-    displayLargestAndSmallestNumber();
-}
-
-    //   #1.	Call a function when a button is clicked that changes the color and text content
+    //   #1. Call a function when a button is clicked that changes the color and text content
     //   (innerHTML) of the button. Toggle not required but is ok.
     function changeButtonColor() {
     if (isBlue) {
