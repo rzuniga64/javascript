@@ -39,19 +39,19 @@ function Aircraft(type, manufacturer, maxPassengers, maxRange) {
         return this.maxRange = maxRange;
     };
     this.display = function() {
-        document.getElementById("message").innerHTML += "<p>Default values: " + this.getType()+" Manufacturer:\t\t\t"+this.manufacturer+" Max Passengers:\t"+this.getMaxPassengers() + " Max Range:\t"+this.getMaxRange()+".</p>";
+        document.getElementById("message").innerHTML += "Type: " + this.getType()+" Manufacturer:\t\t\t"+this.manufacturer+" Max Passengers:\t"+this.getMaxPassengers() + " Max Range:\t"+this.getMaxRange()+".<br />";
     };
     this.takeoff = function() {
-        document.getElementById("message").innerHTML += "<p>Takeoff: In 10...9...8...7...6...5...4...3...2...1...blastoff!</p>";
+        document.getElementById("message").innerHTML += "Takeoff: In 10...9...8...7...6...5...4...3...2...1...blastoff!<br />";
     };
     this.climb = function() {
-        document.getElementById("message").innerHTML += "<p>Climb: The airplane is climbing to 30,0000 ft.</p>";
+        document.getElementById("message").innerHTML += "Climb: The airplane is climbing to 30,0000 ft.<br />";
     };
     this.descend = function() {
-        document.getElementById("message").innerHTML += "<p>Descend: The airplane is descending for landing.</p>";
+        document.getElementById("message").innerHTML += "Descend: The airplane is descending for landing.<br />";
     };
     this.land = function() {
-        document.getElementById("message").innerHTML += "<p>Land: The airplane has had a" + landing + "</p>";
+        document.getElementById("message").innerHTML += "Land: The airplane has had a" + landing + "<br />";
     };
 }
 
@@ -160,12 +160,12 @@ function useAircraftObject() {
     airBus777.display();
     document.getElementById("message").innerHTML += "getType: "+ airBus777.getType()+"<br />";
     document.getElementById("message").innerHTML += "getManufacturer: "+ airBus777.getManufacturer()+"<br />";
-    document.getElementById("message").innerHTML += "getType: "+ airBus777.getMaxPassengers()+"<br />";
-    document.getElementById("message").innerHTML += "getType: "+ airBus777.getMaxRange()+"<br />";
+    document.getElementById("message").innerHTML += "getMaxPassengers: "+ airBus777.getMaxPassengers()+"<br />";
+    document.getElementById("message").innerHTML += "getMaxRange: "+ airBus777.getMaxRange()+"<br />";
     document.getElementById("message").innerHTML += "setType: "+ airBus777.setType("747")+"<br />";
     document.getElementById("message").innerHTML += "setManufacturer: "+ airBus777.setManufacturer("Boeing")+"<br />";
-    document.getElementById("message").innerHTML += "setType: "+ airBus777.setMaxxPassengers("300")+"<br />";
-    document.getElementById("message").innerHTML += "setType: "+ airBus777.setMaxRange("2500 mi")+"<br /><br />";
+    document.getElementById("message").innerHTML += "setMaxPassengers: "+ airBus777.setMaxxPassengers("300")+"<br />";
+    document.getElementById("message").innerHTML += "setMaxrange: "+ airBus777.setMaxRange("2500 mi")+"<br /><br />";
     airBus777.display();
     airBus777.takeoff();
     airBus777.climb();
