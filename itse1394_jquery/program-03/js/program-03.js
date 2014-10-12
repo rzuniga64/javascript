@@ -1,5 +1,13 @@
-var landing = " Safe Landing";
 var newPlayer;
+
+/*8. Create a JavaScript string containing JSON syntax. The array name within the string should be skiResorts
+*  and the keys should be: resortName and resortState. For example, Alta and Utah. There should be at least 3 key:value
+*  pairs in the array.
+*/
+var skiResorts = '{"skiResorts":[' +
+    '{"resortName":"Alta","resortState":"Utah" },' +
+    '{"resortName":"Keystone","resortState":"Colorado" },' +
+    '{"resortName":"Snowbird","resortState":"Utah" }]}';
 
 /*  9. Use an object constructor to create a player object with the following data members:
  *  firstName, lastName, height, yearsInLeague. Use the keyword “this” to set the values.
@@ -34,9 +42,9 @@ var newPlayer;
     };
 
     this.display = function() {
-        document.getElementById("message9").innerHTML += "In the Player display() function.<br />"
+        document.getElementById("message9").innerHTML += "In the Player display() function.<br />";
         document.getElementById("message9").innerHTML += "First Name: " + this.getFirstName() + " Last Name:" + this.getLastName()+" Height:"+this.getHeight() + " Years in league:"+this.getYearsInLeague()+".<br />";
-        document.getElementById("message10").innerHTML += "In the Player display() function.<br />"
+        document.getElementById("message10").innerHTML += "In the Player display() function.<br />";
         document.getElementById("message10").innerHTML += "First Name: " + this.getFirstName() + " Last Name:" + this.getLastName()+" Height:"+this.getHeight() + " Years in league:"+this.getYearsInLeague()+".<br />";
     };
 }
@@ -102,6 +110,7 @@ function displayTest()
         case "option8":
             setClassToHidden(options);
             document.getElementById("test8").setAttribute("class","show" );
+            displaySkiResorts();
             break;
         case "option9":
             setClassToHidden(options);
@@ -294,6 +303,16 @@ try {
 }
 catch(e) {
     window.alert(e);
+}
+
+/*  8. Use JSON.parse() to convert the string into a JavaScript object. Use an HTML element event to call
+ *  a function you wrote named displaySkiResorts() that uses a loop to display the contents name and state data of the JSON object.
+ */
+function displaySkiResorts() {
+    var obj = JSON.parse(skiResorts);
+    for (var i=0; i < obj.skiResorts.length; ++i) {
+        document.getElementById("message8").innerHTML += obj.skiResorts[i].resortName + " " + obj.skiResorts[i].resortState +"<br />";
+    }
 }
 
 /*  9. Use an HTML element event to call a function you wrote named initializePlayer()

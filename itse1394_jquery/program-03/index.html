@@ -261,27 +261,14 @@
                     JavaScript object. Use an HTML element event to call a function you wrote named displaySkiResorts()
                     that uses a loop to display the contents name and state data of the JSON object. -->
                 <div id="test8" class="hidden">
-                    <p>11. HTML element event which calls a function you wrote named randomRun()
-                        which displays a random number between and including 25 to 75.</p>
-                    <form role="form" id="form8" onclick="randomRun();">
+                    <p>8 Create a JavaScript string containing JSON syntax. The array name within the string should be<br />
+                        skiResorts and the keys should be: resortName and resortState. For example, Alta and Utah. There<br />
+                        should be at least 3 key:value pairs in the array. Use JSON.parse() to convert the string into a<br />
+                        JavaScript object. Use an HTML element event to call a function you wrote named displaySkiResorts()<br />
+                        that uses a loop to display the contents name and state data of the JSON object.
+                    </p>
 
-                        <div class = "form-group">
-                            <div class="col-sm-3"></div>
-                            <label for="random" class="col-sm-2 control-label">Random Number</label>
-                            <div class="col-sm-2">
-                                <input type="text" class="form-control" name=random id="random" placeholder="number" onblur="return checkForNumber(this.value)"/>
-                            </div>
-                            <div class="col-sm-5"></div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-offset-5 col-sm-4">
-                                <button type="button" class="btn btn-success">Generate</button>
-                                <button type="reset" class="btn btn-warning">Cancel</button>
-                            </div>
-                            <div class="col-sm-3"></div>
-                        </div>
-                    </form>
+                    <div id="message8" style="text-align: left; margin-left: 300px"></div>
                 </div>
 
                 <!--9.	Use an object constructor to create a player object with the following data members: firstName, lastName, height,
