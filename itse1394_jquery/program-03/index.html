@@ -1,0 +1,356 @@
+<!DOCTYPE html >
+<html lang="en" >
+    <head>
+        <title>Raul Zuniga ITSE 1394 jQuery</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Project 2 for ITSE 1394 jQuery">
+        <meta name="author" content="Raul Zuniga">
+        <!-- Bootstrap CSS -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet"  type="text/css">
+        <link href="css/program-03.css" rel="stylesheet" type="text/css">
+        <!-- Include Modernizr in the head, before any other Javascript -->
+        <!--script src="../js/modernizr-2.6.2.min.js"></script-->
+        <script type="text/javascript" src="js/program-03.js"></script>
+        <script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="../js/bootstrap.min.js"></script>
+    </head>
+    <body id="body">
+
+        <div id="navbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Project 3</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+
+        <aside id="left-panel">
+            <div class="logo">
+                <span>
+                    <img src="assets/acc_logo.png" alt="logo of Austin Community College"/>
+                </span>
+            </div>
+            <div class="btn-group-vertical" id="radio-group" >
+                <label class="btn-custom btn">
+                    <input type="radio" name="options" id="option1" onclick="displayTest()"> Farenheit temperature
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option2" onclick="displayTest()"> Get month
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option3" onclick="displayTest()"> Get season
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option4" onclick="displayTest()"> Birth month
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option5" onclick="displayTest()"> Select month
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option6" onclick="displayTest()"> RegEx
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option7" onclick="displayTest()"> Strict Mode
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option8" onclick="displayTest()"> Random Number
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option9" onclick="displayTest()"> Set Date/day of week
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option10" onclick="displayTest()"> Compare Strings
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option11" onclick="displayTest()"> Smallest/largest number
+                </label>
+            </div>
+        </aside>
+
+        <div class="container" style="margin-top: 30px">
+            <div class="starter-template">
+                <script type="text/javascript">
+                    /* <![CDATA[ */
+                    document.write("<h1 id='mainHeading'></h1>");
+                    document.getElementById("mainHeading").innerHTML = document.getElementsByTagName("title")[0].innerHTML;
+                    /* ]]> */
+                </script>
+
+                    <div id="test1" class="hidden"><!--#1 User can enter a Fahrenheit temperature and the page displays a message based on the value entered-->
+                        <p>1. User can enter a Fahrenheit temperature and the page displays a message based on the value entered.<br />
+                            Use if-else-if statements. Use reasonable judgment to determine if the appropriate message should be cold,<br />
+                            chilly, freezing, warm, hot, etc. Produce an error message if the value entered in less than -50 or greater than<br />
+                            140. Use try/catch to handle the error.
+                        </p>
+                        <form role="form" id="form1">
+                            <div class = "form-group">
+                                <div class="col-sm-3"></div>
+                                <label for="fahrenheit" class="col-sm-3 control-label">Enter temperature in Fahrenheit</label>
+                                <div class="col-sm-1">
+                                    <input type="text" class="form-control" name="fahrenheit" id="fahrenheit" placeholder= "°F" style="margin-bottom:5px" onblur="return checkForNumber(this.value)"/>
+                                </div>
+                                <div class="col-sm-5"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-5 col-sm-3">
+                                    <button type="button" class="btn-xs btn-success" onclick="return displayFahrenheitMessage();">Submit</button>
+                                    <button type="reset" class="btn-xs btn-warning">Cancel</button>
+                                </div>
+                                <div class="col-sm-4"></div>
+                            </div>
+                        </form>
+                        <br/><br /><br /><br /><br /><p id="message1" class="text-center"></p>
+                    </div>
+
+                    <div id="test2" class="hidden"> <!--#2 Write the current date/time in U.S. central time-->
+                        <p> 2. User can enter a number between 1-12 (error message otherwise – use try/catch to handle the error).<br />
+                            Use a switch statement to output the month name based on the number entered.  </p>
+                        <form role="form" id="form2">
+                            <div class = "form-group">
+                                <div class="col-sm-3"></div>
+                                <label for="month" class="col-sm-3 control-label">Enter a number between 1-12</label>
+                                <div class="col-sm-1">
+                                    <input type="text" class="form-control" name=month id="month"  style="margin-bottom:5px" onblur="return checkForNumber(this.value)"/>
+                                </div>
+                                <div class="col-sm-5"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-6 col-sm-2">
+                                    <button type="button" class="btn-xs btn-success" onclick="return displayMonthMessage();">Submit</button>
+                                    <button type="reset" class="btn-xs btn-warning">Cancel</button>
+                                </div>
+                                <div class="col-sm-4"></div>
+                            </div>
+                        </form>
+                        <br/><br /><br /><br /><br /><p id="message2" class="text-center"></p>
+                    </div>
+
+                    <!--3. User can enter a number between 1-12 ((error message otherwise – use try/catch to handle the error).
+                            Use “Common Code and Fall-Through” to display the following messages:
+                            •	12, 1, 2: “Winter”
+                            •	3, 4, 5: “Spring”
+                            •	6, 7, 8: “Summer”
+                            •	9, 10, 11: “Fall” -->
+
+                    <div id="test3" class="hidden">
+                        <p>3. User can enter a number between 1-12 ((error message otherwise – use try/catch to handle the error).<br />
+                            Use “Common Code and Fall-Through” to display the following messages:<br />
+                            •	12, 1, 2: “Winter”<br />
+                            •	3, 4, 5: “Spring”<br />
+                            •	6, 7, 8: “Summer”<br />
+                            •	9, 10, 11: “Fall”
+                        </p>
+                        <form role="form" id="form3">
+                            <div class = "form-group">
+                                <div class="col-sm-3"></div>
+                                <label for="season" class="col-sm-3 control-label">Enter a number between 1-12</label>
+                                <div class="col-sm-1">
+                                    <input type="text" class="form-control" name="season" id="season" style="margin-bottom:5px" onblur="return checkForNumber(this.value)"/>
+                                </div>
+                                <div class="col-sm-5"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-6 col-sm-3">
+                                    <button type="button" class="btn-xs btn-success" onclick="return displaySeasonMessage();">Submit</button>
+                                    <button type="reset" class="btn-xs btn-warning">Cancel</button>
+                                </div>
+                                <div class="col-sm-3"></div>
+                            </div>
+                        </form>
+                        <br/><br /><br /><br /><br /><p id="message3" class="text-center"></p>
+                     </div>
+
+                    <!--#4. Create a birthMonth object with the 12 month names for keys and person names for the value of each month.
+                    For example, January: “Julia”. Use an HTML element event to call a function you wrote named displayBirthMonth()
+                    that uses a for/in loop to display the month and person names.  -->
+                    <div id="test4" class="hidden">
+                        <p>4. Create a birthMonth object with the 12 month names for keys and person names for the value of each month.<br />
+                            For example, January: “Julia”. Use an HTML element event to call a function you wrote named displayBirthMonth()<br />
+                            that uses a for/in loop to display the month and person names.   </p>
+                        <form role="form" id="form4">
+                            <div class="col-sm-3"></div>
+                            <div class="form-group">
+                                <label for="birthMonth" class="col-sm-4 control-label">Enter a month as a number from 1-12</label>
+                                <div class="col-sm-1">
+                                    <input type="text" class="form-control" name="birthMonth" id="birthMonth"  onblur="return checkForNumber(this.value)"/>
+                                </div>
+                                <div class="col-sm-4"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-7 col-sm-3">
+                                    <button type="button" class="btn btn-success" onclick="return displayBirthMonth();">Submit</button>&nbsp;
+                                    <button type="reset" class="btn btn-warning">Cancel</button>
+                                </div>
+                                <div class="col-sm-2"></div>
+                            </div>
+                        </form>
+                        <br/><br /><br /><br /><br /><p id="message4" class="text-center"></p>
+                    </div>
+
+                <!--#5.	Create a month array which contains the names of all months. Use an HTML element event to call a function you wrote named displaySelectMonths()
+                        that uses a while loop and the month array to display month names January, March, April, May, and December in an <h2> element.   -->
+                <div id="test5" class="hidden">
+                    <p>5. Create a month array which contains the names of all months. Use an HTML element event to call a function you<br />
+                    wrote named displaySelectMonths() that uses a while loop and the month array to display month names January, March,<br />
+                    April, May, and December in an '<'h2'>' element.</p>
+                    <div class="col-sm-offset-5 col-sm-2">
+                        <button type="button" class="btn btn-success" onclick="return displaySelectMonth();">Click to display months</button>
+                    </div>
+                    <div class="col-sm-5"></div>
+                    <br/><h2 id="message5" class="text-center"></h2>
+                </div>
+
+                <!--#6.	Use an HTML element event to call a function you wrote named changejQueryMessage() that uses a regular expression
+                        to replace a user entered string “JavaScript makes me cry” to “JavaScript makes me smile”. Display the modified
+                        string in an <h2> element with the font-weight set to bold and the color set to blue.   -->
+                <div id="test6" class="hidden">
+                    <p> 6. Use an HTML element event to call a function you wrote named changejQueryMessage() that uses a regular<br />
+                        expression to replace a user entered string “JavaScript makes me cry” to “JavaScript makes me smile”. Display<br />
+                        the modified string in an '<'h2'>' element with the font-weight set to bold and the color set to blue.
+                    </p>
+                    <form role="form" id="form5">
+                        <div class = "form-group">
+                            <div class="col-sm-3"></div>
+                            <label for="sentence" class="col-sm-3 control-label">Enter: JavaScript makes me cry</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name=sentence id="sentence" onblur="clearModifiedSentenceField()"/>
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-6 col-sm-6">
+                                <button type="button" class="btn btn-success" onclick="return changeQueryMessage();">Submit</button>&nbsp;
+                                <button type="reset" class="btn btn-warning">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                    <br/><h2 id="message6" class="text-center" ></h2>
+                </div>
+
+                <!--#7 Write and display an example that demonstrates Strict Mode.   -->
+                <div id="test7" class="hidden">
+                    <p>7. Write and display an example that demonstrates Strict Mode. .  </p>
+                    <p> In non-strict mode you will see this message. Uncomment the 'use strict;'<br />
+                        line in the function testStrictMode() in program-03.js and save the file. Run<br />
+                        the program again and an alert will appear: 'Reference error: x is not defined'.</p>
+                </div>
+
+                <!--#8 HTML element event which calls a function you wrote named randomRun()
+                        which displays a random number between and including 25 to 75.-->
+                <div id="test8" class="hidden">
+                    <p>11. HTML element event which calls a function you wrote named randomRun()
+                        which displays a random number between and including 25 to 75.</p>
+                    <form role="form" id="form8" onclick="randomRun();">
+
+                        <div class = "form-group">
+                            <div class="col-sm-3"></div>
+                            <label for="random" class="col-sm-2 control-label">Random Number</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" name=random id="random" placeholder="number" onblur="return checkForNumber(this.value)"/>
+                            </div>
+                            <div class="col-sm-5"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-5 col-sm-4">
+                                <button type="button" class="btn btn-success">Generate</button>
+                                <button type="reset" class="btn btn-warning">Cancel</button>
+                            </div>
+                            <div class="col-sm-3"></div>
+                        </div>
+                    </form>
+                </div>
+
+                <!--8.	HTML element event which calls a function you wrote named setMyDate() which creates a Date object and sets the date to 01Jan2020.
+                        Display the day of the week (e.g. Monday) of that date using the Date object get method(s) and an array containing the day names. -->
+                <div id="test9" class="hidden">
+                    <p>12. HTML element event which calls a function you wrote named setMyDate() which creates a Date object and sets the date to 01Jan2020.<br />
+                                  Display the day of the week (e.g. Monday) of that date using the Date object get method(s) and an array containing the day names. </p>
+                    <p id="dateDay"></p>
+                </div>
+
+                <!--#10 User can enter two strings. HTML element event which calls a function you wrote named compareStrings()
+                            which determines if the strings are equal and displays the results. .  -->
+                <div id="test10" class="hidden">
+                    <p>13. User can enter two strings. HTML element event which calls a function you wrote named compareStrings() <br />
+                        which determines if the strings are equal and displays the results.
+                    </p>
+                    <form role="form" id="form9" onclick="return compareStrings();">
+                        <div class = "form-group">
+                            <label for="string4" class="col-sm-2 control-label">Enter string</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="string4"/>
+                            </div>
+                        </div>
+
+                        <div class = "form-group">
+                            <label for="string5" class="col-sm-2 control-label">Enter another string</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="string5" />
+                            </div>
+                        </div>
+
+                        <div class = "form-group">
+                            <label for="string6" class="col-sm-2 control-label">Result of String comparison</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="string6" readonly />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="button" class="btn btn-success">Submit</button>&nbsp;
+                                <button type="reset" class="btn btn-warning">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!--11.	Display the largest and smallest number possible in JavaScript.   -->
+                <div id="test11" class="hidden">
+                    <p>14.	Display the largest and smallest number possible in JavaScript.</p>
+                    <p  id="largestAndSmallestNumber"></p>
+                </div>
+            </div> <!--starter-template-->
+        </div><!-- /.container -->
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        &copy; Raul Zuniga
+                        <!-- external javascript for validation -->
+                        <script type="text/javascript" src="../js/validation.js"></script>
+                    </div> <!--col-12-->
+                </div><!--row-->
+            </div><!--container-->
+        </footer>
+        <!-- Bootstrap core JavaScript
+         ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="../js/bootstrap.min.js"></script>
+    </body>
+</html>
