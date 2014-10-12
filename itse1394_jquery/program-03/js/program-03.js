@@ -1,56 +1,43 @@
 var landing = " Safe Landing";
+var newPlayer;
 
-/*  3.	Write an aircraft object that contains the following data and functionality:
-        •	Data: type, manufacturer, maxPassengers, maxRange
-        •	Functionality: takeOff(), climb(), descend(), land()
-    4.	HTML element events to get and set the aircraft object data and display the results.
-    5.	HTML element events that call the member functions and display confirmation of the calls.
-    6.	Include a global variable with the value “Safe Landing” that is accessed and displayed by the land() function.
-*/
+/*  9. Use an object constructor to create a player object with the following data members:
+ *  firstName, lastName, height, yearsInLeague. Use the keyword “this” to set the values.
+ *  Include a function in the object to update the yearsInLeague data.
+ */
+    function Player(firstName, lastName, height, yearsInLeague) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.height = height;
+    this.yearsInLeague = yearsInLeague;
+    document.getElementById("message9").innerHTML += "In the Player constructor.<br />";
 
-function Aircraft(type, manufacturer, maxPassengers, maxRange) {
-    this.type = type;
-    this.manufacturer = manufacturer;
-    this.maxPassengers = maxPassengers;
-    this.maxRange = maxRange;
-    this.getType = function() {
-        return this.type;
+    this.getFirstName= function() {
+        return this.firstName;
     };
-    this.setType = function(type) {
-        return this.type = type;
-      };
-    this.getManufacturer = function() {
-        return this.manufacturer;
+
+    this.getLastName = function() {
+        return this.lastName;
     };
-    this.setManufacturer = function(manufacturer) {
-        return this.manufacturer = manufacturer;
+
+    this.getHeight= function() {
+        return this.height;
     };
-    this.getMaxPassengers = function() {
-        return this.maxPassengers;
+
+    this.getYearsInLeague= function() {
+        return this.yearsInLeague;
     };
-    this.setMaxxPassengers  = function(maxPassengers) {
-        return this.maxPassengers = maxPassengers;
+
+    this.setYearsInLeague = function(yearsInLeague) {
+        document.getElementById("message10").innerHTML += "In the Player setYearsInLeague() function.<br />";
+        return this.yearsInLeague = yearsInLeague;
     };
-    this.getMaxRange = function() {
-        return this.maxRange;
-    };
-    this.setMaxRange = function(maxRange) {
-        return this.maxRange = maxRange;
-    };
+
     this.display = function() {
-        document.getElementById("message").innerHTML += "Type: " + this.getType()+" Manufacturer:\t\t\t"+this.manufacturer+" Max Passengers:\t"+this.getMaxPassengers() + " Max Range:\t"+this.getMaxRange()+".<br />";
-    };
-    this.takeoff = function() {
-        document.getElementById("message").innerHTML += "Takeoff: In 10...9...8...7...6...5...4...3...2...1...blastoff!<br />";
-    };
-    this.climb = function() {
-        document.getElementById("message").innerHTML += "Climb: The airplane is climbing to 30,0000 ft.<br />";
-    };
-    this.descend = function() {
-        document.getElementById("message").innerHTML += "Descend: The airplane is descending for landing.<br />";
-    };
-    this.land = function() {
-        document.getElementById("message").innerHTML += "Land: The airplane has had a" + landing + "<br />";
+        document.getElementById("message9").innerHTML += "In the Player display() function.<br />"
+        document.getElementById("message9").innerHTML += "First Name: " + this.getFirstName() + " Last Name:" + this.getLastName()+" Height:"+this.getHeight() + " Years in league:"+this.getYearsInLeague()+".<br />";
+        document.getElementById("message10").innerHTML += "In the Player display() function.<br />"
+        document.getElementById("message10").innerHTML += "First Name: " + this.getFirstName() + " Last Name:" + this.getLastName()+" Height:"+this.getHeight() + " Years in league:"+this.getYearsInLeague()+".<br />";
     };
 }
 
@@ -61,6 +48,17 @@ function setClassToHidden(options) {
         }
         document.getElementById("test"+ (i+1).toString()).setAttribute("class","hidden");
     }
+}
+
+// Used to check that a number has been entered
+function checkForNumber(fieldValue) {
+    document.getElementById("message1").innerHTML = "";
+    if (isNaN(fieldValue)) {
+        window.alert("You must enter a numeric value!");
+        return false;
+    }
+    else
+        return true;
 }
 
 function displayTest()
@@ -84,7 +82,6 @@ function displayTest()
         case "option3":
             setClassToHidden(options);
             document.getElementById("test3").setAttribute("class","show" );
-            useAircraftObject();
             break;
         case "option4":
             setClassToHidden(options);
@@ -109,16 +106,17 @@ function displayTest()
         case "option9":
             setClassToHidden(options);
             document.getElementById("test9").setAttribute("class","show" );
-            setMyDate();
+            initializePlayer();
             break;
         case "option10":
             setClassToHidden(options);
             document.getElementById("test10").setAttribute("class","show" );
+            updatePlayer();
             break;
         case "option11":
             setClassToHidden(options);
             document.getElementById("test11").setAttribute("class","show" );
-            displayLargestAndSmallestNumber();
+            addTeamDataMember();
             break;
         default:
             setClassToHidden(options);
@@ -297,36 +295,46 @@ try {
 catch(e) {
     window.alert(e);
 }
-    //  #3-6: A function to use the aircraft object.
-function useAircraftObject() {
-    var airBus777 = new Aircraft("747","AirBus", "400", "3000 mi" );
-    airBus777.display();
-    document.getElementById("message").innerHTML += "getType: "+ airBus777.getType()+"<br />";
-    document.getElementById("message").innerHTML += "getManufacturer: "+ airBus777.getManufacturer()+"<br />";
-    document.getElementById("message").innerHTML += "getMaxPassengers: "+ airBus777.getMaxPassengers()+"<br />";
-    document.getElementById("message").innerHTML += "getMaxRange: "+ airBus777.getMaxRange()+"<br />";
-    document.getElementById("message").innerHTML += "setType: "+ airBus777.setType("747")+"<br />";
-    document.getElementById("message").innerHTML += "setManufacturer: "+ airBus777.setManufacturer("Boeing")+"<br />";
-    document.getElementById("message").innerHTML += "setMaxPassengers: "+ airBus777.setMaxxPassengers("300")+"<br />";
-    document.getElementById("message").innerHTML += "setMaxrange: "+ airBus777.setMaxRange("2500 mi")+"<br /><br />";
-    airBus777.display();
-    airBus777.takeoff();
-    airBus777.climb();
-    airBus777.descend();
-    airBus777.land();
+
+/*  9. Use an HTML element event to call a function you wrote named initializePlayer()
+ *  that creates a new player instance and displays the new instance data.
+ */
+function initializePlayer() {
+    newPlayer = new Player("Tony","Parker", "72 in", "15" );
+    newPlayer.display();
 }
 
-// Used to check that a number has been entered
-function checkForNumber(fieldValue) {
-    document.getElementById("message1").innerHTML = "";
-    if (isNaN(fieldValue)) {
-        window.alert("You must enter a numeric value!");
-        return false;
-    }
-    else
-        return true;
+/* 10 Use an HTML element event to call a function you wrote for the player object to update the yearInLeague data.
+ *  Display the result (a confirmation of the update).
+ */
+function updatePlayer() {
+    initializePlayer();
+    newPlayer.setYearsInLeague("16");
+    newPlayer.display();
+
 }
 
+/*  11.	Use the prototype property to add a new data member to the player prototype named team. Use the prototype
+ *   property to add a function to the player prototype which changes the team data. Use an HTML element event to
+ *   call that function and display the result (a confirmation of the update).
+ */
+function addTeamDataMember() {
+    initializePlayer();
+    Player.prototype.team = "Spurs";
+    Player.prototype.getTeam = function() {
+        document.getElementById("message11").innerHTML += "In the new Player getTeam() function.<br />";
+        return this.team;
+    };
+
+    Player.prototype.setTeam = function(team) {
+        this.team = team;
+        document.getElementById("message11").innerHTML += "In the new Player setTeam() function.<br />";
+    };
+    document.getElementById("message11").innerHTML += "New team data member = " + newPlayer.getTeam() + "<br />";
+    newPlayer.setTeam("Rockets");
+    document.getElementById("message11").innerHTML += "Updated team data member = " + newPlayer.getTeam() + "<br />";
+    return true;
+}
 
 
 

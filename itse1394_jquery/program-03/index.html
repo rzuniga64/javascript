@@ -68,16 +68,16 @@
                     <input type="radio" name="options" id="option7" onclick="displayTest()"> Strict Mode
                 </label>
                 <label class="btn-custom btn" >
-                    <input type="radio" name="options" id="option8" onclick="displayTest()"> Random Number
+                    <input type="radio" name="options" id="option8" onclick="displayTest()"> JSON parser
                 </label>
                 <label class="btn-custom btn" >
-                    <input type="radio" name="options" id="option9" onclick="displayTest()"> Set Date/day of week
+                    <input type="radio" name="options" id="option9" onclick="displayTest()"> Initialize Player
                 </label>
                 <label class="btn-custom btn" >
-                    <input type="radio" name="options" id="option10" onclick="displayTest()"> Compare Strings
+                    <input type="radio" name="options" id="option10" onclick="displayTest()"> Player Update
                 </label>
                 <label class="btn-custom btn" >
-                    <input type="radio" name="options" id="option11" onclick="displayTest()"> Smallest/largest number
+                    <input type="radio" name="options" id="option11" onclick="displayTest()"> Use prototype property
                 </label>
             </div>
         </aside>
@@ -255,8 +255,11 @@
                         the program again and an alert will appear: 'Reference error: x is not defined'.</p>
                 </div>
 
-                <!--#8 HTML element event which calls a function you wrote named randomRun()
-                        which displays a random number between and including 25 to 75.-->
+                <!--#8 Create a JavaScript string containing JSON syntax. The array name within the string should be
+                    skiResorts and the keys should be: resortName and resortState. For example, Alta and Utah. There
+                    should be at least 3 key:value pairs in the array. Use JSON.parse() to convert the string into a
+                    JavaScript object. Use an HTML element event to call a function you wrote named displaySkiResorts()
+                    that uses a loop to display the contents name and state data of the JSON object. -->
                 <div id="test8" class="hidden">
                     <p>11. HTML element event which calls a function you wrote named randomRun()
                         which displays a random number between and including 25 to 75.</p>
@@ -281,55 +284,40 @@
                     </form>
                 </div>
 
-                <!--8.	HTML element event which calls a function you wrote named setMyDate() which creates a Date object and sets the date to 01Jan2020.
-                        Display the day of the week (e.g. Monday) of that date using the Date object get method(s) and an array containing the day names. -->
+                <!--9.	Use an object constructor to create a player object with the following data members: firstName, lastName, height,
+                    yearsInLeague. Use the keyword “this” to set the values. Include a function in the object to update the yearsInLeague
+                    data. Use an HTML element event to call a function you wrote named initializePlayer() that creates a new player instance
+                    and displays the new instance data.-->
                 <div id="test9" class="hidden">
-                    <p>12. HTML element event which calls a function you wrote named setMyDate() which creates a Date object and sets the date to 01Jan2020.<br />
-                                  Display the day of the week (e.g. Monday) of that date using the Date object get method(s) and an array containing the day names. </p>
-                    <p id="dateDay"></p>
-                </div>
-
-                <!--#10 User can enter two strings. HTML element event which calls a function you wrote named compareStrings()
-                            which determines if the strings are equal and displays the results. .  -->
-                <div id="test10" class="hidden">
-                    <p>13. User can enter two strings. HTML element event which calls a function you wrote named compareStrings() <br />
-                        which determines if the strings are equal and displays the results.
+                    <p>9. Use an object constructor to create a player object with the following data members:<br />
+                        firstName, lastName, height, yearsInLeague. Use the keyword “this” to set the values.<br />
+                        Include a function in the object to update the yearsInLeague data. Use an HTML element<br />
+                        event to call a function you wrote named initializePlayer() that creates a new player<br />
+                        instance and displays the new instance data.
                     </p>
-                    <form role="form" id="form9" onclick="return compareStrings();">
-                        <div class = "form-group">
-                            <label for="string4" class="col-sm-2 control-label">Enter string</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="string4"/>
-                            </div>
-                        </div>
 
-                        <div class = "form-group">
-                            <label for="string5" class="col-sm-2 control-label">Enter another string</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="string5" />
-                            </div>
-                        </div>
-
-                        <div class = "form-group">
-                            <label for="string6" class="col-sm-2 control-label">Result of String comparison</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="string6" readonly />
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="button" class="btn btn-success">Submit</button>&nbsp;
-                                <button type="reset" class="btn btn-warning">Cancel</button>
-                            </div>
-                        </div>
-                    </form>
+                    <div id="message9" style="text-align: left; margin-left: 300px"></div>
                 </div>
 
-                <!--11.	Display the largest and smallest number possible in JavaScript.   -->
+                <!--#10 Use an HTML element event to call a function you wrote for the player object to update the yearInLeague data.
+                    Display the result (a confirmation of the update).  -->
+                <div id="test10" class="hidden">
+                    <p>10 Use an HTML element event to call a function you wrote for the player object to update <br />
+                        the yearInLeague data. Display the result (a confirmation of the update).
+                    </p>
+
+                    <div id="message10" style="text-align: left; margin-left: 300px"></div>
+                </div>
+
+                <!--11.	Use the prototype property to add a new data member to the player prototype named team.
+                    Use the prototype property to add a function to the player prototype which changes the team data.
+                    Use an HTML element event to call that function and display the result (a confirmation of the update).-->
                 <div id="test11" class="hidden">
-                    <p>14.	Display the largest and smallest number possible in JavaScript.</p>
+                    <p>11.	Use the prototype property to add a new data member to the player prototype named team.<br />
+                        Use the prototype property to add a function to the player prototype which changes the team data.<br />
+                        Use an HTML element event to call that function and display the result (a confirmation of the update).</p>
                     <p  id="largestAndSmallestNumber"></p>
+                    <div id="message11" style="text-align: left; margin-left: 300px"></div>
                 </div>
             </div> <!--starter-template-->
         </div><!-- /.container -->
