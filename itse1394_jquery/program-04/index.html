@@ -1,0 +1,236 @@
+<!DOCTYPE html >
+<html lang="en" >
+    <head>
+        <title>Raul Zuniga ITSE 1394 jQuery</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Project 2 for ITSE 1394 jQuery">
+        <meta name="author" content="Raul Zuniga">
+        <!-- Bootstrap CSS -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet"  type="text/css">
+        <link href="css/program-04.css" rel="stylesheet" type="text/css">
+        <!-- Include Modernizr in the head, before any other Javascript -->
+        <script src="../js/modernizr-2.6.2.min.js"></script>
+        <script type="text/javascript" src="js/program-04.js"></script>
+        <script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="../js/bootstrap.min.js"></script>
+    </head>
+    <body id="body">
+
+        <div id="navbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Project 3</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+
+        <aside id="left-panel">
+            <div class="logo">
+                <span>
+                    <img src="assets/acc_logo.png" alt="logo of Austin Community College"/>
+                </span>
+            </div>
+            <div class="btn-group-vertical" id="radio-group" >
+                <label class="btn-custom btn">
+                    <input type="radio" name="options" id="option1" onclick="displayTest()"> Argument object
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option2" onclick="displayTest()"> Self-invoking function
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option3" onclick="displayTest()"> Closuure
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option4" onclick="displayTest()"> Color change
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option5" onclick="displayTest()"> Font size change
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option6" onclick="displayTest()"> Onmouseover/Onmouseout
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option7" onclick="displayTest()"> Onmousedown/Onmouseup
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option8" onclick="displayTest()"> Bubbline propagation
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option9" onclick="displayTest()"> Write all HTML content
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option10" onclick="displayTest()"> Firstchild.nodevalue
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option11" onclick="displayTest()"> Create node
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option12" onclick="displayTest()"> Remove node
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option13" onclick="displayTest()"> Change node list
+                </label>
+            </div>
+        </aside>
+
+        <div class="container" style="margin-top: 30px">
+            <div class="starter-template">
+                <script type="text/javascript">
+                    /* <![CDATA[ */
+                    document.write("<h1 id='mainHeading'></h1>");
+                    document.getElementById("mainHeading").innerHTML = document.getElementsByTagName("title")[0].innerHTML;
+                    /* ]]> */
+                </script>
+
+                <!--#1  Use an HTML element event to call a function you wrote named findAverage() that uses the
+                        argument object to determine and display the average of numbers. -->
+                <div id="test1" class="hidden">
+                    <p> 1. Use an HTML element event to call a function you wrote named findAverage() that uses the argument
+                           object to determine and display the average of numbers.
+                    </p>
+                    <p id="message1" class="text-left"></p>
+                </div>
+
+                <!--#2.	Write a function named selfInvoke() that uses a self-invoking function to display “#2 Hello from selfInvoke”.-->
+                <div id="test2" class="hidden">
+                    <p> 2.	Write a function named selfInvoke() that uses a self-invoking function to display “#2 Hello from selfInvoke”.</p><br />
+                    <p id="message2"></p>
+                </div>
+
+                <!--3.  Use an HTML element event to call a function you wrote named closureExample()
+                        that uses a closure to append user-supplied names. Update/display the name list after
+                        each addition. For example, (first time: “Abe” is displayed, second time: “Abe Bill”
+                        is displayed, third time: “Abe Bill Charlie” is displayed, etc.). -->
+
+                <div id="test3" class="hidden">
+                    <p> 3. Use an HTML element event to call a function you wrote named closureExample()<br />
+                        that uses a closure to append user-supplied names. Update/display the name list after<br />
+                        each addition. For example, (first time: “Abe” is displayed, second time: “Abe Bill”<br />
+                        is displayed, third time: “Abe Bill Charlie” is displayed, etc.).
+                    </p>
+                    <p id="message3"></p>
+                 </div>
+
+                <!--#4. Use an HTML element event to call a function you wrote named colorChange () that changes the background-color
+                        of HTML elements with the CSS class changeMyColor.-->
+                <div id="test4" class="hidden">
+                    <p>4. Use an HTML element event to call a function you wrote named colorChange()<br />
+                       that changes the background-color of HTML elements with the CSS class changeMyColor.   </p>
+                    <h4 id="message4" class="text-center"></h4>
+                </div>
+
+                <!--#5.	Use an HTML element event to call a function you wrote named fontSizeChange() that
+                        changes the font size of HTML elements based on their tag name.    -->
+                <div id="test5" class="hidden">
+                    <p>5. Use an HTML element event to call a function you wrote named fontSizeChange() that
+                        changes the font size of HTML elements based on their tag name.</p>
+                    <br/><h2 id="message5"></h2>
+                </div>
+
+                <!--#6.	Demonstrate the onmouseover and onmouseout events by changing an image source
+                        to display a different image.  -->
+                <div id="test6" class="hidden">
+                    <p> 6. Demonstrate the onmouseover and onmouseout events by changing an image source
+                        to display a different image.
+                    </p>
+                    <!--a href="index.htm'><img id="img1" alt="basket" height="20" onmousedown=swapImage(); onmouseout=swapImage();</a><br /-->
+                    <a href="#"><img class="displayed" id="img1" onmouseover=imageSwap2() onmouseout=imageSwap1() src="assets/quilt.jpg" alt="picture of basket"></a>
+                </div>
+
+                <!--#7 Demonstrate the onmousedown and onmouseup events by changing the text and color
+                    of a div element. -->
+                <div id="test7" class="hidden" onmousedown="changeOnMouseDown()" onmouseup="changeOnMouseUp()">
+                    <p>7. Demonstrate the onmousedown and onmouseup events by changing the text and color
+                        of a &lt;div&gt; element.  </p>
+                    <p> Change the color/font of this &lt;div&gt; element by mousedown/mouseup</p>
+                </div>
+
+                <!--#8  Add an eventlistener to a div element for the click event that produces an alert.
+                        The listener should call a function that you write named handleDivClick().
+                        Use bubbling propagation.-->
+                <div id="test8" class="hidden">
+                    <p>8 Add an eventlistener to a div element for the click event that produces an alert.<br />
+                        The listener should call a function that you write named handleDivClick().<br />
+                        Use bubbling propagation.
+                    </p>
+                    <a id="clickMe" href="#" class="btn btn-primary" onclick="handleButtonClick(); return false;">Click me!</a>
+                </div>
+
+                <!--9.  Use an HTML element event to call a function you wrote named domContent() that
+                        writes all of the HTML content to an alert. -->
+                <div id="test9" class="hidden">
+                    <p>9.Use an HTML element event to call a function you wrote named domContent() that
+                        writes all of the HTML content to an alert.
+                    </p>
+                </div>
+
+                <!--#10 Use an HTML element event to call a function you wrote named changeContent() that gets
+                        the firstChild.nodeValue of a paragraph element and uses it to rest the innerHTML of an <h1> element. -->
+                <div id="test10" class="hidden">
+                    <p>10. Use an HTML element event to call a function you wrote named changeContent() that gets the<br />
+                        firstChild.nodeValue of a &lt;p&gt; element and uses it to rest the innerHTML of an &lt;h1&gt; element.
+                    </p>
+                    <h1>This is a H1</h1>
+                </div>
+
+                <!--#11. Use an HTML element event to call a function you wrote named createNode() which
+                        creates a paragraph element with the content “This is a new paragraph element” and append
+                        that paragraph element to an existing div element.  -->
+                <div id="test11" class="hidden">
+                    <p>11.	Use an HTML element event to call a function you wrote named createNode() which
+                        creates a &lt;p&gt;> element with the content “This is a new paragraph element” and append
+                    that &lt;p&gt; element to an existing &lt;div&gt; element. </p>
+                </div>
+                <div></div>
+
+                <!--#12. Use an HTML element event to call a function you wrote named removeNode() to reverse
+                        the operation of requirement 16 by removing the new paragraph element.-->
+                <div id="test12" class="hidden">
+                    <p>12. Use an HTML element event to call a function you wrote named removeNode() to
+                        reverse the operation of requirement 16 by removing the new &lt;p&gt; element </p>
+                </div>
+
+                <!--#13. Use an HTML element event to call a function you wrote named changeNodeList()
+                        to change the background-color of all <div> elements in a node list. -->
+                <div id="test13" class="hidden">
+                    <p>13.  Use an HTML element event to call a function you wrote named changeNodeList()
+                        to change the background-color of all &lt;div&gt; elements in a node list. </p>
+                </div>
+            </div> <!--starter-template-->
+        </div><!-- /.container -->
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        &copy; Raul Zuniga
+                        <!-- external javascript for validation -->
+                        <script type="text/javascript" src="../js/validation.js"></script>
+                    </div> <!--col-12-->
+                </div><!--row-->
+            </div><!--container-->
+        </footer>
+        <!-- Bootstrap core JavaScript
+         ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="../js/bootstrap.min.js"></script>
+    </body>
+</html>
