@@ -222,8 +222,7 @@ function setClock(){
 }
 
 function getCurrentTime() {
-    var time= new Date().toLocaleTimeString();
-    return time;
+    return new Date().toLocaleTimeString();;
 }
 /*  10. Include a button on your page to stop/start the clock on your page. The text on the button
  *      should display “Stop” when the clock is running and should display “Start” when the timer is
