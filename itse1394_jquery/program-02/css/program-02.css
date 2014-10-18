@@ -26,19 +26,21 @@ label {
     margin: 0;
     max-width: 100%;
 }
+
 .btn {
     font-size:12px;
     text-align:left
 }
+
 .btn-custom {
     background-color: #c00;
     border-color: #c00;
     margin: 0;
     padding:0;
     font-size: 12px;
-    padding:0;
     text-align:left
 }
+
 .btn-custom:hover,
 .btn-custom:focus,
 .btn-custom:active,
@@ -58,6 +60,10 @@ label {
     padding-top: 2px;
 }
 
+.starter-template {
+    text-align: center
+}
+
 #navbar {
     background: #ffc000
 }
@@ -72,10 +78,6 @@ label {
     text-align: center;
 }
 
-.starter-template {
-    text-align: center
-}
-
 #form1, #form2, #form3, #form4, #form5, #form6 {
      text-align: left;
  }
@@ -87,6 +89,11 @@ label {
     float: left;
     z-index: 904;
     width:155px;
+}
+
+#test6 h2 {
+    font-weight: bold;
+    color: blue
 }
 
 
