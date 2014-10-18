@@ -8,12 +8,14 @@
         <meta name="author" content="Raul Zuniga">
         <!-- Bootstrap CSS -->
         <link href="../css/bootstrap.min.css" rel="stylesheet"  type="text/css">
+        <link href="../css/bootstrap-glyphicons.css" rel="stylesheet"  type="text/css">
         <link href="css/program-05.css" rel="stylesheet" type="text/css">
         <!-- Include Modernizr in the head, before any other Javascript -->
         <script src="../js/modernizr-2.6.2.min.js"></script>
         <script type="text/javascript" src="js/program-05.js"></script>
+        <!-- jQuery -->
         <script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <!-- Bootstrap JS -->
         <script src="../js/bootstrap.min.js"></script>
     </head>
     <body id="body">
@@ -45,9 +47,9 @@
                     <img src="assets/acc_logo.png" alt="logo of Austin Community College"/>
                 </span>
             </div>
-            <div class="btn-group-vertical" id="radio-group" >
-                <label class="btn-custom btn">
-                    <input type="radio" name="options" id="option1" onclick="displayTest()"> Display size
+            <div class="btn-group-vertical" id="radio-group">
+                <label class="btn-custom btn" >
+                    <input type="radio"  data-toggle="button" name="options" id="option1"  onclick="displayTest()"> Display size
                 </label>
                 <label class="btn-custom btn" >
                     <input type="radio" name="options" id="option2" onclick="displayTest()"> Display location
@@ -67,16 +69,16 @@
                 <label class="btn-custom btn" >
                     <input type="radio" name="options" id="option7" onclick="displayTest()"> Navigator object info
                 </label>
-                <!--label class="btn-custom btn" >
+                <label class="btn-custom btn" >
                     <input type="radio" name="options" id="option8" onclick="displayTest()"> Enter favorite browser
                 </label>
                 <label class="btn-custom btn" >
                     <input type="radio" name="options" id="option9" onclick="displayTest()"> Clock
                 </label>
                 <label class="btn-custom btn" >
-                    <input type="radio" name="options" id="option10" onclick="displayTest()"> Start/Stop clcok
+                    <input type="radio" name="options" id="option10" onclick="displayTest()"> Start/Stop clock
                 </label>
-                <label class="btn-custom btn" >
+                <!--label class="btn-custom btn" >
                     <input type="radio" name="options" id="option11" onclick="displayTest()"> Display images
                 </label>
                 <label class="btn-custom btn" >
@@ -109,7 +111,7 @@
                 <!--#2.	Use an HTML element event to call a function you wrote named displayLocation() that displays the
                         URL location of the current page. .-->
                 <div id="test2" class="hidden">
-                    <p> 2.	Use an HTML element event to call a function you wrote named displayLocation() that displays the URL location of the current page. ”.</p><br />
+                    <p> 2.	Use an HTML element event to call a function you wrote named displayLocation() that displays the URL location of the current page..</p><br />
                     <p id="message2"></p>
                 </div>
 
@@ -172,6 +174,65 @@
                     </label></p>
                     <p id="message7"></p>
                 </div>
+
+                <!--#8 	Include a prompt box to ask the user to enter their favorite browser. Include the name of your personal favorite
+                        browser as the default value. Display the results. -->
+                <div id="test8" class="checkbox hidden">
+                    <p>8. Include a prompt box to ask the user to enter their favorite browser. Include the name of your personal favorite
+                        browser as the default value. Display the results.
+                    </p>
+                    <form role="form" id="form1">
+                        <div class = "form-group">
+                            <div class="col-sm-3"></div>
+                            <label for="browser" class="col-sm-3 control-label">What is your favorite browser?</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="browser" id="browser" placeholder="Favorite browser"/>
+                            </div>
+                            <div class="col-sm-3"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-6 col-sm-6">
+                                <button type="button" class="btn btn-success" onclick="return displayFavoriteBrowser();">Submit</button>&nbsp;
+                                <button type="reset" class="btn btn-warning">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                    <br /><br /><br /><br /><p id="message8"></p>
+                </div>
+
+                <!--#9 	Include a clock on your page that displays the current local time and advances each second. -->
+                <div id="test9" class="checkbox hidden">
+                <p id="para9">9. Include a clock on your page that displays the current local time and advances each second.</p>
+                    <div class="col-sm-5"></div>
+                    <div class="col-sm-2">
+                        <input type="text" class="text-center" name="clock" id="clock" />
+                    </div>
+                    <div class="col-sm-5"></div><br /><br />
+                </div>
+
+                <!--#10 Include a button on your page to stop/start the clock on your page. The text on the button
+                        should display “Stop” when the clock is running and should display “Start” when the timer is
+                        stopped. The start/stop functionality should be perpetual – meaning that the button can be
+                        clicked multiple times. -->
+
+                <div id="test10" class="checkbox hidden">
+                    <p>10. Include a button on your page to stop/start the clock on your page. The text on the button
+                        should display “Stop” when the clock is running and should display “Start” when the timer is
+                        stopped. The start/stop functionality should be perpetual – meaning that the button can be
+                        clicked multiple times.
+                    </p>
+                    <a id="stopStart" href="#" class="btn btn-primary" onclick="startStopClock(); return false;">Stop</a>
+                </div>
+
+                <!--#11	Display three images on the page five seconds after the page is opened. -->
+                <!--#12 Include three text boxes to enter values for the following cookies: name, school, and
+                        hobby. Include a button that creates the three cookies (with values). Include three
+                        more buttons. Each button deletes a cookie.  -->
+                <!--#13	Include a function that will check the existence of each cookie when the page is accessed.
+                        If one or more of the cookies is not set, an alert box should notify the user to set the
+                        unset cookie(s). If all three cookies are set, the alert box should display the contents
+                        of each cookie. -->
 
             </div> <!--starter-template-->
         </div><!-- /.container -->
