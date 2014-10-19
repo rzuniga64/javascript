@@ -304,7 +304,6 @@ function deleteHobbyCookie() {
  */
 
 function checkForCookies() {
-        clearInterval(clock);
         var name = getCookie("name");
         var school = getCookie("school");
         var hobby = getCookie("hobby");
@@ -321,24 +320,8 @@ function checkForCookies() {
         if (c != "")
             throw "Please set these unset cookies: " + c;
         else
-           throw "Cookies: name=" + name + " school=" + school + " hobby" +hobby;
+           throw "Cookies: name=" + name + " school=" + school + " hobby=" +hobby;
    } catch(e) {
        window.alert(e);
    }
-}
-
-function displayMonthMessage() {
-
-    try {
-        var monthArray = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
-        var month = Number(document.forms[1][0].value);
-
-        if (month >=1 && month <=12)
-            document.getElementById("message2").innerHTML = "The month is " + monthArray[month-1];
-        else
-            throw "The number you entered must be in the range 1-12.";
-    } catch(monthError) {
-        alert(monthError);
-        return false;
-    }
 }
