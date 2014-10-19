@@ -69,7 +69,7 @@ function displayTest()
             setClassToHidden(options);
             document.getElementById("test9").setAttribute("class","show" );
             document.getElementById("para9").setAttribute("class", "show");
-            setClock()
+            setClock();
             break;
         case "option10":
             setClassToHidden(options);
@@ -79,12 +79,11 @@ function displayTest()
             break;
         case "option11":
             setClassToHidden(options);
-            document.getElementById("test11").setAttribute("class","show" );
+            displayImages();
             break;
         case "option12":
             setClassToHidden(options);
             document.getElementById("test12").setAttribute("class","show" );
-
             break;
         case "option13":
             setClassToHidden(options);
@@ -143,14 +142,12 @@ function changeLocation() {
 /*  4.  Add a button “Back” to your page which loads the previous URL in the history list.
  */
 function goBack() {
-    document.getElementById("message4").innerHTML =  "You have visited " + history.length + " Web pages";
     history.back();
 }
 
 /*  5. Add a button “Forward” to your page which loads the next URL in the history list.
  */
 function goForward() {
-    document.getElementById("message5").innerHTML =  "You have visited " + history.length + " Web pages";
     history.forward();
 }
 
@@ -222,7 +219,7 @@ function setClock(){
 }
 
 function getCurrentTime() {
-    return new Date().toLocaleTimeString();;
+    return new Date().toLocaleTimeString();
 }
 /*  10. Include a button on your page to stop/start the clock on your page. The text on the button
  *      should display “Stop” when the clock is running and should display “Start” when the timer is
@@ -241,7 +238,9 @@ function startStopClock() {
 }
 
 /*  11.	Display three images on the page five seconds after the page is opened. */
-
+function displayImages() {
+    setTimeout(function(){document.getElementById("test11").setAttribute("class","show" )},5000);
+}
 /*  12. Include three text boxes to enter values for the following cookies: name, school, and
  *      hobby. Include a button that creates the three cookies (with values). Include three
  *      more buttons. Each button deletes a cookie.
