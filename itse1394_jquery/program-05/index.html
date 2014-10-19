@@ -10,7 +10,7 @@
         <link href="../css/bootstrap.min.css" rel="stylesheet"  type="text/css">
         <link href="css/program-05.css" rel="stylesheet" type="text/css">
         <!-- Include Modernizr in the head, before any other Javascript -->
-        <script src="../js/modernizr-2.6.2.min.js"></script>
+        <!--script src="../js/modernizr-2.6.2.min.js"></script-->
         <script type="text/javascript" src="js/program-05.js"></script>
         <!-- jQuery -->
         <script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
@@ -80,12 +80,12 @@
                 <label class="btn-custom btn" >
                     <input type="radio" name="options" id="option11" onclick="displayTest()"> Display images
                 </label>
-                <!--label class="btn-custom btn" >
+                <label class="btn-custom btn" >
                     <input type="radio" name="options" id="option12" onclick="displayTest()"> Add/delete cookies
                 </label>
                 <label class="btn-custom btn" >
                     <input type="radio" name="options" id="option13" onclick="displayTest()"> Check cookie
-                </label-->
+                </label>
             </div>
         </aside>
 
@@ -102,7 +102,7 @@
                         argument object to determine and display the average of numbers. -->
                 <div id="test1" class="hidden">
                     <p> 1. Use an HTML element event to call a function you wrote named findAverage() that uses the argument
-                           object to determine and display the average of numbers.
+                        object to determine and display the average of numbers.
                     </p>
                     <p id="message1" class="text-left"></p>
                 </div>
@@ -113,7 +113,6 @@
                     <p> 2.	Use an HTML element event to call a function you wrote named displayLocation() that displays the URL location of the current page..</p><br />
                     <p id="message2"></p>
                 </div>
-
                 <!--3. Use an HTML element event to call a function you wrote named changeLocation() that uses the assign
                         method to change the URL location and load a new document.  -->
 
@@ -180,7 +179,7 @@
                     <p>8. Include a prompt box to ask the user to enter their favorite browser. Include the name of your personal favorite
                         browser as the default value. Display the results.
                     </p>
-                    <form role="form" id="form1">
+                    <form role="form" id="form0">
                         <div class = "form-group">
                             <div class="col-sm-3"></div>
                             <label for="browser" class="col-sm-3 control-label">What is your favorite browser?</label>
@@ -202,7 +201,7 @@
 
                 <!--#9 	Include a clock on your page that displays the current local time and advances each second. -->
                 <div id="test9" class="checkbox hidden">
-                <p id="para9">9. Include a clock on your page that displays the current local time and advances each second.</p>
+                    <p id="para9">9. Include a clock on your page that displays the current local time and advances each second.</p>
                     <div class="col-sm-5"></div>
                     <div class="col-sm-2">
                         <label >
@@ -229,25 +228,63 @@
                 <!--#11	Display three images on the page five seconds after the page is opened. -->
                 <div id="test11" class="checkbox hidden">
                     <p>10. Display three images on the page five seconds after the page is opened.</p>
-                    <span>
-                        <img src="assets/butterfly.gif" alt="picture of butterfly"/>
-                    </span>
-                    <span>
-                        <img src="assets/butterfly.gif" alt="picture of butterfly"/>
-                    </span>
-                     <span>
-                        <img src="assets/butterfly.gif" alt="picture of butterfly"/>
-                    </span>
+                    <img src="assets/butterfly.gif" alt="picture of butterfly"/>
+                    <img src="assets/butterfly.gif" alt="picture of butterfly"/>
+                    <img src="assets/butterfly.gif" alt="picture of butterfly"/>
                 </div>
 
                 <!--#12 Include three text boxes to enter values for the following cookies: name, school, and
                         hobby. Include a button that creates the three cookies (with values). Include three
                         more buttons. Each button deletes a cookie.  -->
+                <div id="test12" class="hidden">
+                    <p>12. Include three text boxes to enter values for the following cookies: name, school, and
+                        hobby. Include a button that creates the three cookies (with values). Include three
+                        more buttons. Each button deletes a cookie.
+                    </p>
+                    <form  id="form1" class = "form-horizontal" role="form">
+
+                        <div class = "form-group">
+                            <label for="name"  class="col-sm-offset-2 col-sm-2 control-label">Name</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Name"/>
+                            </div>
+
+
+                            <label for="school" class="col-sm-offset-2 col-sm-2 control-label">School</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="school" id="school" placeholder="School"/>
+                            </div>
+
+                            <label for="hobby" class="col-sm-offset-2 col-sm-2 control-label">Hobby</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="hobby" id="hobby" placeholder="Hobby"/>
+                            </div>
+
+                            <div class="col-sm-12">
+                                &nbsp;&nbsp;
+                                <a id="create"       href="#" class="btn btn-primary" onclick="createCookies();      return false;">Create</a>
+                                <a id="deleteName"   href="#" class="btn btn-primary" onclick="deleteNameCookie();   return false;">Delete Name</a>
+                                <a id="deleteSchool" href="#" class="btn btn-primary" onclick="deleteSchoolCookie(); return false;">Delete School</a>
+                                <a id="deleteHobby"  href="#" class="btn btn-primary" onclick="deleteHobbyCookie();  return false;">Delete Hobby</a>
+                                <br /><br />
+                            </div>
+                            <div class="col-sm-12">
+                                <p id="message12"></p>
+                            </div>
+                        </div>
+                    </form><!-- form2 -->
+                </div><!-- test12 -->
                 <!--#13	Include a function that will check the existence of each cookie when the page is accessed.
                         If one or more of the cookies is not set, an alert box should notify the user to set the
                         unset cookie(s). If all three cookies are set, the alert box should display the contents
                         of each cookie. -->
-
+                <div id="test13" class="checkbox hidden">
+                    <p>13. Include a function that will check the existence of each cookie when the page is accessed.
+                        If one or more of the cookies is not set, an alert box should notify the user to set the
+                        unset cookie(s). If all three cookies are set, the alert box should display the contents
+                        of each cookie.</p>
+                    <a  href="#" class="btn btn-primary btn-lg" onclick="checkForCookies()">Check cookies</a>
+                </div>
             </div> <!--starter-template-->
         </div><!-- /.container -->
 
@@ -262,12 +299,5 @@
                 </div><!--row-->
             </div><!--container-->
         </footer>
-        <!-- Bootstrap core JavaScript
-         ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="../js/bootstrap.min.js"></script>
     </body>
 </html>

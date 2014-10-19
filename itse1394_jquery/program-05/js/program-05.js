@@ -2,10 +2,8 @@ var clock = setInterval(function() {setClock()},1000);
 
 function setClassToHidden(options) {
     for (var i = 0; i < options.length; ++i) {
-        if (options[i].checked) {
-            continue;
-        }
-        document.getElementById("test"+ (i+1).toString()).setAttribute("class","hidden");
+        if (!(options[i].checked))
+            document.getElementById("test" + (i + 1).toString()).setAttribute("class", "hidden");
     }
 }
 
@@ -30,6 +28,7 @@ function displayTest()
     }
 
     switch (id) {
+
         case "option1":
             setClassToHidden(options);
             document.getElementById("test1").setAttribute("class","show" );
@@ -241,13 +240,105 @@ function startStopClock() {
 function displayImages() {
     setTimeout(function(){document.getElementById("test11").setAttribute("class","show" )},5000);
 }
+
 /*  12. Include three text boxes to enter values for the following cookies: name, school, and
  *      hobby. Include a button that creates the three cookies (with values). Include three
  *      more buttons. Each button deletes a cookie.
  */
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+function deleteCookie(cname, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() - (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + "; " + expires;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) != -1) return c.substring(name.length,c.length);
+    }
+    return "";
+}
+
+function createCookies() {
+    var name = document.forms[1][0].value;
+    var school = document.forms[1][1].value;
+    var hobby = document.forms[1][2].value;
+
+    setCookie("name", name, 30);
+    setCookie("school", school, 30);
+    setCookie("hobby", hobby, 30);
+    document.getElementById("message12").innerHTML = "The cookies that were created are: " + document.cookie;
+}
+
+function deleteNameCookie() {
+    deleteCookie("name", 30);
+    document.getElementById("message12").innerHTML = "After deleting the name cookie the cookies are: " + document.cookie;
+}
+
+function deleteSchoolCookie() {
+    deleteCookie("school", 30);
+    document.getElementById("message12").innerHTML = "After deleting the school cookie the cookies are:  " + document.cookie
+}
+
+function deleteHobbyCookie() {
+    deleteCookie("hobby", 30);
+    document.getElementById("message12").innerHTML = "After deleting the hobby cookie the cookies are: " + document.cookie
+}
 
 /*  13.	Include a function that will check the existence of each cookie when the page is accessed.
  *      If one or more of the cookies is not set, an alert box should notify the user to set the
  *      unset cookie(s). If all three cookies are set, the alert box should display the contents
  *      of each cookie.
  */
+
+function checkForCookies() {
+        clearInterval(clock);
+        var name = getCookie("name");
+        var school = getCookie("school");
+        var hobby = getCookie("hobby");
+        var c = "";
+
+        if (name == "")
+           c += "name= ";
+        if (school == "")
+           c += "school= ";
+        if (hobby == "")
+           c += "hobbies= ";
+
+    try {
+        if (c != "")
+            throw "Please set these unset cookies: " + c;
+        else
+           throw "Cookies: name=" + name + " school=" + school + " hobby" +hobby;
+   } catch(e) {
+       window.alert(e);
+   }
+}
+
+function displayMonthMessage() {
+
+    try {
+        var monthArray = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+        var month = Number(document.forms[1][0].value);
+
+        if (month >=1 && month <=12)
+            document.getElementById("message2").innerHTML = "The month is " + monthArray[month-1];
+        else
+            throw "The number you entered must be in the range 1-12.";
+    } catch(monthError) {
+        alert(monthError);
+        return false;
+    }
+}
