@@ -1,0 +1,121 @@
+aside {
+    display: block;
+    min-height: 100%;
+    overflow: hidden
+}
+
+footer{
+    background: #008000; font-size:12px; padding:20px
+}
+footer a:link {
+    color: blue; text-decoration: underline
+}
+footer a:visited {
+    color: #28AACA; text-decoration: underline
+}
+
+p {
+    text-align: left;
+    margin-left: 300px
+}
+
+td, th { padding:5px }
+
+.btn {
+    font-size:12px;
+    text-align:left
+}
+.btn-custom {
+    background-color: #c00;
+    border-color: #c00;
+    margin: 0;
+    padding:0;
+    font-size: 12px;
+    text-align:left
+}
+.btn-custom:hover,
+.btn-custom:focus,
+.btn-custom:active,
+.btn-custom.active {
+    background-color: #b30000;
+    border-color: #990000;
+    color:white
+}
+
+.logo {
+    border: 3px solid white
+}
+
+.starter-template {
+    text-align: center
+}
+
+.table1 {
+    font-size: 11px;
+    margin:10px auto auto auto;
+    border:2px solid white;
+    background-color:#50B4C8;
+    color:#000;
+}
+
+.colorChange{
+    background-color: cornflowerblue;
+}
+
+.button1 {
+    background: url('../assets/white_button.png') no-repeat; width:103px; height: 31px; color: black
+}
+
+.button2 {
+    background: url('../assets/polkadot_button.png') no-repeat; width:103px; height: 31px; color: black
+}
+
+.button3 {
+    background: url('../assets/black_button.png') no-repeat; width:103px; height: 31px; color: white
+}
+
+.button4 {
+    background: url('../assets/green_button.png') no-repeat; width:103px; height: 31px; color: black
+}
+
+#navbar {
+    background: #ffc000
+}
+
+#body {
+    background: #003d79;
+    color:white;
+}
+
+#mainHeading {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#left-panel {
+    left: 0;
+    top: 0;
+    padding-top: 19px;
+    float: left;
+    z-index: 904;
+    width:155px;
+}
+#div1{
+    background-color: red;
+}
+
+nav, #div2{
+    background-color: green;
+}
+
+#div3{
+    background-color: blue;
+}
+
+#textbox1, #textbox2 {
+    background-color: black;
+    border: 1px, solid, white
+}
+
+
+
