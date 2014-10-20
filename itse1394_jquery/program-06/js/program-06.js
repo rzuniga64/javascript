@@ -104,30 +104,37 @@ function changeColor() {
 function buttonImageToggle() {
     $(document).ready(function() {
         $(':button').click(function() {
-            try {
-                if ($(':button').hasClass("button5")){
-                    $(".button1").css("background-color", "#6495ED");
-                }
-                if ($(':button').hasClass("btn-custom")){
-                    $(".btn-custom").css("background-color", "#6495ED");
-                }
-                if ($(':button').hasClass("button2")){
-                    $(".button1").css("background-color", "#6495ED");
-                    document.getElementsByClassName("button2")[0].setAttribute("src", "../assets/silver_button.jpg");
-                }
-                if ($(':button').hasClass("button3")){
-                    $(".button1").css("background-color", "#6495ED");
-                }
-                if ($(':button').hasClass("button4")){
-                    $(".button1").css("background-color", "#6495ED");
-                }
-                    //$("#button1").css("background", "url('../assets/psychodelic_button.png') no-repeat; width:103px; height: 31px; color: black")
-                    //$("#button2").css("background", "url('../assets/silver_button.png') no-repeat; width:103px; height: 31px; color: black")
-                    //$("#button3").css("background", "url('../assets/brown_button.png') no-repeat; width:103px; height: 31px; color: black")
-                    //$("#button4").css("background", "url('../assets/orange_button.png') no-repeat; width:103px; height: 31px; color: black")
 
-            } catch(e){
-                window.alert(e);
+            if ($("div#test4 button").eq(0).hasClass("button1")){
+                $("div#test4 button").eq(0).removeClass("button1");
+                $("div#test4 button").eq(0).addClass("button5");
+
+                ($("div#test4 button").eq(1).hasClass("button2"))
+                $("div#test4 button").eq(1).removeClass("button2");
+                $("div#test4 button").eq(1).addClass("button6");
+
+               ($("div#test4 button").eq(2).hasClass("button3"))
+                $("div#test4 button").eq(2).removeClass("button3");
+                $("div#test4 button").eq(2).addClass("button7");
+
+               ($("div#test4 button").eq(3).hasClass("button4"))
+                $("div#test4 button").eq(3).removeClass("button4");
+                $("div#test4 button").eq(3).addClass("button8");
+            } else if ($("div#test4 button").eq(0).hasClass("button5")) {
+                $("div#test4 button").eq(0).removeClass("button5");
+                $("div#test4 button").eq(0).addClass("button1");
+
+                ($("div#test4 button").eq(1).hasClass("button6"))
+                $("div#test4 button").eq(1).removeClass("button6");
+                $("div#test4 button").eq(1).addClass("button2");
+
+                ($("div#test4 button").eq(2).hasClass("button7"))
+                $("div#test4 button").eq(2).removeClass("button7");
+                $("div#test4 button").eq(2).addClass("button3");
+
+                ($("div#test4 button").eq(3).hasClass("button8"))
+                $("div#test4 button").eq(3).removeClass("button8");
+                $("div#test4 button").eq(3).addClass("button4");
             }
         });
     });

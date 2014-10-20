@@ -78,6 +78,22 @@ td, th { padding:5px }
     background: url('../assets/green_button.png') no-repeat; width:103px; height: 31px; color: black
 }
 
+.button5 {
+    background: url('../assets/psychodelic_button.png') no-repeat; width:103px; height: 31px; color: black
+}
+
+.button6 {
+    background: url('../assets/silver_button.png') no-repeat; width:103px; height: 31px; color: black
+}
+
+.button7 {
+    background: url('../assets/brown_button.png') no-repeat; width:103px; height: 31px; color: white
+}
+
+.button8 {
+    background: url('../assets/orange_button.png') no-repeat; width:103px; height: 31px; color: black
+}
+
 #navbar {
     background: #ffc000
 }
