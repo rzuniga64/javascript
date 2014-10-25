@@ -44,7 +44,32 @@ section {
     display: none;
 }
 
+#leftDiv, #leftDiv2 {
+    position:relative;
+    float: left;
+    width: 100px;
+    height: 100px;
+    background: #008000;
+}
 
+#rightDiv, #rightDiv2{
+    position:relative;
+    float:right;
+    width: 100px;
+    height: 100px;
+    background: #ffc000;
+}
+
+#animateDiv2 {
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:10px;
+    display:block;
+    width: 100px;
+    height: 100px;
+    background: #ffc000;
+}
 
 .btn {
     font-size:12px;

@@ -1,5 +1,5 @@
 function setClassToHidden(options) {
-    for (var i = 0; i < options.length-1; ++i) {
+    for (var i = 0; i < options.length; ++i) {
         if (!(options[i].checked))
             document.getElementById("test" + (i + 1).toString()).setAttribute("class", "hidden");
     }
@@ -138,7 +138,7 @@ function fadeToSection() {
 function toggleSlide() {
     $(document).ready(function() {
         $("#flip").click(function(){
-           $("#lowerDiv").slideToggle();
+            $("#lowerDiv").slideToggle();
         });
     });
 }
@@ -147,42 +147,54 @@ function toggleSlide() {
  *      Include a button “#7 Move Left-Div” which moves the left-div to the right 200px. Include a button “#7 Move Right-Div”
  *      which moves the right-div to the left 200px.
  */
-function onMouseOver() {
+function moveLeftDiv() {
     $(document).ready(function() {
+        $("#moveLeftDiv").click(function(){
+            $("#leftDiv").animate({left:'200px'});
+        });
     });
 }
 
-/* 7.   Include two 100x100px <div> elements. Float one to the left (left-div) and the other to the right (right-div).
- *      Include a button “#7 Move Left-Div” which moves the left-div to the right 200px. Include a button “#7 Move Right-Div”
- *      which moves the right-div to the left 200px.
- */
-function onMouseOut() {
+function moveRightDiv() {
     $(document).ready(function() {
+        $("#moveRightDiv").click(function(){
+            $("#rightDiv").animate({right:'200px'});
+        });
     });
 }
 
 /* 8.	Include the text “jQuery Growing” in a <div> element. Include a <button> that causes the text to animate slowly up to 5em.
  */
-function onMouseOut() {
+function animateText() {
     $(document).ready(function() {
+        $("#animateText").click(function(){
+            $("#animateDiv").animate({fontSize:'5em'}, "slow");
+        });
     });
 }
-
 
 /* 9.	This is similar to item 7 but uses a callback and only one button. Include two 100x100px <div> elements.
  *       Float one to the left (left-div) and the other to the right (right-div). Include a button “#9 Demonstrate
  *       Callback” which moves the left-div to the right 200px and then invokes a callback to move the right-div to
  *       the left 200px.
  */
-function onMouseOut() {
+function demonstrateCallback() {
     $(document).ready(function() {
+        $("#callback").click(function(){
+            $("#leftDiv2").animate({left:'200px'},function(){
+                $("#rightDiv2").animate({right:'200px'});
+            });
+        });
     });
 }
 
 /* 10.	Start with a 100x100px <div>. Include a button which invokes animation to increase the height to 400px.
  *      Using chaining, hide the <div> over 3000 milliseconds. .
  */
-function onMouseOut() {
+function demonstrateChaining() {
     $(document).ready(function() {
+        $("#chaining").click(function(){
+            $("#animateDiv2").animate({height:'400px'}).fadeOut(3000);
+        });
     });
 }

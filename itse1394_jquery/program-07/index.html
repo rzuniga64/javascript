@@ -107,9 +107,7 @@
 
                 <!--#2 Use the jQuery toggle() method to hide/show the three <div> from item 1. Set the toggle() to occur over 700 milliseconds.  -->
                 <div id="test2" class="hidden">
-                    <p>
-                        2. Use the jQuery toggle() method to hide/show the three &lt;div&gt; from item 1. Set the toggle() to occur over 700 milliseconds.
-                    </p>
+                    <p>2. Use the jQuery toggle() method to hide/show the three &lt;div&gt; from item 1. Set the toggle() to occur over 700 milliseconds.</p>
                     <div id="div4">This is div1</div>
                     <div id="div5">This is div2</div>
                     <div id="div6">This is div3</div>
@@ -118,7 +116,6 @@
 
                 <!--3   Include a table with at least 10 rows. Odd and even rows should be different colors.
                         Include a button to toggle hide/show the odd rows and a button to toggle hide/show the even rows.-->
-
                 <div id="test3" class="hidden">
                     <p>
                         3. Include a table with at least 10 rows. Odd and even rows should be different colors.
@@ -154,28 +151,22 @@
 
                 <!--#4. Include an element that uses jQuery to toggle-fade a footer element on the page for 1000 milliseconds.  -->
                 <div id="test4" class="hidden">
-                    <p>
-                        4.Include an element that uses jQuery to toggle-fade a &lt;footer&gt; element on the page for 1000 milliseconds.
-                    </p>
+                    <p>4.Include an element that uses jQuery to toggle-fade a &lt;footer&gt; element on the page for 1000 milliseconds.</p>
                     <button class="btn btn-primary" id="toggle-fade-footer" onclick="toggleFadeFooter()">Toggle footer</button>
                 </div>
 
                 <!--#5.	Include an element that uses jQuery to fade a section element from black to 20% of black to reveal the word “Hello”.  -->
                 <div id="test5" class="hidden">
-                    <p>
-                        5. Include an element that uses jQuery to fade a &lt;section&gt; from black to 20% of black to reveal the word Hello.
-                    </p>
+                    <p>5. Include an element that uses jQuery to fade a &lt;section&gt; from black to 20% of black to reveal the word Hello.</p>
                     <section>
-                        <p class="text-center para6">Hello</p>
+                        <p class="para6 text-center" style="margin:0 0 10px 0">Hello</p>
                     </section>
                     <button class="btn btn-primary" id="section" onclick="fadeToSection()">Fade section</button>
                 </div>
 
                 <!--#6.	Center two div elements on the page and use jQuery to toggle-slide the appearance of the lower by clicking the upper.  -->
                 <div id="test6" class="hidden">
-                    <p>
-                        6. Center two &lt;div&gt; elements on the page and use jQuery to toggle-slide the appearance of the lower by clicking the upper.
-                    </p>
+                    <p>6. Center two &lt;div&gt; elements on the page and use jQuery to toggle-slide the appearance of the lower by clicking the upper.</p>
                     <p id="message6"></p>
                     <div id="flip" onclick="toggleSlide()">Upper div</div>
                     <div id="lowerDiv">Lower div</div>
@@ -190,13 +181,21 @@
                             Include a button “#7 Move Left-Div” which moves the left-div to the right 200px. Include a button “#7 Move Right-Div”
                             which moves the right-div to the left 200px.
                     </p>
+                    <div id="leftDiv">Left div</div>
+                    <div id="rightDiv">Right div</div>
+                    <div class="col-sm-12">
+                        <button class="btn btn-primary" id="moveLeftDiv" onclick="moveLeftDiv()">#7 Move Left-Div</button>
+                        <button class="btn btn-primary" id="moveRightDiv" onclick="moveRightDiv()">#7 Move Right-Div</button>
+                    </div>
                 </div>
 
                 <!--#8 Include the text “jQuery Growing” in a <div> element. Include a <button> that causes the text to animate slowly up to 5em. -->
                 <div id="test8" class="checkbox hidden">
-                    <p>
+                    <p class="text-center" style="margin:0">
                         8. Include the text “jQuery Growing” in a &lt;div&gt; element. Include a &lt;button&gt; that causes the text to animate slowly up to 5em.
                     </p>
+                    <div id="animateDiv">jQuery Growing</div>
+                    <button class="btn btn-primary" id="animateText" onclick="animateText()">Start Animation</button>
                 </div>
 
                 <!--#9  This is similar to item 7 but uses a callback and only one button. Include two 100x100px &lt;div&gt; elements.
@@ -208,14 +207,24 @@
                             Float one to the left (left-div) and the other to the right (right-div). Include a button “#9 Demonstrate Callback” which
                             moves the left-div to the right 200px and then invokes a callback to move the right-div to the left 200px.
                     </p>
+                    <div id="leftDiv2">Left div</div>
+                    <div id="rightDiv2">Right div</div>
+                    <div class="col-sm-12">
+                        <button class="btn btn-primary" id="callback" onclick="demonstrateCallback()">#9 Demonstrate Callback</button>
+                    </div>
                 </div>
 
                 <!--#10 Start with a 100x100px <div>. Include a button which invokes animation to increase the height to 400px.
                 Using chaining, hide the <div> over 3000 milliseconds.-->
                 <div id="test10" class="checkbox hidden">
                     <p>
-                        10. Start with a 100x100px &lt;div&gt;. Include a button which invokes animation to increase the height to 400px. Using chaining, hide the &lt;div&gt; over 3000 milliseconds.
+                        10. Start with a 100x100px &lt;div&gt;. Include a button which invokes animation to increase the height to 400px.
+                            Using chaining, hide the &lt;div&gt; over 3000 milliseconds.
                     </p>
+                    <div id="animateDiv2">Animated div</div>
+                    <div class="col-sm-12">
+                        <button class="btn btn-primary" id="chaining" onclick="demonstrateChaining()">#9 Demonstrate Chaining</button>
+                    </div>
                 </div>
             </div> <!--starter-template-->
         </div><!-- /.container -->
