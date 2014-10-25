@@ -1,0 +1,235 @@
+<!DOCTYPE html >
+<html lang="en" >
+    <head>
+        <title>Raul Zuniga ITSE 1394 jQuery</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Project 2 for ITSE 1394 jQuery">
+        <meta name="author" content="Raul Zuniga">
+        <!-- Bootstrap CSS -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet"  type="text/css">
+        <link href="css/program-07.css" rel="stylesheet" type="text/css">
+        <!-- Include Modernizr in the head, before any other Javascript -->
+        <script src="../js/modernizr-2.6.2.min.js"></script>
+        <script type="text/javascript" src="js/program-07.js"></script>
+        <!-- jQuery -->
+        <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="../js/bootstrap.min.js"></script>
+
+    </head>
+    <body id="body">
+
+        <div id="navbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Project 7</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+
+        <aside id="left-panel">
+            <div class="logo">
+                <span>
+                    <img src="assets/acc_logo.png" alt="logo of Austin Community College"/>
+                </span>
+            </div>
+            <div class="btn-group-vertical" id="radio-group">
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option1"  onclick="displayTest()"> Hide/Show div
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option2" onclick="displayTest()"> Toggle
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option3" onclick="displayTest()"> Toggle Table color
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option4" onclick="displayTest()"> Toggle-fade footer
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option5" onclick="displayTest()"> Fade a section
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option6" onclick="displayTest()"> Toggle-slide div
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option7" onclick="displayTest()"> Move divs
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option8" onclick="displayTest()"> Animate text
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option9" onclick="displayTest()"> Callback
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option10" onclick="displayTest()"> Chaining
+                </label>
+            </div>
+        </aside>
+
+        <div class="container" style="margin-top: 30px">
+            <div class="starter-template">
+                <script type="text/javascript">
+                    /* <![CDATA[ */
+                    document.write("<h1 id='mainHeading'></h1>");
+                    document.getElementById("mainHeading").innerHTML = document.getElementsByTagName("title")[0].innerHTML;
+                    /* ]]> */
+                </script>
+
+                <!--#1  Use the jQuery hide() method to hide all three colored <div> when a hide button is clicked. Use the jQuery show() method to
+                        show all three colored <div> when a show button is clicked. Set the hide() and show() to occur over 300 milliseconds.-->
+                <div id="test1" class="hidden">
+                    <p>
+                        1. Use the jQuery hide() method to hide all three colored &lt;div&gt; when a hide button is clicked.
+                        Use the jQuery show() method to show all three colored &lt;div&gt; when a show button is clicked.
+                        Set the hide() and show() to occur over 300 milliseconds.
+                    </p>
+                    <div id="div1">This is div1</div>
+                    <div id="div2">This is div2</div>
+                    <div id="div3">This is div3</div>
+                    <button class="btn btn-primary" id="hide" onclick="hideShowDiv()">Hide</button>
+                    <button class="btn btn-primary" id="show" onclick="hideShowDiv()">Show</button>
+                </div>
+
+                <!--#2 Use the jQuery toggle() method to hide/show the three <div> from item 1. Set the toggle() to occur over 700 milliseconds.  -->
+                <div id="test2" class="hidden">
+                    <p>
+                        2. Use the jQuery toggle() method to hide/show the three &lt;div&gt; from item 1. Set the toggle() to occur over 700 milliseconds.
+                    </p>
+                    <div id="div4">This is div1</div>
+                    <div id="div5">This is div2</div>
+                    <div id="div6">This is div3</div>
+                    <button class="btn btn-primary" id="toggle" onclick="toggleDiv()">Toggle</button>
+                </div>
+
+                <!--3   Include a table with at least 10 rows. Odd and even rows should be different colors.
+                        Include a button to toggle hide/show the odd rows and a button to toggle hide/show the even rows.-->
+
+                <div id="test3" class="hidden">
+                    <p>
+                        3. Include a table with at least 10 rows. Odd and even rows should be different colors.
+                        Include a button to toggle hide/show the odd rows and a button to toggle hide/show the even rows.
+                    </p>
+                    <script type="text/javascript">
+                        /* <![CDATA[ */
+                        var header = ["Office","Address","Mail Address","City","State","Zip","Phone","Fax","E-mail","Visiting Hours"];
+
+                        document.write('<table class="table1"> ');
+                        for (var i = 0; i < header.length; i++) {
+                            if (i == 0) {
+                                document.write('<thead>');
+                                document.write('<tr>');
+                                for (var j = 0; j < header.length; j++) {
+                                    document.write('<th>' + header[j] + '</th>');
+                                }
+                                document.write('</tr>');
+                                document.write('</thead>');
+                            }
+                            document.write('<tr>');
+                            for (var k = 0; k < header.length; k++) {
+                                document.write('<td>' + [k] + '</td>');
+                            }
+                            document.write('</tr>');
+                        }
+                        document.write('</table>');
+                        /* ]]> */
+                    </script>
+                    <button class="btn btn-primary" id="even" onclick="hideShowEvenRows()">Even</button>
+                    <button class="btn btn-primary" id="odd" onclick="hideShowOddRows()">Odd</button>
+                </div>
+
+                <!--#4. Include an element that uses jQuery to toggle-fade a footer element on the page for 1000 milliseconds.  -->
+                <div id="test4" class="hidden">
+                    <p>
+                        4.Include an element that uses jQuery to toggle-fade a &lt;footer&gt; element on the page for 1000 milliseconds.
+                    </p>
+                    <button class="btn btn-primary" id="toggle-fade-footer" onclick="toggleFadeFooter()">Toggle footer</button>
+                </div>
+
+                <!--#5.	Include an element that uses jQuery to fade a section element from black to 20% of black to reveal the word “Hello”.  -->
+                <div id="test5" class="hidden">
+                    <p>
+                        5. Include an element that uses jQuery to fade a &lt;section&gt; from black to 20% of black to reveal the word Hello.
+                    </p>
+                    <section>
+                        <p class="text-center para6">Hello</p>
+                    </section>
+                    <button class="btn btn-primary" id="section" onclick="fadeToSection()">Fade section</button>
+                </div>
+
+                <!--#6.	Center two div elements on the page and use jQuery to toggle-slide the appearance of the lower by clicking the upper.  -->
+                <div id="test6" class="hidden">
+                    <p>
+                        6. Center two &lt;div&gt; elements on the page and use jQuery to toggle-slide the appearance of the lower by clicking the upper.
+                    </p>
+                    <p id="message6"></p>
+                    <div id="flip" onclick="toggleSlide()">Upper div</div>
+                    <div id="lowerDiv">Lower div</div>
+                </div>
+
+                <!--#7  Include two 100x100px div elements. Float one to the left (left-div) and the other to the right (right-div).
+                        Include a button “#7 Move Left-Div” which moves the left-div to the right 200px. Include a button “#7 Move Right-Div”
+                        which moves the right-div to the left 200px.-->
+                <div id="test7" class="checkbox hidden">
+                    <p>
+                        7.  Include two 100x100px &lt;div&gt; elements. Float one to the left (left-div) and the other to the right (right-div).
+                            Include a button “#7 Move Left-Div” which moves the left-div to the right 200px. Include a button “#7 Move Right-Div”
+                            which moves the right-div to the left 200px.
+                    </p>
+                </div>
+
+                <!--#8 Include the text “jQuery Growing” in a <div> element. Include a <button> that causes the text to animate slowly up to 5em. -->
+                <div id="test8" class="checkbox hidden">
+                    <p>
+                        8. Include the text “jQuery Growing” in a &lt;div&gt; element. Include a &lt;button&gt; that causes the text to animate slowly up to 5em.
+                    </p>
+                </div>
+
+                <!--#9  This is similar to item 7 but uses a callback and only one button. Include two 100x100px &lt;div&gt; elements.
+                        Float one to the left (left-div) and the other to the right (right-div). Include a button “#9 Demonstrate Callback” which
+                        moves the left-div to the right 200px and then invokes a callback to move the right-div to the left 200px.-->
+                <div id="test9" class="checkbox hidden">
+                    <p>
+                        9.  This is similar to item 7 but uses a callback and only one button. Include two 100x100px &lt;div&gt; elements.
+                            Float one to the left (left-div) and the other to the right (right-div). Include a button “#9 Demonstrate Callback” which
+                            moves the left-div to the right 200px and then invokes a callback to move the right-div to the left 200px.
+                    </p>
+                </div>
+
+                <!--#10 Start with a 100x100px <div>. Include a button which invokes animation to increase the height to 400px.
+                Using chaining, hide the <div> over 3000 milliseconds.-->
+                <div id="test10" class="checkbox hidden">
+                    <p>
+                        10. Start with a 100x100px &lt;div&gt;. Include a button which invokes animation to increase the height to 400px. Using chaining, hide the &lt;div&gt; over 3000 milliseconds.
+                    </p>
+                </div>
+            </div> <!--starter-template-->
+        </div><!-- /.container -->
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        &copy; Raul Zuniga
+                        <!-- external javascript for validation -->
+                        <script type="text/javascript" src="../js/validation.js"></script>
+                    </div> <!--col-12-->
+                </div><!--row-->
+            </div><!--container-->
+        </footer>
+    </body>
+</html>
