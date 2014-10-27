@@ -1,0 +1,192 @@
+<!DOCTYPE html >
+<html lang="en" >
+    <head>
+        <title>Raul Zuniga ITSE 1394 jQuery</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Project 2 for ITSE 1394 jQuery">
+        <meta name="author" content="Raul Zuniga">
+        <!-- Bootstrap CSS -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet"  type="text/css">
+        <link href="css/program-08.css" rel="stylesheet" type="text/css">
+        <!-- Include Modernizr in the head, before any other Javascript -->
+        <script src="../js/modernizr-2.6.2.min.js"></script>
+        <script type="text/javascript" src="js/program-08.js"></script>
+        <!-- jQuery -->
+        <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="../js/bootstrap.min.js"></script>
+
+    </head>
+    <body id="body">
+
+        <div id="navbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Project 8</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+
+        <aside id="left-panel">
+            <div class="logo">
+                <span>
+                    <img src="assets/acc_logo.png" alt="logo of Austin Community College"/>
+                </span>
+            </div>
+            <div class="btn-group-vertical" id="radio-group">
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option1"  onclick="displayTest()"> Hide/Show div
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option2" onclick="displayTest()"> Toggle
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option3" onclick="displayTest()"> Toggle Table color
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option4" onclick="displayTest()"> Toggle-fade footer
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option5" onclick="displayTest()"> Fade a section
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option6" onclick="displayTest()"> Toggle-slide div
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option7" onclick="displayTest()"> Move divs
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option8" onclick="displayTest()"> Animate text
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option9" onclick="displayTest()"> Callback
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option10" onclick="displayTest()"> Chaining
+                </label>
+            </div>
+        </aside>
+
+        <div class="container" style="margin-top: 30px">
+            <div class="starter-template">
+                <script type="text/javascript">
+                    /* <![CDATA[ */
+                    document.write("<h1 id='mainHeading'></h1>");
+                    document.getElementById("mainHeading").innerHTML = document.getElementsByTagName("title")[0].innerHTML;
+                    /* ]]> */
+                </script>
+
+                <!--#1. Include two buttons to display the “text” and “html” properties of a <p> element that uses the
+                        <code> text-level attribute to identify some of the text as code. -->
+                <div id="test1" class="hidden">
+                    <p>
+                        1.  Include two buttons to display the “text” and “html” properties of a &lt;p&gt; element that uses the &lt;code&gt;
+                            text-level attribute to identify some of the text as code.
+                    </p>
+                    <p id="para2"> Below is a piece of code surrounded by the code tag. The code tag is a phrase tag.  It defines a piece of computer code.<br /><br />
+                        <code>
+                            function hideShowDiv() {<br/>
+                            $(document).ready(function(){<br />
+                                $("#hide").click(function(){<br />
+                                $("#div1, #div2, #div3").hide(300);<br />
+                                });<br />
+                            });<br />
+                            }
+                        </code>
+                    </p>
+                    <button class="btn btn-primary" id="textbtn" onclick="showText()">Show Text</button>
+                    <button class="btn btn-primary" id="htmlbtn" onclick="showHTML()">Show HTML</button>
+                </div>
+
+                <!--#2 Include an HTML element with an event to display the value and style attribute of an <input> text box element.-->
+                <div id="test2" class="hidden">
+                    <p>2. Include an HTML element with an event to display the value and style attribute of an &lt;input&gt; text box element. </p>
+                </div>
+
+                <!--#3 Include an HTML element with an event to set the value and style attribute of an <input> text box element. -->
+                <div id="test3" class="hidden">
+                    <p>
+                        3.	Include an HTML element with an event to set the value and style attribute of an &lt;input&gt; text box element.
+                    </p>
+                </div>
+
+                <!--#4. Use a callback to accomplish the following: include an HTML element with an event to
+                        change an attribute value of a <div> and display the original value. -->
+                <div id="test4" class="hidden">
+                    <p>4. Use a callback to accomplish the following: include an HTML element with an event
+                          to change an attribute value of a &lt;div&gt; and display the original value. </p>
+                </div>
+
+                <!--#5.	Create an ordered list and a text box. Use the content of the text box to create new list items that are added to the list.   -->
+                <div id="test5" class="hidden">
+                    <p>5. Create an ordered list and a text box. Use the content of the text box to create new list items that are added to the list.</p>
+                </div>
+
+                <!--#6.	Include an image. Include a button to insert two images before the original image and another button to insert three
+                        images after the original image.-->
+                <div id="test6" class="hidden">
+                    <p>6.	Include an image. Include a button to insert two images before the original image and another
+                            button to insert three images after the original image. </p>
+                </div>
+
+                <!--#7  Include a button to remove the three images that were inserted after the original image in item 6. -->
+                <div id="test7" class="checkbox hidden">
+                    <p>
+                        7. Include a button to remove the three images that were inserted after the original image in item 6.
+                    </p>
+                </div>
+
+                <!--#8  Include an HTML element with an event to toggle the class setting of three <div>. Make the class named
+                        “toggleClass” set the background-color to red and increase the size of the three <div> from 20x20px to 50x50px.  -->
+                <div id="test8" class="checkbox hidden">
+                    <p class="text-center" style="margin:0">
+                        8.  Include an HTML element with an event to toggle the class setting of three &lt;div&gt;. Make the class named “toggleClass”
+                            set the background-color to red and increase the size of the three &lt;div&gt; from 20x20px to 50x50px.
+                    </p>
+                </div>
+
+                <!--#9 Include an HTML element with an event that invokes the .css method on an <p> to change the font color to blue and font-style to italic.-->
+                <div id="test9" class="checkbox hidden">
+                    <p>
+                        9. Include an HTML element with an event that invokes the .css method on an &lt;h1&gt; to change the font color to blue and font-style to italic.
+                    </p>
+                </div>
+
+                <!--#10 Include a button to display the width, height, innerWidth, innerHeight, outerWidth, and outerHeight of the <div> in item 8.
+                        The outerWidth and outerHeight should include the margin. -->
+                <div id="test10" class="checkbox hidden">
+                    <p>
+                        10.	Include a button to display the width, height, innerWidth, innerHeight, outerWidth, and outerHeight of the
+                            &lt;div&gt; in item 8. The outerWidth and outerHeight should include the margin.
+                    </p>
+                </div>
+            </div> <!--starter-template-->
+        </div><!-- /.container -->
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        &copy; Raul Zuniga
+                        <!-- external javascript for validation -->
+                        <script type="text/javascript" src="../js/validation.js"></script>
+                    </div> <!--col-12-->
+                </div><!--row-->
+            </div><!--container-->
+        </footer>
+    </body>
+</html>
