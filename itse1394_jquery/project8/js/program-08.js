@@ -83,10 +83,10 @@ function showHTML() {
 
 /*   2.	Include an HTML element with an event to display the value and style attribute of an <input> text box element.
  */
-function toggleDiv() {
+function getAttrOfInput() {
     $(document).ready(function(){
-        $("#toggle").click(function(){
-            setTimeout(function(){$("#div4, #div5, #div6").toggle()},700);
+        $("#attrbtn").click(function(){
+            window.alert("Value: " + $("#textbox").val() + " Attribute: " + $("#textbox").attr("style"));
         });
     });
 }

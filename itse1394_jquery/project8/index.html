@@ -52,7 +52,7 @@
                     <input type="radio" name="options" id="option1"  onclick="displayTest()"> Hide/Show div
                 </label>
                 <label class="btn-custom btn" >
-                    <input type="radio" name="options" id="option2" onclick="displayTest()"> Toggle
+                    <input type="radio" name="options" id="option2" onclick="displayTest()"> Show Attributes
                 </label>
                 <label class="btn-custom btn" >
                     <input type="radio" name="options" id="option3" onclick="displayTest()"> Toggle Table color
@@ -115,6 +115,11 @@
                 <!--#2 Include an HTML element with an event to display the value and style attribute of an <input> text box element.-->
                 <div id="test2" class="hidden">
                     <p>2. Include an HTML element with an event to display the value and style attribute of an &lt;input&gt; text box element. </p>
+                    <label> Enter some test
+                        <input type="text" class="text-center" id="textbox" placeholder="Enter text" style="color:black" />
+                    </label>
+                    <button class="btn btn-primary" id="attrbtn" onclick="getAttrOfInput()">Show Attr</button>
+                    <p id="para4"></p>
                 </div>
 
                 <!--#3 Include an HTML element with an event to set the value and style attribute of an <input> text box element. -->
