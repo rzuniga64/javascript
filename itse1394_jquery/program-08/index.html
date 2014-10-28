@@ -13,10 +13,9 @@
         <script src="../js/modernizr-2.6.2.min.js"></script>
         <script type="text/javascript" src="js/program-08.js"></script>
         <!-- jQuery -->
-        <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
         <!-- Bootstrap JS -->
         <script src="../js/bootstrap.min.js"></script>
-
     </head>
     <body id="body">
 
@@ -49,28 +48,28 @@
             </div>
             <div class="btn-group-vertical" id="radio-group">
                 <label class="btn-custom btn" >
-                    <input type="radio" name="options" id="option1"  onclick="displayTest()"> Hide/Show div
+                    <input type="radio" name="options" id="option1"  onclick="displayTest()"> DOM manipulation
                 </label>
                 <label class="btn-custom btn" >
                     <input type="radio" name="options" id="option2" onclick="displayTest()"> Show Attributes
                 </label>
                 <label class="btn-custom btn" >
-                    <input type="radio" name="options" id="option3" onclick="displayTest()"> Toggle Table color
+                    <input type="radio" name="options" id="option3" onclick="displayTest()"> Set Attributes
                 </label>
                 <label class="btn-custom btn" >
-                    <input type="radio" name="options" id="option4" onclick="displayTest()"> Toggle-fade footer
+                    <input type="radio" name="options" id="option4" onclick="displayTest()"> Change Attributes
                 </label>
                 <label class="btn-custom btn" >
-                    <input type="radio" name="options" id="option5" onclick="displayTest()"> Fade a section
+                    <input type="radio" name="options" id="option5" onclick="displayTest()"> Append content
                 </label>
                 <label class="btn-custom btn" >
-                    <input type="radio" name="options" id="option6" onclick="displayTest()"> Toggle-slide div
+                    <input type="radio" name="options" id="option6" onclick="displayTest()"> Add images
                 </label>
                 <label class="btn-custom btn" >
-                    <input type="radio" name="options" id="option7" onclick="displayTest()"> Move divs
+                    <input type="radio" name="options" id="option7" onclick="displayTest()"> Remove images
                 </label>
                 <label class="btn-custom btn" >
-                    <input type="radio" name="options" id="option8" onclick="displayTest()"> Animate text
+                    <input type="radio" name="options" id="option8" onclick="displayTest()"> Toggle class
                 </label>
                 <label class="btn-custom btn" >
                     <input type="radio" name="options" id="option9" onclick="displayTest()"> Callback
@@ -115,11 +114,12 @@
                 <!--#2 Include an HTML element with an event to display the value and style attribute of an <input> text box element.-->
                 <div id="test2" class="hidden">
                     <p>2. Include an HTML element with an event to display the value and style attribute of an &lt;input&gt; text box element. </p>
-                    <label> Enter some test
-                        <input type="text" class="text-center" id="textbox" placeholder="Enter text" style="color:black" />
+                    <label> Enter text
+                        <input type="text" class="text-center" id="textbox1" style="color:black" />
                     </label>
-                    <button class="btn btn-primary" id="attrbtn" onclick="getAttrOfInput()">Show Attr</button>
-                    <p id="para4"></p>
+                    <div>
+                        <button class="btn btn-primary" id="attrbtn1" onclick="getAttrOfInput()">Show Attribute</button>
+                    </div>
                 </div>
 
                 <!--#3 Include an HTML element with an event to set the value and style attribute of an <input> text box element. -->
@@ -127,6 +127,12 @@
                     <p>
                         3.	Include an HTML element with an event to set the value and style attribute of an &lt;input&gt; text box element.
                     </p>
+                    <label> Enter text
+                        <input type="text" class="text-center" id="textbox2" />
+                    </label>
+                    <div>
+                        <button class="btn btn-primary" id="attrbtn2" onclick="setAttrOfInput()">Set Attribute</button>
+                    </div>
                 </div>
 
                 <!--#4. Use a callback to accomplish the following: include an HTML element with an event to
@@ -134,18 +140,41 @@
                 <div id="test4" class="hidden">
                     <p>4. Use a callback to accomplish the following: include an HTML element with an event
                           to change an attribute value of a &lt;div&gt; and display the original value. </p>
+                    <div id="div13" style="font-size:18px; color:red">This is some text in a div.</div>
+                    <button class="btn btn-primary" id="attrbtn3" onclick="changeAttrValueOfDiv()">Change Attribute</button>
                 </div>
 
                 <!--#5.	Create an ordered list and a text box. Use the content of the text box to create new list items that are added to the list.   -->
                 <div id="test5" class="hidden">
                     <p>5. Create an ordered list and a text box. Use the content of the text box to create new list items that are added to the list.</p>
+                    <div>
+                        <ol type="1">
+                            <li>Web Development Tools</li>
+                            <li>Beginning Web Programming</li>
+                            <li>Intermediate Web Programming</li>
+                            <li>jQuery</li>
+                        </ol>
+                        <label> Enter new list item
+                            <input type="text" class="text-center" id="textbox3"/>
+                        </label>
+                        <div>
+                            <button id="attrbtn4" onclick="addToOrderedList()">Add</button>
+                        </div>
+                    </div>
                 </div>
 
                 <!--#6.	Include an image. Include a button to insert two images before the original image and another button to insert three
                         images after the original image.-->
                 <div id="test6" class="hidden">
-                    <p>6.	Include an image. Include a button to insert two images before the original image and another
+                    <p id="para6">6.	Include an image. Include a button to insert two images before the original image and another
                             button to insert three images after the original image. </p>
+                    <div id="animals">
+                        <img src="assets/dog.png" id="dog" alt="picture of dog"/>
+                    </div>
+                    <div id="div6">
+                        <button class="btn btn-primary" id="btn5" onmouseup="addImagesBefore()">Add Before</button>
+                        <button class="btn btn-primary" id="btn6" onmouseup="addImagesAfter()">Add After</button>
+                    </div>
                 </div>
 
                 <!--#7  Include a button to remove the three images that were inserted after the original image in item 6. -->
@@ -162,6 +191,10 @@
                         8.  Include an HTML element with an event to toggle the class setting of three &lt;div&gt;. Make the class named “toggleClass”
                             set the background-color to red and increase the size of the three &lt;div&gt; from 20x20px to 50x50px.
                     </p>
+                    <div id="div1" class="div1">Div1</div>
+                    <div id="div2" class="div2">Div2</div>
+                    <div id="div3" class="div3">Div3</div>
+                    <button class="btn btn-primary" id="toggleClass" onmouseup="toggleClass()">Toggle class</button>
                 </div>
 
                 <!--#9 Include an HTML element with an event that invokes the .css method on an <p> to change the font color to blue and font-style to italic.-->

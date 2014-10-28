@@ -4,6 +4,11 @@ aside {
     overflow: hidden
 }
 
+body {
+    background: #003d79;
+    color:white;
+}
+
 footer{
     background: #008000; font-size:12px; padding:20px
 }
@@ -14,16 +19,23 @@ footer a:visited {
     color: #28AACA; text-decoration: underline
 }
 
-p {
+p, {
     text-align: left;
     margin-left: 300px
 }
 
-td, th { padding:5px }
+ol {
+    text-align: left;
+    margin-left: 400px
+}
 
 code {
     background-color: #003d79;
     color: white;
+}
+
+input {
+    color:black
 }
 
 .btn {
@@ -55,13 +67,47 @@ code {
     text-align: center
 }
 
-#navbar {
-    background: #ffc000
+.toggleClass {
+    background-color: red;
+    width:50px;
+    height:50px;
+    margin-left:auto;
+    margin-right:auto;
+    display:block
 }
 
-#body {
-    background: #003d79;
-    color:white;
+.div1{
+    font-size: 7px;
+    background-color: orange;
+    width:20px;
+    height:20px;
+    margin-left:auto;
+    margin-right:auto;
+    display:block
+}
+
+.div2{
+    font-size: 7px;
+    background-color: green;
+    width:20px;
+    height:20px;
+    margin-left:auto;
+    margin-right:auto;
+    display:block
+}
+
+.div3{
+    font-size: 7px;
+    background-color: blue;
+    width:20px;
+    height:20px;
+    margin-left:auto;
+    margin-right:auto;
+    display:block
+}
+
+#navbar {
+    background: #ffc000
 }
 
 #mainHeading {
@@ -77,17 +123,8 @@ code {
     z-index: 904;
     width:155px;
 }
-#div1, #div4{
-    background-color: red;
-}
 
-#div2, #div5{
-    background-color: green;
-}
 
-#div3, #div6{
-    background-color: blue;
-}
 
 
 

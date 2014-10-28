@@ -41,7 +41,10 @@ function displayTest()
             break;
         case "option7":
             setClassToHidden(options);
+            document.getElementById("test6").setAttribute("class","show" );
+            document.getElementById("para6").setAttribute("class","hide" );
             document.getElementById("test7").setAttribute("class","show" );
+            $("#div6").append("<button class='btn btn-primary' id='btn7' onmouseup='removeImagesAfter()'>Remove After</button>");
             break;
         case "option8":
             setClassToHidden(options);
@@ -85,32 +88,18 @@ function showHTML() {
  */
 function getAttrOfInput() {
     $(document).ready(function(){
-        $("#attrbtn").click(function(){
-            window.alert("Value: " + $("#textbox").val() + " Attribute: " + $("#textbox").attr("style"));
+        $("#attrbtn1").click(function(){
+            window.alert("Value: " + $("#textbox1").val() + " Attribute: " + $("#textbox1").attr("style"));
         });
     });
 }
 
 /*   3.	Include an HTML element with an event to set the value and style attribute of an <input> text box element.
  */
-function colorRows() {
+function setAttrOfInput() {
     $(document).ready(function(){
-        $(".table1 tr:odd").css("background-color", "#BFBFBF");
-    });
-}
-
-function hideShowEvenRows(){
-    $(document).ready(function () {
-        $("#even").click(function () {
-            $(".table1 tr:even").toggle();
-        });
-    });
-}
-
-function hideShowOddRows(){
-    $(document).ready(function () {
-        $("#odd").click(function () {
-            $(".table1 tr:odd").toggle();
+        $("#attrbtn2").click(function(){
+            $("#textbox2").val("Hello, World!") + $("#textbox2").attr("style", "color:red");
         });
     });
 }
@@ -118,47 +107,57 @@ function hideShowOddRows(){
 /*  4.	Use a callback to accomplish the following: include an HTML element with an event to change an
  *      attribute value of a <div> and display the original value.
  */
-function toggleFadeFooter() {
+function changeAttrValueOfDiv() {
     $(document).ready(function() {
-        //setTimeout(function(){$("footer").toggle()},1000);
-        $("footer").toggle(1000);
+        $("#attrbtn3").click(function(){
+            var x = $("#textbox3").val();
+            $("#div13").attr("style", "font-size:14px color:white");
+        });
     });
 }
 
 /*  5.	Create an ordered list and a text box. Use the content of the text box to create new list items that are added to the list.
  */
-function fadeToSection() {
+function addToOrderedList() {
     $(document).ready(function() {
-        $("section").fadeTo("slow", 0.8, function(){
-            $(".para6").toggleClass("para6");
+        $("#attrbtn4").click(function(){
+            $("ol").append("<li>" + $("#textbox3").val() + "</li>");
         });
     });
 }
 
-/*  6. Center two <div> elements on the page and use jQuery to toggle-slide the appearance of the lower by clicking the upper.
+/*  6.	Include an image. Include a button to insert two images before the original image and another
+ *      button to insert three images after the original image.
  */
-function toggleSlide() {
+function addImagesBefore() {
     $(document).ready(function() {
-        $("#flip").click(function(){
-            $("#lowerDiv").slideToggle();
+        $("#btn5").click(function(){
+            var meercat = "<img src='assets/meercat.png' id='meercat'/>";
+            var peacock = "<img src='assets/peacock.png' id='peacock'/>";
+            $("#dog").before(meercat, peacock);
+        });
+    });
+}
+
+function addImagesAfter() {
+    $(document).ready(function() {
+        $("#btn6").click(function(){
+            var fish = "<img src='assets/fish.png' id='fish'/>";
+            var koala = "<img src='assets/koala.jpg' id='koala' />";
+            var rhino = "<img src='assets/rhino.png' id='rhino'/>";
+            $("#dog").after(fish, koala, rhino);
         });
     });
 }
 
 /* 7. Include a button to remove the three images that were inserted after the original image in item 6.
  */
-function moveLeftDiv() {
+function removeImagesAfter() {
     $(document).ready(function() {
-        $("#moveLeftDiv").click(function(){
-            $("#leftDiv").animate({left:'200px'});
-        });
-    });
-}
-
-function moveRightDiv() {
-    $(document).ready(function() {
-        $("#moveRightDiv").click(function(){
-            $("#rightDiv").animate({right:'200px'});
+        $("#btn7").click(function(){
+            $("#fish").remove();
+            $("#koala").remove();
+            $("#rhino").remove();
         });
     });
 }
@@ -166,10 +165,15 @@ function moveRightDiv() {
 /* 8.   Include an HTML element with an event to toggle the class setting of three <div>. Make the class named
  *      “toggleClass” set the background-color to red and increase the size of the three <div> from 20x20px to 50x50px.
  */
-function animateText() {
+function toggleClass() {
     $(document).ready(function() {
-        $("#animateText").click(function(){
-            $("#animateDiv").animate({fontSize:'5em'}, "slow");
+        $("#toggleClass").mouseup(function(){
+            $("#div1").toggleClass("div1", "false");
+            $("#div2").toggleClass("div2", "false");
+            $("#div3").toggleClass("div3", "false");
+            $("#div1").toggleClass("toggleClass", "true");
+            $("#div2").toggleClass("toggleClass", "true");
+            $("#div3").toggleClass("toggleClass", "true");
         });
     });
 }
