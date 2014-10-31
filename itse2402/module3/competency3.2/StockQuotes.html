@@ -8,7 +8,7 @@
 
     <script type="text/javascript">
         /* <![CDATA[ */
-        var stockRequest = false;
+        var httpRequest = false;
         var tickerSymbol = "^IXIC";
         function getRequestObject() {
             try {
@@ -31,19 +31,19 @@
             return httpRequest;
         }
         function getStockQuote(newTicker) {
-            if (!stockRequest)
-                stockRequest = getRequestObject();
+            if (!httpRequest)
+                httpRequest = getRequestObject();
             if (newTicker)
                 tickerSymbol = newTicker;
-            stockRequest.abort();
-            stockRequest.open("get", "StockCheck.php?" + "checkQuote=" + tickerSymbol, true);
-            stockRequest.send(null);
-            stockRequest.onreadystatechange = fillStockInfo;
+            httpRequest.abort();
+            httpRequest.open("get", "StockCheck.php?checkQuote=" + tickerSymbol, true);
+            httpRequest.send(null);
+            httpRequest.onreadystatechange = fillStockInfo;
             var updateQuote = setTimeout('getStockQuote()', 10000);
         }
         function fillStockInfo() {
-            if (stockRequest.readyState == 4 && stockRequest.status == 200) {
-                var stockValues = stockRequest.responseXML;
+            if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+                var stockValues = httpRequest.responseXML;
                 document.getElementById("ticker").childNodes[0].nodeValue = stockValues.getElementsByTagName("ticker")[0].childNodes[0].nodeValue;
                 document.getElementById("openingPrice").innerHTML = stockValues.getElementsByTagName("open")[0].childNodes[0].nodeValue;
                 document.getElementById("lastTrade").innerHTML = "<strong>" + stockValues.getElementsByTagName("lastTrade")[0].childNodes[0].nodeValue + "</strong>";
@@ -57,7 +57,6 @@
         }
         /* ]]> */
     </script>
-
 </head>
 <body onload="getStockQuote(); getDow(); getNasdaq(); getSP()">
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -468,7 +467,7 @@
                         <td align="center">
                             <table width="82%" border="0" cellspacing="0" cellpadding="8">
                                 <tr>
-                                    <td align="center"><span class="c19">&copy; 2010 DRGMONEY, Inc. All rights reserved.
+                                    <td align="center"><span class="c19">&copy; 2014 DRGMONEY, Inc. All rights reserved.
                                         <span class="c18">Terms of Use and Disclaimer</span></span></td>
                                 </tr>
                             </table>

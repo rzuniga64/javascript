@@ -1,0 +1,88 @@
+<!DOCTYPE html >
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Express Conversion Currency Converter</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="description" content="Project 3 for ITSE 2402 | Login">
+    <meta name="author" content="Raul Zuniga">
+    <!-- Mobile viewport optimized -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Bootstrap CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet"  type="text/css">
+    <link href="css/project3.css" rel="stylesheet" type="text/css">
+    <script type = "text/javascript" src="js/project2.js"></script>
+    <script type = "text/javascript" src="js/jquery.js"></script>
+    <script type = "text/javascript" src="../../js/jquery-1.11.1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../../js/bootstrap.min.js"></script>
+    <!-- Include Modernizr in the head, before any other Javascript -->
+    <script src="../../js/modernizr-2.6.2.min.js"></script>
+</head>
+<body id="body" onload="getTodayDate()">
+    <div class="container">
+        <div id="flag"></div>
+    </div>
+    <div class="container">
+        <div class="starter-template">
+            <form role="form" action="currency.htm" method="get" class="form">
+                <h1 id="h1">Express Conversion Currency Converter </h1><br />
+                <fieldset class="scheduler-border">
+                    <legend class="scheduler-border">Currency Converter</legend>
+                    <p id="para1"></p>
+                    <p>Any transaction will be effective with tomorrow's date.</p>
+                    <div class="form-group">
+                        <label for="dateToday" class="col-2">Today's Date</label>
+                        <input type="text" class="col-2" name="dateToday" id="dateToday" readonly/>
+                        <label for="dateTomorrow" class="col-2">Tomorrow's Date</label>
+                        <input type="text" class="col-2" name="dateTomorrow" id="dateTomorrow" readonly/>
+                        <div class="col-2"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="username" class="col-2">Username&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        <input type="text" class="col-2" name="username" id="username" onblur="return validateLoginSubmission(this.value)"/>
+                        <div class="col-8"></div>
+                    </div>
+                    <div class="col-sm-offset-1 col-5" >
+                        <button name="convert" type="button" class="btn btn-sm btn-primary" onclick="location.href = 'currency.htm' + '?' + 'name='+ document.forms[0].username.value;return validateLoginSubmission()">Money Exchange</button>
+                        <button name="convert" type="button" class="btn btn-sm btn-success">Withdraw</button>
+                        <button name="convert" type="button" class="btn btn-sm btn-info">Check Balance</button>
+                        <button name="convert" type="button" class="btn btn-sm btn-warning">Deposit</button>
+                        <button name="convert" type="button" class="btn btn-sm btn-danger"  onclick="location.href = 'weather.htm'">Check Weather</button>
+                    </div>
+                    <div class="col-6"><br /></div>
+                    <a href="#">
+                        <img class="displayed"  onclick="showLocation()" src="assets/atm_services.jpg" alt="picture of ATM machine" />
+                    </a>
+                    <a href="#" class="center" onclick="showLocation()">See nearest location</a>
+                </fieldset>
+            </form>
+            <div class="row" id="map">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-6">
+                    <div class="tabbable">
+                        <ul class="nav nav-tabs">
+                            <li class="active hide"><a href="#tab1" data-toggle="tab">Location</a> </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active hide" id="tab1">
+                                <h4>Our Location<small style="color:white">&nbsp;is right on SoCo</small></h4>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3447.134772184985!2d-97.758653!3d30.233233!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b4eb9282ed59%3A0xb727cce3a041b384!2s2910+S+Congress+Ave!5e0!3m2!1sen!2sus!4v1403601115192" height="200" style="border:0"></iframe>
+                                <!--iframe src=""></iframe-->
+                            </div><!--tab-pane-->
+                        </div><!--tab-content-->
+                    </div><!--tabbable-->
+                </div><!--col-sm-6-->
+                <div class="col-sm-2"></div>
+            </div> <!-- moreInfo -->
+        </div> <!--starter-template-->
+    </div><!-- /.container -->
+
+    <footer id="footer">
+        <div class="col-12" style=color:#000000>
+            &copy; 2013 Raul Zuniga | <a href="mailto:raul.zuniga@g.austincc.edu">raul.zuniga@g.austincc.edu</a>
+            <script type = "text/javascript" src="../../js/validation.js"></script>
+        </div> <!--col-12-->
+    </footer>
+</body>
+</html>

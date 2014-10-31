@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <title>Express Conversion Currency Converter</title>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <meta name="description" content="Project 3 for ITSE 2402">
     <meta name="author" content="Raul Zuniga">
     <!-- Mobile viewport optimized -->
@@ -20,10 +18,6 @@
     <script type="text/javascript" src="../../js/jquery-1.11.1.js"></script>
     <script type="text/javascript">
         /* <![CDATA[ */
-        var britishPoundConverstionRate = 0.61050;
-        var euroConversioRate = 0.77952;
-        var mexicanPesoConversionRate = 13.2889;
-
         var formData = location.search;
         formData = formData.substring(1, formData.length);  // remove the ? at position 0 in the search property
 
@@ -35,13 +29,8 @@
         var formArray = formData.split("&");                // break the string into array elements at the &
 
         // get the starting index of the value of each name=value pair
-        startDollarAmount = formArray[0].indexOf("=");
-        startCurrency = formArray[1].indexOf("=");
-        startUsername = formArray[3].indexOf("=");
-
-        dollarAmount = formArray[0].substring(startDollarAmount+1);
-        currency = formArray[1].substring(startCurrency+1);
-        username = formArray[3].substring(startUsername+1);
+        startUsername = formArray[0].indexOf("=");
+        username = formArray[0].substring(startUsername+1);
         /* ]]> */
     </script>
 </head>
@@ -53,38 +42,42 @@
         <div class="starter-template">
             <form onsubmit="return validateCurrencySubmission()" method="get" action="conversion.htm" role="form" class="form">
                 <h1 id="h1">Express Conversion Currency Converter </h1><br />
+                <p style="text-align: center">
+                    <span class="dropCap">P</span>
+                    lease enter the amount to convert.
+                </p>
                 <fieldset class="scheduler-border">
                     <legend class="scheduler-border">Currency Converter</legend>
-                    <p>
-                        <script>
-                            document.write("Hello " + username +", thank you for using Currency Converter!<br />");
-                            switch(currency){
-                                case "British Pound":
-                                    $(document).ready(function(){
-                                        britishBackground();
-                                    });
-                                    britishPoundamount = (dollarAmount * britishPoundConverstionRate).toFixed(2);
-                                    document.write(dollarAmount+ " US Dollar = " + britishPoundamount + " British Pound");
-                                    break;
-                                case "Euro":
-                                    $(document).ready(function(){
-                                        euroBackground()
-                                    });
-                                    euroAmount = (dollarAmount * euroConversioRate).toFixed(2);
-                                    document.write(dollarAmount+ " US Dollar = " + euroAmount + " Euro");
-                                    break;
-                                case "Peso":
-                                    $(document).ready(function(){
-                                        mexicoBackground();
-                                    });
-                                    mexicanPesoAmount = (dollarAmount * mexicanPesoConversionRate).toFixed(2);
-                                    document.write(dollarAmount+ " US Dollar = " + mexicanPesoAmount+ " Mexican Peso");
-                                    break;
-                                default:
-                                    break;
-                            }
-                        </script>
-                    </p>
+                    <p><script>document.write("Hello, " + username +"<br />")</script></p>
+                    <p>Any transaction will be effective with tomorrow's date.</p>
+                    <div class="form-group">
+                        <label class="col-12" for="amount">What is the amount of U.S dollars you want to convert?</label>
+                        <br>
+                        <input id="amount" class="col-2" type="text" onblur="return checkForNumber(this.value)" value="0" name="amount">
+                        <div class="col-10"></div>
+                    </div>
+                    <label class="control-label">To which currency would you like to convert?</label><br />
+                    <div class="radio">
+                        <label>
+                            <input id="currency1" type="radio" value="British Pound" name="optionsRadios" onclick="changeBackground()">British Pound
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input id="currency2" type="radio" value="Euro" name="optionsRadios" onclick="changeBackground()">Euro
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input id="currency3" type="radio" value="Peso" name="optionsRadios" onclick="changeBackground()">Peso
+                        </label>
+                    </div>
+                    <button class="btn btn-default" type="submit" name="convert">Submit</button>
+                    <label for='hiddenName' class='col-2 hidden'>
+                        <input type='text' class='col-2 hidden' name='hiddenName' id='hiddenName'/>
+                    </label>
+                    <script>document.forms[0].hiddenName.value = username;</script>
+                    <div class='col-8'></div>
                 </fieldset>
             </form>
         </div>
