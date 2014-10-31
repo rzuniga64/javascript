@@ -14,7 +14,25 @@
     <!-- Include Modernizr in the head, before any other Javascript -->
     <script src="../../js/modernizr-2.6.2.min.js"></script>
     <script type = "text/javascript" src="js/project2.js"></script>
+    <script type = "text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="../../js/jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var formData = location.search;
+        formData = formData.substring(1, formData.length);  // remove the ? at position 0 in the search property
+
+        while (formData.indexOf("+") != -1) {               // convert + back to blank
+            formData = formData.replace("+", " ");
+        }
+        formData = decodeURI(formData);
+
+        var formArray = formData.split("&");                // break the string into array elements at the &
+
+        // get the starting index of the value of each name=value pair
+        startUsername = formArray[2].indexOf("=");
+        username = formArray[2].substring(startUsername+1);
+        /* ]]> */
+    </script>
 </head>
 <body>
     <div class="container">
@@ -22,109 +40,46 @@
     </div>
     <div class="container">
         <div class="starter-template">
-            <script type="text/javascript">
-                /* <![CDATA[ */
-                var britishPoundConverstionRate = 0.61050;
-                var euroConversioRate = 0.77952;
-                var mexicanPesoConversionRate = 13.2889;
-
-                var formData = location.search;
-                formData = formData.substring(1, formData.length);  // remove the ? at position 0 in the search property
-
-                while (formData.indexOf("+") != -1) {               // convert + back to blank
-                    formData = formData.replace("+", " ");
-                }
-                formData = decodeURI(formData);
-
-                var formArray = formData.split("&");                // break the string into array elements at the &
-                document.write("<form role='form' action='conversion.htm' method='get'>");
-                document.write("<h1 id='h1'>Express Conversion Currency Converter</h1><br />");
-                document.write("<fieldset class='scheduler-border'>");
-                document.write(" <legend class='scheduler-border'>Currency Converter</legend>");
-                document.write("<p>");
-
-                // get the starting index of the value of each name=value pair
-                startDateToday = formArray[0].indexOf("=");
-                startDateTomorrow = formArray[1].indexOf("=");
-                startUsername = formArray[2].indexOf("=");
-                startDollarAmount = formArray[3].indexOf("=");
-                startCurrency = formArray[4].indexOf("=");
-
-                username = formArray[2].substring(startUsername+1);
-                dollarAmount = formArray[3].substring(startDollarAmount+1);
-                currency = formArray[4].substring(startCurrency+1);
-
-                document.write("Hello, " + username +"<br />")
-                document.write("Thank you for using Express Conversion!<br /><br />");
-
-                switch(currency){
-                    case "British Pound":
-                        $(document).ready(function(){
-                            $('form').css("color", "white");
-                            $('form').css("border", "solid 2px #fffffe");
-                            $('form').css("background-color", "#11145b");
-                            $('#amount').css("color", "black");
-                            $('#flag').css("background", "url('assets/gb_header.png') no-repeat");
-                            $('.starter-template').css("background", "url('assets/gb_bg.png') repeat-y");
-                            $('h1').css("color", "#F60305");
-                            $('.dropcap').css("color", "#F60305");
-                            $('legend').css("color", "#F60305");
-                        });
-                        britishPoundamount = (dollarAmount * britishPoundConverstionRate).toFixed(2);
-                        document.write(dollarAmount+ " US Dollar = " + britishPoundamount + " British Pound");
-                        break;
-                    case "Euro":
-                        $(document).ready(function(){
-                            $('form').css("color", "black");
-                            $('form').css("border", "solid 2px #FE8402");
-                            $('form').css("background-color", "#FDD513");
-                            $('#flag').css("background", "url('assets/euro_header.png') no-repeat");
-                            $('.starter-template').css("background", "url('assets/euro_bg.png') repeat-y");
-                            $('h1').css("color", "#FE8402");
-                            $('.dropcap').css("color", "#FE8402");
-                            $('legend').css("color", "#FE8402");
-                        });
-                        euroAmount = (dollarAmount * euroConversioRate).toFixed(2);
-                        document.write(dollarAmount+ " US Dollar = " + euroAmount + " Euro");
-                        break;
-                    case "Peso":
-                        $(document).ready(function(){
-                            $('form').css("color", "#7E3D0B");
-                            $('form').css("background-color", "#329B00");
-                            $('form').css("border", "solid 2px #ffffff");
-                            $('#flag').css("background", "url('assets/mexico_header.png') no-repeat");
-                            $('.starter-template').css("background", "url('assets/mexico_bg.png') repeat-y");
-                            $('h1').css("color", "#ffffee");
-                            $('h1').css("border-bottom-color", "#ffffee");
-                            $('.dropcap').css("color", "#ffffee");
-                            $('legend').css("color", "#ffffee");
-                            $('.center').css("color","#7E3D0B");
-                        });
-                        mexicanPesoAmount = (dollarAmount * mexicanPesoConversionRate).toFixed(2);
-                        document.write(dollarAmount+ " US Dollar = " + mexicanPesoAmount+ " Mexican Peso");
-                        break;
-                    default:
-                        break;
-                }
-                document.write("</p>");
-                document.write("<div class='form-group'>");
-                document.write("<label for='currency' class='col-2 hidden'>Currency&nbsp&nbsp&nbsp&nbsp&nbsp</label>");
-                document.write("<input type='text'class='col-2 hidden' name='currency' id='currency'/>");
-                document.write("<div class='col-8'></div>");
-                document.write("</div>");
-                document.write("<div class='form-group'>");
-                document.write("<label for='hiddenName' class='col-2 hidden'>Username&nbsp&nbsp&nbsp&nbsp&nbsp</label>");
-                document.write("<input type='text'class='col-2 hidden' name='hiddenName' id='hiddenName'/>");
-                document.write("<div class='col-8'></div>");
-                document.write("</div>");
-                document.write("<button name='convert' type='submit' class='btn btn-default'>Submit</button>");
-                document.write("</legend>");
-                document.write("</fieldset>");
-                document.write("</form>");
-                document.forms[0].currency.value = currency;
-                document.forms[0].hiddenName.value = username;
-                /* ]]> */
-            </script>
+            <form onsubmit="return validateCurrencySubmission()" method="get" action="conversion.htm" role="form">
+                <h1 id="h1">Express Conversion Currency Converter </h1><br />
+                <p style="text-align: center">
+                    <span class="dropCap">P</span>
+                    lease enter the amount to convert.
+                </p>
+                <fieldset class="scheduler-border">
+                    <legend class="scheduler-border">Currency Converter</legend>
+                    <p><script>document.write("Hello, " + username +"<br />")</script></p>
+                    <p>Any transaction will be effective with tomorrow's date.</p>
+                    <div class="form-group">
+                        <label class="col-12" for="amount">What is the amount of U.S dollars you want to convert?</label>
+                        <br>
+                        <input id="amount" class="col-2" type="text" onblur="return checkForNumber(this.value)" value="0" name="amount">
+                        <div class="col-10"></div>
+                    </div>
+                    <label class="control-label">To which currency would you like to convert?</label><br />
+                    <div class="radio">
+                        <label>
+                            <input id="currency1" type="radio" value="British Pound" name="optionsRadios" onclick="changeBackground()">British Pound
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input id="currency2" type="radio" value="Euro" name="optionsRadios" onclick="changeBackground()">Euro
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input id="currency3" type="radio" value="Peso" name="optionsRadios" onclick="changeBackground()">Peso
+                        </label>
+                    </div>
+                    <button class="btn btn-default" type="submit" name="convert">Submit</button>
+                    <label for='hiddenName' class='col-2 hidden'>
+                        <input type='text' class='col-2 hidden' name='hiddenName' id='hiddenName'/>
+                    </label>
+                    <script>document.forms[0].hiddenName.value = username;</script>
+                    <div class='col-8'></div>
+                </fieldset>
+            </form>
         </div>
     </div>
     <div id="footer">

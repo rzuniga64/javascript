@@ -1,32 +1,44 @@
 var dateObject = new Date();
 var month = dateObject.getMonth();
-var monthArray = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+var monthArray = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 var isLocationShown = false;
 
 function getTodayDate() {
-    var dateToday = monthArray[month] + " " + dateObject.getDate() + ", " + dateObject.getFullYear();
-    document.forms[0].dateToday.value = dateToday;
+    document.forms[0].dateToday.value = monthArray[month] + " " + dateObject.getDate() + ", " + dateObject.getFullYear();
     getTomorrowDate();
 }
 
 function getTomorrowDate() {
-    var dateTomorrow = monthArray[month] + " " + (dateObject.getDate()+1) + ", " + dateObject.getFullYear();
-    document.forms[0].dateTomorrow.value = dateTomorrow;
+    document.forms[0].dateTomorrow.value = monthArray[month] + " " + (dateObject.getDate()+1) + ", " + dateObject.getFullYear();
 }
 
-function validateSubmission() {
+function validateLoginSubmission() {
+    var retValue = true;
+
+    if (document.forms[0].username.value == "") {
+        window.alert("You did not fill in one of the following required fields:" +
+            " Username.");
+        return false;
+    } else {
+        document.getElementById("para1").innerHTML = "Hello, " + document.forms[0].username.value;
+    }
+
+    return retValue;
+}
+
+function validateCurrencySubmission() {
     var currencySelected = false;
     var retValue = true;
 
     if (document.forms[0].amount.value == "") {
         window.alert("You did not fill in one of the following required fields:" +
-            "  Amount");
+        "  Amount");
         return false;
     }
 
     if (document.forms[0].username.value == "") {
         window.alert("You did not fill in one of the following required fields:" +
-            " Username.");
+        " Username.");
         return false;
     } else {
         document.getElementById("para1").innerHTML = "Hello, " + document.forms[0].username.value;
@@ -41,7 +53,7 @@ function validateSubmission() {
     }
     if (currencySelected != true) {
         window.alert("You did not select one of the following required fields:" +
-            " Currency.");
+        " Currency.");
         return false;
     }
 

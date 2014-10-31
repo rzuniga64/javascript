@@ -17,105 +17,80 @@
     <script src="../../js/modernizr-2.6.2.min.js"></script>
     <script type = "text/javascript" src="js/project2.js"></script>
     <script type="text/javascript" src="../../js/jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var britishPoundConverstionRate = 0.61050;
+        var euroConversioRate = 0.77952;
+        var mexicanPesoConversionRate = 13.2889;
+
+        var formData = location.search;
+        formData = formData.substring(1, formData.length);  // remove the ? at position 0 in the search property
+
+        while (formData.indexOf("+") != -1) {               // convert + back to blank
+            formData = formData.replace("+", " ");
+        }
+        formData = decodeURI(formData);
+
+        var formArray = formData.split("&");                // break the string into array elements at the &
+
+        // get the starting index of the value of each name=value pair
+        startDollarAmount = formArray[0].indexOf("=");
+        startCurrency = formArray[1].indexOf("=");
+        startUsername = formArray[3].indexOf("=");
+
+        dollarAmount = formArray[0].substring(startDollarAmount+1);
+        currency = formArray[1].substring(startCurrency+1);
+        username = formArray[3].substring(startUsername+1);
+        /* ]]> */
+    </script>
 </head>
 <body>
-<div class="container">
-    <div id="flag"></div>
-</div>
-<div class="container">
-    <div class="starter-template">
-        <script type="text/javascript">
-            /* <![CDATA[ */
-            var formData = location.search;
-            formData = formData.substring(1, formData.length);  // remove the ? at position 0 in the search property
-
-            while (formData.indexOf("+") != -1) {               // convert + back to blank
-                formData = formData.replace("+", " ");
-            }
-            formData = decodeURI(formData);
-
-            var formArray = formData.split("&");                // break the string into array elements at the &
-            document.write("<form role='form'>");
-            document.write("<h1 id='h1'>Express Conversion Currency Converter </h1><br />");
-            document.write("<fieldset class='scheduler-border'>");
-            document.write(" <legend class='scheduler-border'>Currency Converter</legend>");
-            document.write("<p>");
-
-            // get the starting index of the value of each name=value pair
-            startCurrency = formArray[0].indexOf("=");
-            startUsername = formArray[1].indexOf("=");
-            currency = formArray[0].substring(startCurrency+1);
-            username = formArray[1].substring(startUsername+1);
-
-            document.write("Hello, " + username +"<br />")
-            document.write("Thank you for using Express Conversion!<br /><br />");
-
-            switch(currency){
-                case "British Pound":
-                    $(document).ready(function(){
-                        $('form').css("color", "white");
-                        $('form').css("border", "solid 2px #fffffe");
-                        $('form').css("background-color", "#11145b");
-                        $('#amount').css("color", "black");
-                        $('#flag').css("background", "url('assets/gb_header.png') no-repeat");
-                        $('.starter-template').css("background", "url('assets/gb_bg.png') repeat-y");
-                        $('h1').css("color", "#F60305");
-                        $('.dropcap').css("color", "#F60305");
-                        $('legend').css("color", "#F60305");
-                    });
-                    britishPoundamount = (dollarAmount * britishPoundConverstionRate).toFixed(2);
-                    document.write(dollarAmount+ " US Dollar = " + britishPoundamount + " British Pound");
-                    break;
-                case "Euro":
-                    $(document).ready(function(){
-                        $('form').css("color", "black");
-                        $('form').css("border", "solid 2px #FE8402");
-                        $('form').css("background-color", "#FDD513");
-                        $('#flag').css("background", "url('assets/euro_header.png') no-repeat");
-                        $('.starter-template').css("background", "url('assets/euro_bg.png') repeat-y");
-                        $('h1').css("color", "#FE8402");
-                        $('.dropcap').css("color", "#FE8402");
-                        $('legend').css("color", "#FE8402");
-                    });
-                    euroAmount = (dollarAmount * euroConversioRate).toFixed(2);
-                    document.write(dollarAmount+ " US Dollar = " + euroAmount + " Euro");
-                    break;
-                case "Peso":
-                    $(document).ready(function(){
-                        $('form').css("color", "#7E3D0B");
-                        $('form').css("background-color", "#329B00");
-                        $('form').css("border", "solid 2px #ffffff");
-                        $('#flag').css("background", "url('assets/mexico_header.png') no-repeat");
-                        $('.starter-template').css("background", "url('assets/mexico_bg.png') repeat-y");
-                        $('h1').css("color", "#ffffee");
-                        $('h1').css("border-bottom-color", "#ffffee");
-                        $('.dropcap').css("color", "#ffffee");
-                        $('legend').css("color", "#ffffee");
-                        $('.center').css("color","#7E3D0B");
-                    });
-                    mexicanPesoAmount = (dollarAmount * mexicanPesoConversionRate).toFixed(2);
-                    document.write(dollarAmount+ " US Dollar = " + mexicanPesoAmount+ " Mexican Peso");
-                    break;
-                default:
-                    break;
-            }
-            document.write("</p>");
-            document.write("<div class='form-group'>");
-            document.write("<label for='hiddenName' class='col-2 hidden'></label>");
-            document.write("<input type='text'class='col-2 hidden' name='hiddenName' id='hiddenName'/>");
-            document.write("<div class='col-8'></div>");
-            document.write("</div>");
-            document.write("<button name='convert' type='submit' class='btn btn-default'>Submit</button>");
-            document.write("</legend>");
-            document.write("</fieldset>");
-            document.write("</form>");
-            /* ]]> */
-        </script>
+    <div class="container">
+        <div id="flag"></div>
     </div>
-</div>
-<div id="footer">
-    &copy; 2014 Raul Zuniga | <a href="mailto:raul.zuniga@g.austincc.edu">raul.zuniga@g.austincc.edu</a>
-    <script type="text/javascript" src="../../js/validation.js"></script>
-</div>
+    <div class="container">
+        <div class="starter-template">
+            <form onsubmit="return validateCurrencySubmission()" method="get" action="conversion.htm" role="form">
+                <h1 id="h1">Express Conversion Currency Converter </h1><br />
+                <fieldset class="scheduler-border">
+                    <legend class="scheduler-border">Currency Converter</legend>
+                    <p>
+                        <script>
+                            document.write(username +", thank you for using Currency Converter!<br />")
+                            switch(currency){
+                                case "British Pound":
+                                    $(document).ready(function(){
+                                        britishBackground();
+                                    });
+                                    britishPoundamount = (dollarAmount * britishPoundConverstionRate).toFixed(2);
+                                    document.write(dollarAmount+ " US Dollar = " + britishPoundamount + " British Pound");
+                                    break;
+                                case "Euro":
+                                    $(document).ready(function(){
+                                        euroBackground()
+                                    });
+                                    euroAmount = (dollarAmount * euroConversioRate).toFixed(2);
+                                    document.write(dollarAmount+ " US Dollar = " + euroAmount + " Euro");
+                                    break;
+                                case "Peso":
+                                    $(document).ready(function(){
+                                        mexicoBackground();
+                                    });
+                                    mexicanPesoAmount = (dollarAmount * mexicanPesoConversionRate).toFixed(2);
+                                    document.write(dollarAmount+ " US Dollar = " + mexicanPesoAmount+ " Mexican Peso");
+                                    break;
+                                default:
+                                    break;
+                            }
+                        </script>
+                    </p>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div id="footer">
+        &copy; 2014 Raul Zuniga | <a href="mailto:raul.zuniga@g.austincc.edu">raul.zuniga@g.austincc.edu</a>
+        <script type="text/javascript" src="../../js/validation.js"></script>
+    </div>
 </body>
 </html>
