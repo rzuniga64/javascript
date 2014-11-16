@@ -58,7 +58,7 @@ function displayTest()
  */
 function hideDiv() {
     $(document).ready(function(){
-        $('#div1, #div2, #div3').click(function() {
+        $('#div1').click(function() {
             $("#div1").hide();
         });
         $('#div2').click(function() {

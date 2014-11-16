@@ -17,12 +17,12 @@
         <!-- Bootstrap JS -->
         <script src="../js/bootstrap.min.js"></script>
     </head>
-    <body id="body">
+    <body>
 
         <div id="navbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <button type="button" class="navbar-toggle collapse" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -72,19 +72,19 @@
                     <input type="radio" name="options" id="option8" onclick="displayTest()"> Toggle class
                 </label>
                 <label class="btn-custom btn" >
-                    <input type="radio" name="options" id="option9" onclick="displayTest()"> Callback
+                    <input type="radio" name="options" id="option9" onclick="displayTest()"> Change Class
                 </label>
                 <label class="btn-custom btn" >
-                    <input type="radio" name="options" id="option10" onclick="displayTest()"> Chaining
+                    <input type="radio" name="options" id="option10" onclick="displayTest()"> Get Dimensions
                 </label>
             </div>
         </aside>
 
-        <div class="container" style="margin-top: 30px">
+        <div class="container1" style="margin-top: 30px">
             <div class="starter-template">
                 <script type="text/javascript">
                     /* <![CDATA[ */
-                    document.write("<h1 id='mainHeading'></h1>");
+                    document.write("<h2 id='mainHeading'></h2>");
                     document.getElementById("mainHeading").innerHTML = document.getElementsByTagName("title")[0].innerHTML;
                     /* ]]> */
                 </script>
@@ -107,8 +107,8 @@
                             }
                         </code>
                     </p>
-                    <button class="btn btn-primary" id="textbtn" onclick="showText()">Show Text</button>
-                    <button class="btn btn-primary" id="htmlbtn" onclick="showHTML()">Show HTML</button>
+                    <button class="btn btn-primary" id="textbtn" onmouseup="showText()">Show Text</button>
+                    <button class="btn btn-primary" id="htmlbtn" onmouseup="showHTML()">Show HTML</button>
                 </div>
 
                 <!--#2 Include an HTML element with an event to display the value and style attribute of an <input> text box element.-->
@@ -131,7 +131,7 @@
                         <input type="text" class="text-center" id="textbox2" />
                     </label>
                     <div>
-                        <button class="btn btn-primary" id="attrbtn2" onclick="setAttrOfInput()">Set Attribute</button>
+                        <button class="btn btn-primary" id="attrbtn2" onmouseup="setAttrOfInput()">Set Attribute</button>
                     </div>
                 </div>
 
@@ -141,7 +141,8 @@
                     <p>4. Use a callback to accomplish the following: include an HTML element with an event
                           to change an attribute value of a &lt;div&gt; and display the original value. </p>
                     <div id="div13" style="font-size:18px; color:red">This is some text in a div.</div>
-                    <button class="btn btn-primary" id="attrbtn3" onclick="changeAttrValueOfDiv()">Change Attribute</button>
+                    <div id="div14" ></div>
+                    <button class="btn btn-primary" id="attrbtn3" onmouseup="changeAttrValueOfDiv()">Change Attribute</button>
                 </div>
 
                 <!--#5.	Create an ordered list and a text box. Use the content of the text box to create new list items that are added to the list.   -->
@@ -158,7 +159,7 @@
                             <input type="text" class="text-center" id="textbox3"/>
                         </label>
                         <div>
-                            <button id="attrbtn4" onclick="addToOrderedList()">Add</button>
+                            <button class="btn btn-primary" id="attrbtn4" onmouseup="addToOrderedList()">Add</button>
                         </div>
                     </div>
                 </div>
@@ -166,7 +167,7 @@
                 <!--#6.	Include an image. Include a button to insert two images before the original image and another button to insert three
                         images after the original image.-->
                 <div id="test6" class="hidden">
-                    <p id="para6">6.	Include an image. Include a button to insert two images before the original image and another
+                    <p id="para6">6. Include an image. Include a button to insert two images before the original image and another
                             button to insert three images after the original image. </p>
                     <div id="animals">
                         <img src="assets/dog.png" id="dog" alt="picture of dog"/>
@@ -187,14 +188,16 @@
                 <!--#8  Include an HTML element with an event to toggle the class setting of three <div>. Make the class named
                         “toggleClass” set the background-color to red and increase the size of the three <div> from 20x20px to 50x50px.  -->
                 <div id="test8" class="checkbox hidden">
-                    <p class="text-center" style="margin:0">
+                    <p class="text-center" id="para8" style="margin:0">
                         8.  Include an HTML element with an event to toggle the class setting of three &lt;div&gt;. Make the class named “toggleClass”
                             set the background-color to red and increase the size of the three &lt;div&gt; from 20x20px to 50x50px.
                     </p>
                     <div id="div1" class="div1">Div1</div>
                     <div id="div2" class="div2">Div2</div>
                     <div id="div3" class="div3">Div3</div>
-                    <button class="btn btn-primary" id="toggleClass" onmouseup="toggleClass()">Toggle class</button>
+                    <div id="div8">
+                        <button class="btn btn-primary" id="btn8" onmouseup="toggleClass()">Toggle class</button>
+                    </div>
                 </div>
 
                 <!--#9 Include an HTML element with an event that invokes the .css method on an <p> to change the font color to blue and font-style to italic.-->
@@ -202,15 +205,18 @@
                     <p>
                         9. Include an HTML element with an event that invokes the .css method on an &lt;h1&gt; to change the font color to blue and font-style to italic.
                     </p>
+                    <h1>This is an H1 element</h1>
+                    <button class="btn btn-primary" id="btn9" onmouseup="changeClass()">Change class</button>
                 </div>
 
                 <!--#10 Include a button to display the width, height, innerWidth, innerHeight, outerWidth, and outerHeight of the <div> in item 8.
                         The outerWidth and outerHeight should include the margin. -->
                 <div id="test10" class="checkbox hidden">
-                    <p>
+                    <p><br />
                         10.	Include a button to display the width, height, innerWidth, innerHeight, outerWidth, and outerHeight of the
-                            &lt;div&gt; in item 8. The outerWidth and outerHeight should include the margin.
+                        &lt;div&gt; in item 8. The outerWidth and outerHeight should include the margin.
                     </p>
+                    <p id="para10"></p>
                 </div>
             </div> <!--starter-template-->
         </div><!-- /.container -->
@@ -219,7 +225,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        &copy; Raul Zuniga
+                        &copy; 2014 Raul Zuniga | <a href="mailto:raul.zuniga@g.austincc.edu?subject=Web Site Contact">raul.zuniga@g.austincc.edu</a>
                         <!-- external javascript for validation -->
                         <script type="text/javascript" src="../js/validation.js"></script>
                     </div> <!--col-12-->

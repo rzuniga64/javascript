@@ -19,7 +19,7 @@ footer a:visited {
     color: #28AACA; text-decoration: underline
 }
 
-p, {
+p {
     text-align: left;
     margin-left: 300px
 }
@@ -71,9 +71,10 @@ input {
     background-color: red;
     width:50px;
     height:50px;
-    margin-left:auto;
-    margin-right:auto;
-    display:block
+    margin: 0 auto 0 auto;
+    display:block;
+    padding: 1px 1px 1px 1px;
+    border: white solid 1px;
 }
 
 .div1{
@@ -81,9 +82,10 @@ input {
     background-color: orange;
     width:20px;
     height:20px;
-    margin-left:auto;
-    margin-right:auto;
-    display:block
+    margin: 0 auto 0 auto;
+    display:block;
+    padding: 1px 1px 1px 1px;
+    border: white solid 1px;
 }
 
 .div2{
@@ -91,9 +93,10 @@ input {
     background-color: green;
     width:20px;
     height:20px;
-    margin-left:auto;
-    margin-right:auto;
-    display:block
+    margin: 0 auto 0 auto;
+    display:block;
+    padding: 1px 1px 1px 1px;
+    border: white solid 1px;
 }
 
 .div3{
@@ -101,9 +104,10 @@ input {
     background-color: blue;
     width:20px;
     height:20px;
-    margin-left:auto;
-    margin-right:auto;
-    display:block
+    margin: 0 auto 0 auto;
+    display:block;
+    padding: 1px 1px 1px 1px;
+    border: white solid 1px;
 }
 
 #navbar {

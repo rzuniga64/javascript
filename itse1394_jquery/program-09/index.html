@@ -1,0 +1,168 @@
+<!DOCTYPE html >
+<html lang="en" >
+    <head>
+        <title>Raul Zuniga ITSE 1394 jQuery</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Project 9 for ITSE 1394 jQuery">
+        <meta name="author" content="Raul Zuniga">
+        <!-- Bootstrap CSS -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet"  type="text/css">
+        <link href="css/program-09.css" rel="stylesheet" type="text/css">
+        <!-- Include Modernizr in the head, before any other Javascript -->
+        <script src="../js/modernizr-2.6.2.min.js"></script>
+        <script type="text/javascript" src="js/program-09.js"></script>
+        <!-- jQuery -->
+        <script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="../js/bootstrap.min.js"></script>
+    </head>
+    <body>body
+
+        <div id="navbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapse" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Project 9</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+
+        <aside id="left-panel">aside
+            <div class="logo"> div (logo)
+                <img src="assets/acc_logo.png"  style="width:150px height:87px" alt="logo of Austin Community College"/>
+            </div>
+            <div class="btn-group-vertical" id="radio-group"> div (radio-group)
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option1"  onclick="displayTest()"> Identify elements
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option2" onclick="displayTest()"> Identify parents
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option3" onclick="displayTest()"> Identify ancestors
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option4" onclick="displayTest()"> Identify children
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option5" onclick="displayTest()"> identify descendants
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option6" onclick="displayTest()"> Identify siblings
+                </label>
+            </div>
+        </aside>
+
+        <div class="container1"> div (container)
+            <div class="starter-template" id="foo"> div (starter-template)
+                <!--#1  Include the following elements: <header>, <section>, <article>, <nav>, <footer>. Include <p> elements
+                        in the <header> and <footer>. Include <div> elements in the <section>, <article>, and <nav>.
+                        Use lightgrey borders and text to identify the elements. All of the requirements below use this
+                        page structure.  -->
+                <div id="test1" class="show"> div (test1)
+                    <article>article inside of a div
+                        <header> header inside of an article
+                            <h4>h4 inside of header</h4>
+                        <p> paragraph inside of a header</p>
+                        </header>
+                        <div> div inside of an article<br>
+                            <section>section inside of a div <br />
+                                <h4>h4 inside of div</h4>
+                            1.  Include the following elements: &lt;header&gt;, &lt;section&gt;, &lt;article&gt;, &lt;nav&gt;, &lt;footer&gt;.
+                                Include &lt;p&gt; elements in the &lt;header&gt; and &lt;footer&gt;. Include &lt;div&gt; elements in the
+                                &lt;section&gt;, &lt;article&gt;, and &lt;nav&gt;. Use lightgrey borders and text to identify the elements.
+                                All of the requirements below use this page structure.
+                                <div>div inside of a section</div>
+                            </section>
+                        </div>
+                    </article>
+                    <nav>nav
+                        <div id="div2">div id=div2 inside of nav</div>
+                    </nav>
+                </div>
+
+                <!--#2  Create a button with a click event that uses jQuery and CSS to identify with a blue border the direct
+                        parents of the <p> and <div> elements. When clicked, the button should toggle the borders from default
+                        (lightgrey) to blue to default etc.  -->
+                <div id="test2" class="hidden">div (test2)
+                    <p>paragraph<br />
+                        2. Create a button with a click event that uses jQuery and CSS to identify with a blue border the direct
+                        parents of the &lt;p&gt; and &lt;div&gt; elements. When clicked, the button should toggle the borders from default
+                        (lightgrey) to blue to default etc.   &lt;/p&gt;
+                    <div class="btn-group" > div for buttons<br />
+                        <button class="btn btn-primary btn-sm" onclick="showParents()">Show Parents</button>
+                    </div>
+
+                </div>
+
+                <!--#3  Assign an id to a <div> in the <nav> element. Create a button with a click event that uses
+                        jQuery and CSS to identify with a red border ALL ancestor elements of the <div>; with the id.
+                        When clicked, the button should toggle the borders from default (lightgrey) to red to default etc. -->
+                <div id="test3" class="hidden">
+                    <p>
+                        3. Assign an id to a &lt;div&gt; in the &lt;nav&gt; element. Create a button with a click event that uses
+                        jQuery and CSS to identify with a red border ALL ancestor elements of the &lt;div&gt; with the id.
+                        When clicked, the button should toggle the borders from default (lightgrey) to red to default etc.
+                    </p>
+                    <div>
+                        <button class="btn btn-primary" id="btn3" onclick="showAncestors()">Show Ancestors</button>
+                    </div>
+                </div>
+
+                <!--#4  Create a button with a click event that uses jQuery and CSS to identify the children of the <nav>
+                        and <article> tags with a black border. When clicked, the button should toggle the borders from
+                        default (lightgrey) to black to default etc.  -->
+                <div id="test4" class="hidden">
+                    <p>4. Create a button with a click event that uses jQuery and CSS to identify the children of the &lt;nav&gt;
+                        and &lt;article&gt; tags with a black border. When clicked, the button should toggle the borders from
+                        default (lightgrey) to black to default etc. &lt;/p&gt;
+                    <div>This is some text in a div.</div>
+                    <button class="btn btn-primary" onclick="showChild()">Show Children</button>
+                </div>
+
+                <!--#5.	Create a button with a click event that uses jQuery and CSS to identify with a #90F border the descendants
+                        of the <section> that are <div> elements. When clicked, the button should toggle the borders from default
+                        (lightgrey) to #90F to default etc. -->
+                <div id="test5" class="hidden">
+                    <p>5. Create a button with a click event that uses jQuery and CSS to identify with a #90F border the descendants
+                        of the &lt;section&gt; that are &lt;div&gt; elements. When clicked, the button should toggle the borders from
+                        default(lightgrey) to #90F to default etc.
+                    </p>
+                    <button class="btn btn-primary" onclick="showDescendants()">Show Descendants</button>
+                </div>
+
+                <!--#6 Create a button with a click event that uses jQuery and CSS to identify with a #3C3 border the siblings
+                of the <p> that are children of the <header> element. When clicked, the button should toggle the borders from
+                default (lightgrey) to #3C3 to default etc. -->
+                <div id="test6" class="hidden">
+                    <p id="para6">6. Create a button with a click event that uses jQuery and CSS to identify with a #3C3 border the siblings
+                        of the &lt;p&gt; that are children of the &lt;header&gt; element. When clicked, the button should toggle the borders from
+                        default (lightgrey) to #3C3 to default etc. &lt;/p&gt;
+                    </p>
+                    <button class="btn btn-primary" onclick="showSiblings()">Show Siblings</button>
+                </div>
+            </div> <!--starter-template-->
+        </div><!-- /.container -->
+
+        <footer>footer
+            <div class="col-12">
+                <p style="margin: 0">paragraph inside footer<br />
+                    &copy; 2014 Raul Zuniga <a href="mailto:raul.zuniga@g.austincc.edu">raul.zuniga@g.austincc.edu</a>
+                </p>
+            </div> <!--col-12-->
+        </footer>
+    </body>
+</html>

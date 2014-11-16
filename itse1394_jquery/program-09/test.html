@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="css/program-08.css" rel="stylesheet" type="text/css">
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+        function addToOrderedList() {
+            $(document).ready(function() {
+                $("#attrbtn4").click(function(){
+                    $("ol").append("<li>" + $("#textbox3").val() + "</li>");
+                });
+            });
+        }
+    </script>
+</head>
+
+<body>
+<div id="test5" class="hidden">
+    <p>5. Create an ordered list and a text box. Use the content of the text box to create new list items that are added to the list.</p>
+    <div>
+        <ol type="1">
+            <li>Web Development Tools</li>
+            <li>Beginning Web Programming</li>
+            <li>Intermediate Web Programming</li>
+            <li>jQuery</li>
+        </ol>
+        <label> Enter new list item
+            <input type="text" class="text-center" id="textbox3"/>
+        </label>
+        <div>
+            <button id="attrbtn4" onclick="addToOrderedList()">Add</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

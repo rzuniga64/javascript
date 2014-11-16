@@ -48,7 +48,9 @@ function displayTest()
             break;
         case "option8":
             setClassToHidden(options);
+            document.getElementById("para8").setAttribute("class","show" );
             document.getElementById("test8").setAttribute("class","show" );
+            $("#btn10").remove();
             break;
         case "option9":
             setClassToHidden(options);
@@ -56,7 +58,11 @@ function displayTest()
             break;
         case "option10":
             setClassToHidden(options);
+            document.getElementById("test8").setAttribute("class","show" );
+            document.getElementById("para8").setAttribute("class","hide" );
             document.getElementById("test10").setAttribute("class","show" );
+            $("#div8").append("<button class='btn btn-primary' id='btn10' onmouseup='getDimensions()'>Get Dimensions</button>");
+            break;
             break;
         default:
             setClassToHidden(options);
@@ -70,17 +76,13 @@ function displayTest()
  */
 function showText() {
     $(document).ready(function(){
-        $("#textbtn").click(function(){
-            window.alert("Text: " + $("#para2").text());
-        });
+        window.alert("Text: " + $("#para2").text());
     });
 }
 
 function showHTML() {
     $(document).ready(function(){
-        $("#htmlbtn").click(function(){
-            window.alert("HTML: " + $("#para2").html());
-        });
+        window.alert("HTML: " + $("#para2").html());
     });
 }
 
@@ -88,9 +90,7 @@ function showHTML() {
  */
 function getAttrOfInput() {
     $(document).ready(function(){
-        $("#attrbtn1").click(function(){
-            window.alert("Value: " + $("#textbox1").val() + " Attribute: " + $("#textbox1").attr("style"));
-        });
+        window.alert("Value: " + $("#textbox1").val() + " Attribute: " + $("#textbox1").attr("style"));
     });
 }
 
@@ -98,9 +98,7 @@ function getAttrOfInput() {
  */
 function setAttrOfInput() {
     $(document).ready(function(){
-        $("#attrbtn2").click(function(){
-            $("#textbox2").val("Hello, World!") + $("#textbox2").attr("style", "color:red");
-        });
+        $("#textbox2").val("Hello, World!") + $("#textbox2").attr("style", "color:red");
     });
 }
 
@@ -109,10 +107,11 @@ function setAttrOfInput() {
  */
 function changeAttrValueOfDiv() {
     $(document).ready(function() {
-        $("#attrbtn3").click(function(){
-            var x = $("#textbox3").val();
-            $("#div13").attr("style", "font-size:14px color:white");
-        });
+        var div13HTML= $("#div13").text();
+        var div13Style = $("#div13").attr("style");
+        $("#div13").attr("style", "font-size:14px color:white");
+        $("#div14").text("Original value: " + div13HTML);
+        $("#div14").attr("style", div13Style);
     });
 }
 
@@ -120,9 +119,7 @@ function changeAttrValueOfDiv() {
  */
 function addToOrderedList() {
     $(document).ready(function() {
-        $("#attrbtn4").click(function(){
-            $("ol").append("<li>" + $("#textbox3").val() + "</li>");
-        });
+        $("ol").append("<li>" + $("#textbox3").val() + "</li>");
     });
 }
 
@@ -131,22 +128,18 @@ function addToOrderedList() {
  */
 function addImagesBefore() {
     $(document).ready(function() {
-        $("#btn5").click(function(){
-            var meercat = "<img src='assets/meercat.png' id='meercat'/>";
-            var peacock = "<img src='assets/peacock.png' id='peacock'/>";
-            $("#dog").before(meercat, peacock);
-        });
+        var meercat = "<img src='assets/meercat.png' id='meercat'/>";
+        var peacock = "<img src='assets/peacock.png' id='peacock'/>";
+        $("#dog").before(meercat, peacock);
     });
 }
 
 function addImagesAfter() {
     $(document).ready(function() {
-        $("#btn6").click(function(){
-            var fish = "<img src='assets/fish.png' id='fish'/>";
-            var koala = "<img src='assets/koala.jpg' id='koala' />";
-            var rhino = "<img src='assets/rhino.png' id='rhino'/>";
-            $("#dog").after(fish, koala, rhino);
-        });
+        var fish = "<img src='assets/fish.png' id='fish'/>";
+        var koala = "<img src='assets/koala.jpg' id='koala' />";
+        var rhino = "<img src='assets/rhino.png' id='rhino'/>";
+        $("#dog").after(fish, koala, rhino);
     });
 }
 
@@ -154,11 +147,9 @@ function addImagesAfter() {
  */
 function removeImagesAfter() {
     $(document).ready(function() {
-        $("#btn7").click(function(){
-            $("#fish").remove();
-            $("#koala").remove();
-            $("#rhino").remove();
-        });
+        $("#fish").remove();
+        $("#koala").remove();
+        $("#rhino").remove();
     });
 }
 
@@ -167,36 +158,38 @@ function removeImagesAfter() {
  */
 function toggleClass() {
     $(document).ready(function() {
-        $("#toggleClass").mouseup(function(){
-            $("#div1").toggleClass("div1", "false");
-            $("#div2").toggleClass("div2", "false");
-            $("#div3").toggleClass("div3", "false");
-            $("#div1").toggleClass("toggleClass", "true");
-            $("#div2").toggleClass("toggleClass", "true");
-            $("#div3").toggleClass("toggleClass", "true");
-        });
+        $("#div1").toggleClass("div1", "false");
+        $("#div2").toggleClass("div2", "false");
+        $("#div3").toggleClass("div3", "false");
+        $("#div1").toggleClass("toggleClass", "true");
+        $("#div2").toggleClass("toggleClass", "true");
+        $("#div3").toggleClass("toggleClass", "true");
     });
 }
 
 /* 9. Include an HTML element with an event that invokes the .css method on an <h1> to change the font color to blue and font-style to italic.
  */
-function demonstrateCallback() {
+function changeClass() {
     $(document).ready(function() {
-        $("#callback").click(function(){
-            $("#leftDiv2").animate({left:'200px'},function(){
-                $("#rightDiv2").animate({right:'200px'});
-            });
-        });
+        $("h1").css({"font-style":"italic", "color":"cornflowerblue"});
     });
 }
 
 /* 10.	Include a button to display the width, height, innerWidth, innerHeight, outerWidth, and outerHeight of
  *      the <div> in item 8. The outerWidth and outerHeight should include the margin.
  */
-function demonstrateChaining() {
-    $(document).ready(function() {
-        $("#chaining").click(function(){
-            $("#animateDiv2").animate({height:'400px'}).fadeOut(3000);
-        });
-    });
+function getDimensions() {
+     $(document).ready(function() {
+         var txt="";
+         txt+="Padding Div 1: " + $("#div1").css("padding-left") + "</br>";
+         txt+="Margin of Div 1: " + $("#div1").css("margin-left") + "</br>";
+         txt+="Border of Div 1: " + $("#div1").css("border-left-width") + "</br>";
+         txt+="Width of Div 1: " + $("#div1").width() + "</br>";
+         txt+="Height of Div 1: " + $("#div1").height() + "</br>";
+         txt+="Inner width: " + $("#div1").innerWidth() + "</br>";
+         txt+="Inner height: " + $("#div1").innerHeight() + "</br>";
+         txt+="Outer width (+margin): " + $("#div1").outerWidth(true) + "</br>";
+         txt+="Outer height (+margin): " + $("#div1").outerHeight(true);
+         $("#para10").html(txt);
+     });
 }

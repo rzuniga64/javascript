@@ -1,0 +1,118 @@
+aside {
+    display: block;
+    min-height: 100%;
+    overflow: hidden;
+    margin-top:90px;
+}
+
+body {
+    background: #003d79;
+    color:lightgrey;
+}
+
+footer{
+    background: #008000; font-size:12px; padding:20px
+}
+footer a:link {
+    color: blue; text-decoration: underline
+}
+footer a:visited {
+    color: #28AACA; text-decoration: underline
+}
+
+p, nav, section {
+    text-align: left;
+    margin-left: 300px
+}
+
+.ancestors *
+{
+    display: block;
+    border: 2px solid lightgrey;
+    color: lightgrey;
+    padding: 5px;
+    margin: 5px;
+}
+
+.ancestor
+{
+    display: block;
+    border: 2px solid lightgrey;
+    color: lightgrey;
+    padding: 5px;
+    margin: 5px;
+}
+
+.parent
+{
+    display: block;
+    border: 2px solid blue;
+    color: lightgrey;
+    padding: 5px;
+    margin: 5px;
+}
+
+
+
+.btn {
+    font-size:12px;
+    text-align:left
+}
+.btn-custom {
+    background-color: #c00;
+    border-color: #c00;
+    margin: 0;
+    padding:0;
+    font-size: 12px;
+    text-align:left
+}
+.btn-custom:hover,
+.btn-custom:focus,
+.btn-custom:active,
+.btn-custom.active {
+    background-color: #b30000;
+    border-color: #990000;
+    color:white
+}
+
+.container1 {
+    margin: 50px 0 0 165px
+}
+
+.logo {
+    border: 3px solid white;
+}
+
+.parent * {
+    display: block;
+    border: 2px solid lightgrey;
+    color: lightgrey;
+}
+
+.starter-template {
+    text-align: center
+}
+
+#navbar {
+    background: #ffc000;
+    color: #777
+}
+
+#mainHeading {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#left-panel {
+    left: 0;
+    top: 0;
+    float: left;
+    z-index: 904;
+    width:155px;
+}
+
+
+
+
+
+
