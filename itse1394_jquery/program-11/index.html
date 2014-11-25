@@ -1,0 +1,260 @@
+<!DOCTYPE html >
+<html lang="en" >
+    <head>
+        <title>Raul Zuniga ITSE 1394 jQuery</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Project 11 for ITSE 1394 jQuery">
+        <meta name="author" content="Raul Zuniga">
+        <!-- Bootstrap CSS -->
+        <link href="../css/jquery-ui.min.css" rel="stylesheet"  type="text/css">
+        <link href="../css/bootstrap.min.css" rel="stylesheet"  type="text/css">
+        <link href="css/program-11.css" rel="stylesheet"  type="text/css">
+        <!-- Include Modernizr in the head, before any other Javascript -->
+        <script src="../js/modernizr-2.6.2.min.js"></script>
+        <script type="text/javascript" src="js/program-11.js"></script>
+        <!-- jQuery -->
+        <script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+        <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="../js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+        <div id="navbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapse" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Project 11</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+
+        <aside id="left-panel">
+            <div class="logo">
+                <span>
+                    <img src="assets/acc_logo.png" alt="logo of Austin Community College"/>
+                </span>
+            </div>
+            <div class="btn-group-vertical" id="radio-group">
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option1"  onclick="displayTest()"> Draggable
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option2" onclick="displayTest()"> Draggable x-axis
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option3" onclick="displayTest()"> Disable draggable
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option4" onclick="displayTest()"> Droppable
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option5" onclick="displayTest()"> Resizable
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option6" onclick="displayTest()"> minHeight/minWidth
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option7" onclick="displayTest()"> alsoResize
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option8" onclick="displayTest()"> Selectable
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option9" onclick="displayTest()"> Sortable
+                </label>
+            </div>
+        </aside>
+
+        <div class="container" style="margin-top: 30px">
+            <div class="starter-template">
+                <script type="text/javascript">
+                    /* <![CDATA[ */
+                    document.write("<h2 id='mainHeading'></h2>");
+                    document.getElementById("mainHeading").innerHTML = document.getElementsByTagName("title")[0].innerHTML;
+                    /* ]]> */
+                </script>
+
+                <!--#1.     Create two <div> elements, one inside the other. Ensure the inner <div> can be dragged
+                            but only within the outer <div>. -->
+                <div id="test1" class="hidden">
+                    <p>
+                        1.  Create two &lt;div&gt; elements, one inside the other. Ensure the inner &lt;div&gt; can be
+                            dragged but only within the outer &lt;div&gt;.
+                    </p>
+                    <div class="div" id="div1">
+                        <div style="width:260px">You can only drag me within the outer div</div><br /><br />
+                    </div>
+                </div>
+
+                <!--#2      Create two <div> elements, one inside the other. Ensure the inner <div> can be dragged
+                            only along the x-axis and only within the outer <div>.   -->
+                <div id="test2" class="hidden">
+                    <p>2.   Create two &lt;div&gt; elements, one inside the other. Ensure the inner &lt;div&gt; can
+                            be dragged only along the x-axis and only within the outer &lt;div&gt;.
+                    </p>
+                    <div class="div" id="div2">
+                        <div style="width:260px">You can drag me only along the x-axis</div><br /><br />
+                    </div>
+                </div>
+
+                <!--#3.	    Create two <div> elements, one inside the other. Ensure the inner <div> can be dragged
+                            only for the first ten seconds after the page has been opened. Display the countdown in
+                            seconds for the user.    -->
+                <div id="test3" class="hidden">
+                    <p>3.	Create two &lt;div&gt; elements, one inside the other. Ensure the inner &lt;div&gt; can
+                            be dragged only for the first ten seconds after the page has been opened. Display the
+                            countdown in seconds for the user.
+                    </p>
+                    <div class="col-sm-5"></div>
+                    <div class="col-sm-2">
+                        <label >
+                            <input type="text" class="text-center" name="timer" id="timer" />
+                        </label>
+                    </div>
+                    <div class="col-sm-5"></div><br /><br />
+                    <div class="div" id="div3">
+                        <div style="width:320px">You can drag me for 10 seconds after page loads.</div><br /><br />
+                    </div>
+                </div>
+
+                <!--#4.	    Create two <div> elements on the left (L1, L2) and two <div> elements on the right
+                            (R1, R2). Set the options such that only L1 can be dropped in R1 and only L2 can be
+                            dropped in R2. Also, L1 should be considered dropped when it touches R1 and L2 must
+                            be contained within R2 before it is considered dropped. R1 and R2 should change colors
+                            when L1 and L2 hover over their targets. -->
+                <div id="test4" class="hidden">
+                    <p>4.	Create two &lt;div&gt; elements on the left (L1, L2) and two &lt;div&gt; elements
+                    on the right (R1, R2). Set the options such that only L1 can be dropped in R1 and only L2 can be
+                    dropped in R2. Also, L1 should be considered dropped when it touches R1 and L2 must
+                    be contained within R2 before it is considered dropped. R1 and R2 should change colors
+                    when L1 and L2 hover over their targets.
+                    </p>
+                    <div class="wrap">
+                        <div id="leftDiv1" class="ui-widget-content">
+                            <span>L1</span>
+                        </div>
+                        <div id="leftDiv2" class="ui-widget-content">
+                            <span>L2</span>
+                        </div>
+                        <div id="rightDiv1" class="ui-widget-header">
+                            <span>R1</span>
+                        </div>
+                        <div id="rightDiv2" class="ui-widget-header">
+                            <span>R2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--#5.	    Create a resizable <article> element with the ghost option enabled.  -->
+                <div id="test5" class="hidden">
+                    <p>5.	Create a resizable &lt;article&gt; element with the ghost option enabled.</p>
+                    <article id="resizable" class="ui-widget-content">
+                        <h3>What is green computing?</h3>
+                        <p> Green computing is the practice of using computing resources efficiently.
+                            It is also the study and practice of designing, manufacturing, using and
+                            disposing of computers, servers, and associated sub-systems such as monitors,
+                            printers, storage device, etc., efficiently and effectively.
+                        </p>
+                    </article>
+                </div>
+
+                <!--#6.	    Demonstrate the use of the containment, minheight, and minWidth options on a <nav>
+                            element within a <section> element. -->
+                <div id="test6" class="hidden">
+                    <p>6.	Demonstrate the use of the containment, minheight, and minWidth options on a &lt;nav&gt;
+                            element within a &lt;section&gt; element.
+                    </p>
+                    <section id="section" class="wrap">
+                        <h6>Section</h6>
+                        <nav id="nav" class="wrap">nav
+                        </nav>
+                    </section>
+                </div>
+
+                <!--#7.	    Create four small <div> elements that are side-by-side. Make all four resizable.
+                            If any one of the <div> elements is resized, the other three are resized also. -->
+                <div id="test7" class="hidden">
+                    <p>7.	Create four small &lt;div&gt; elements that are side-by-side. Make all four resizable.
+                            If any one of the &lt;div&gt; elements is resized, the other three are resized also.
+                    </p>
+                    <div class="wrap">
+                        <div class="resize" id="resize1">
+                            <span>div1</span>
+                        </div>
+                        <div class="resize" id="resize2">
+                            <span>div2</span>
+                        </div>
+                        <div  class="resize" id="resize3">
+                            <span>div3</span>
+                        </div>
+                        <div  class="resize" id="resize4">
+                            <span>div4</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--#8.	    Create an ordered list of seven items. Use the selectable method along with the filter
+                            option to ensure only the first and last elements of the list are selectable.  -->
+                <div id="test8" class="hidden">
+                    <p>8.	Create an ordered list of seven items. Use the selectable method along with the filter
+                            option to ensure only the first and last elements of the list are selectable.
+                    </p>
+                    <ol class="selectable">
+                        <li>Product 1</li>
+                        <li>Product 2</li>
+                        <li>Product 3</li>
+                        <li>Product 4</li>
+                        <li>Product 5</li>
+                        <li>Product 6</li>
+                        <li>Product 7</li>
+                    </ol>
+                </div>
+
+                <!--#9.	    Create an ordered list of seven items. Use the sortable method along with the placeholder
+                            option to make the list sortable which means that the user can rearrange the items.   -->
+                <div id="test9" class="hidden">
+                    <p>9.	Create an ordered list of seven items. Use the sortable method along with the placeholder
+                            option to make the list sortable which means that the user can rearrange the items.
+                    </p>
+                    <ol class="sortable">
+                        <li>Apples</li>
+                        <li>Oranges</li>
+                        <li>Bananas</li>
+                        <li>Strawberries</li>
+                        <li>Watermelons</li>
+                        <li>Lemons</li>
+                        <li>Limes</li>
+                    </ol>
+                </div>
+
+
+            </div> <!--starter-template-->
+        </div><!-- /.container -->
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        &copy; 2014 Raul Zuniga | <a href="mailto:raul.zuniga@g.austincc.edu">raul.zuniga@g.austincc.edu</a>
+                        <!-- external javascript for validation -->
+                        <script type="text/javascript" src="../js/validation.js"></script>
+                    </div> <!--col-12-->
+                </div><!--row-->
+            </div><!--container-->
+        </footer>
+    </body>
+</html>
