@@ -233,7 +233,6 @@ function startStopClock() {
         clock = setInterval(function() {setClock()},1000);
         document.getElementById("stopStart").innerHTML = "Stop";
     }
-
 }
 
 /*  11.	Display three images on the page five seconds after the page is opened. */

@@ -87,7 +87,7 @@
                     <p>
                         1. Three &lt;div&gt; elements with background-colors red, green, and blue that become hidden when each is clicked. That is, the red &lt;div&gt; is hidden when it is clicked, etc.
                     </p>
-                    <div id="div1" onclick="hideDiv()">This is div1</div>
+                    <div id="div1" onmouseup="hideDiv()">This is div1</div>
                     <div id="div2" onclick="hideDiv()">This is div2</div>
                     <div id="div3" onclick="hideDiv()">This is div3</div>
                 </div>
@@ -141,7 +141,7 @@
                     <p id="para5" class="colorChange"> paragraph 5</p>
                     <p id="para6"> paragraph 6</p>
                     <p id="para7" class="colorChange"> paragraph 7</p>
-                    <button class="btn btn-primary" onclick="changeColor()">Change Color</button>
+                    <button class="btn btn-primary" onmouseup="changeColor()">Change Color</button>
                 </div>
 
                 <!--#4. Implement a button image toggle feature. Include at least four <button> elements that employ background images for the buttons. Use an HTML element event to call a function you wrote named buttonImageToggle() that uses jQuery to change the background images of all buttons on the page. When the event is fired again the images revert back to the default.-->
@@ -159,12 +159,13 @@
                 <!--#5.	Use an HTML element event to call a function you wrote named changeFirstParagraph() that
                         uses jQuery to select the first <p> and change the font-family and increase the font-size. -->
                 <div id="test5" class="hidden">
-                    <div>
+                    <div style="text-align:left; margin-left: 300px">
                         5. Use an HTML element event to call a function you wrote named changeFirstParagraph() that uses jQuery to select the first &lt;p&gt; and change the font-family and increase the font-size.
                     </div><br />
                     <p>
                         This is the first paragraph. So the font-family will change to 'Times New Roman, Times, serif' and font-size will change to 20px.
                     </p>
+                    <button class="btn btn-primary" id="btn5" onclick="changeFirstParagraph()">Change &lt;p&gt;</button>
                 </div>
 
                 <!--#6.	At least two <input> text boxes that use jQuery to apply the color #FF9 when receiving the focus. The color
@@ -173,13 +174,12 @@
                     <p>
                         6. At least two &lt;input&gt; text boxes that use jQuery to apply the color #FF9 when receiving the focus. The color should return to #FFF or another default when the focus has left the text boxes.
                     </p>
-                    <div class="col-sm-12">
+                    <div>
                         <label> Text box 1
                             <input type="text" class="text-center" id="textbox1" placeholder="Text box 1" />
                         </label>
                     </div>
-
-                    <div class="col-sm-12">
+                    <div>
                         <label> Text box 2
                             <input type="text" class="text-center" id="textbox2" placeholder="Text box 2"/>
                         </label>
@@ -194,7 +194,7 @@
                         7. Increase the size of a &lt;nav&gt; element when the mouse enters the element and return the size to the default when the mouse leaves. Use color to identify the &lt;nav&gt; element.
                     </p>
 
-                    <nav onmouseover=onMouseOver() onmouseout=onMouseOut()>
+                    <nav onmouseover="onMouseOver()" onmouseout="onMouseOut()">
                         <a href="#">HTML</a> |
                         <a href="#">CSS</a> |
                         <a href="#">JavaScript</a> |

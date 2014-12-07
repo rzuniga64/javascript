@@ -1,0 +1,93 @@
+aside {
+    display: block;
+    min-height: 100%;
+    overflow: hidden
+}
+
+body {
+    background: #003d79;
+    color:white;
+}
+
+footer{
+    background: #008000; font-size:12px; padding:20px
+}
+footer a:link {
+    color: blue; text-decoration: underline
+}
+footer a:visited {
+    color: #28AACA; text-decoration: underline
+}
+
+textarea {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.para1 {
+    text-align: left;
+    margin-left: 200px
+}
+
+.para2 {
+    text-align: center
+}
+
+.btn {
+    font-size:12px;
+    text-align:left
+}
+.btn-custom {
+    background-color: #c00;
+    border-color: #c00;
+    margin: 0;
+    padding:0;
+    font-size: 12px;
+    text-align:left
+}
+.btn-custom:hover,
+.btn-custom:focus,
+.btn-custom:active,
+.btn-custom.active {
+    background-color: #b30000;
+    border-color: #990000;
+    color:white
+}
+
+.invalid { color: red; }
+.logo {  border: 3px solid white }
+.starter-template { text-align: center }
+.ui-menu { width: 200px }
+
+.wrap{
+    display:block;
+    margin:0 auto 0 auto
+}
+
+#accordion-1{
+    font-size: 14px;
+    width: 70%
+}
+
+#navbar { background: #ffc000 }
+
+#left-panel {
+    left: 0;
+    top: 0;
+    padding-top: 19px;
+    float: left;
+    z-index: 904;
+    width:155px;
+}
+
+#mainHeading {
+    font-size: 24px;
+    font-weight: bold;
+    text-align:center
+}
+
+
+
+
+

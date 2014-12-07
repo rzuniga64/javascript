@@ -1,5 +1,5 @@
 function setClassToHidden(options) {
-    for (var i = 0; i < options.length-1; ++i) {
+    for (var i = 0; i < options.length; ++i) {
         if (!(options[i].checked))
             document.getElementById("test" + (i + 1).toString()).setAttribute("class", "hidden");
     }
@@ -35,7 +35,6 @@ function displayTest()
         case "option5":
             setClassToHidden(options);
             document.getElementById("test5").setAttribute("class","show" );
-            changeFirstParagraph();
             break;
         case "option6":
             setClassToHidden(options);

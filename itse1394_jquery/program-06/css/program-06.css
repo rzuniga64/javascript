@@ -4,14 +4,23 @@ aside {
     overflow: hidden
 }
 
+body {
+    background: #003d79;
+    color:white;
+}
+
 footer{
     background: #008000; font-size:12px; padding:20px
 }
 footer a:link {
-    color: blue; text-decoration: underline
+color: blue; text-decoration: underline
 }
 footer a:visited {
     color: #28AACA; text-decoration: underline
+}
+
+nav {
+    background-color: white;
 }
 
 p {
@@ -98,11 +107,6 @@ td, th { padding:5px }
     background: #ffc000
 }
 
-#body {
-    background: #003d79;
-    color:white;
-}
-
 #mainHeading {
     font-size: 24px;
     font-weight: bold;
@@ -120,7 +124,7 @@ td, th { padding:5px }
     background-color: red;
 }
 
-nav, #div2{
+#div2{
     background-color: green;
 }
 

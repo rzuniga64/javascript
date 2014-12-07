@@ -1,0 +1,248 @@
+<!DOCTYPE html >
+<html lang="en" >
+    <head>
+        <title>Raul Zuniga ITSE 1394 jQuery</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Raul Zuniga">
+        <!-- Bootstrap CSS -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet"  type="text/css">
+        <link href="http://code.jquery.com/ui/1.11.2/themes/sunny/jquery-ui.css" rel="stylesheet">
+        <link href="css/program-13.css" rel="stylesheet"  type="text/css">
+        <!-- Include Modernizr in the head, before any other Javascript -->
+        <script src="../js/modernizr-2.6.2.min.js"></script>
+        <script type="text/javascript" src="js/program-13.js"></script>
+        <!-- jQuery -->
+        <script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+        <script src="../js/jquery-min-ui.js"></script>
+    </head>
+    <body>
+
+        <div id="navbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapse" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Project 13</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+
+        <aside id="left-panel">
+            <div class="logo">
+                <span>
+                    <img src="assets/acc_logo.png" alt="logo of Austin Community College"/>
+                </span>
+            </div>
+            <div class="btn-group-vertical" id="radio-group">
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option1"  onclick="displayTest()"> Progress bar widget
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option2" onclick="displayTest()"> Slider widget
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option3" onclick="displayTest()"> Spinner widgets
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option4" onclick="displayTest()"> Tabs widget
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option5" onclick="displayTest()"> Tooltips widget
+                </label>
+            </div>
+        </aside>
+
+        <div class="container" style="margin-top: 30px">
+            <div class="starter-template">
+                <script type="text/javascript">
+                    /* <![CDATA[ */
+                    document.write("<h2 id='mainHeading' style='text-align:center'></h2>");
+                    document.getElementById("mainHeading").innerHTML = document.getElementsByTagName("title")[0].innerHTML;
+                    /* ]]> */
+                </script>
+
+                <!--#1.	Implement a progressbar widget with the following attributes:
+                        •	value: 10
+                        •	max: 100
+                        •	Implemented via a function named progress()
+                        •	setTimeout ( progress, 100 ) ; within the progress() function • setTimeout ( progress, 1000 );
+                            for initial invocation of progress() -->
+                <div id="test1" class="hidden">
+                    <p class="para1">
+                        1.	Implement a progressbar widget with the following attributes: <br />
+                            •	value: 10 <br />
+                            •	max: 100 <br />
+                            •	Implemented via a function named progress() <br />
+                            •	setTimeout ( progress, 100 ) ; within the progress() function <br />
+                            •   setTimeout ( progress, 1000 ); for initial invocation of progress()
+                    </p>
+                    <div id="progressbar"></div>
+                </div>
+
+                <!--#2  Implement a slider widget with the following attributes:
+                        •	uses a range
+                        •	min: 0
+                        •	max: 1000
+                        •	Initial values of 275 and 750
+                        •	Displays the selected range in text -->
+                <div id="test2" class="hidden">
+                    <p class="para1">
+                        2. Implement a slider widget with the following attributes:<br />
+                            •	uses a range <br />
+                            •	min: 0 <br />
+                            •	max: 1000 <br />
+                            •	Initial values of 275 and 750 <br />
+                            •	Displays the selected range in text
+                    </p>
+                    <div style="text-align:center">
+                        <label for="range">Range:</label>
+                        <input type="text" id="range" class="textbox1">
+                    </div>
+                    <div id="slider" class="wrap"></div>
+                </div>
+
+                <!--#3.	Implement a spinner widget with the following attributes:
+                        •	min: 0
+                        •	max: 10
+                        •	Displays the values with $ -->
+                <div id="test3" class="hidden">
+                    <p class="para1">
+                        3.	Implement a spinner widget with the following attributes: <br />
+                            •	min: 0 <br />
+                            •	max: 10 <br />
+                            •	Displays the values with $ <br />
+                    </p>
+                    <div style="text-align: center">
+                        <input type="text" id="spinner" value="0" style="text-align:center">
+                    </div>
+                </div>
+
+                <!--#4.	Implement a tabs widget with the following attributes:
+                        •	Four tabs for cities: Austin, Dallas, Houston, San Antonio
+                        •	Activate with mouseover (does not require click)
+                        •	Displays relevant text for each city
+                        •	Displays a relevant image for each city -->
+                <div id="test4" class="hidden">
+                    <p class="para1">
+                        4.	Implement a tabs widget with the following attributes: <br />
+                            •	Four tabs for cities: Austin, Dallas, Houston, San Antonio <br />
+                            •	Activate with mouseover (does not require click) <br />
+                            •	Displays relevant text for each city <br />
+                            •	Displays a relevant image for each city
+                    </p>
+                    <div id="tabs1" class="wrap">
+                        <ul>
+                            <li><a href = "#tab2">Austin</a></li>
+                            <li><a href = "#tab3">Dallas</a></li>
+                            <li><a href = "#tab4">Houston</a></li>
+                            <li><a href = "#tab5">San Antonio</a></li>
+                        </ul>
+                        <div id="tab2">
+                            <span><img src="http://www.skylinescenes.com/gallery/albums/city_galleries/austin/thumb_austin_skyline_101_3824.jpg" alt="picture of the city of Austin" class="wrap"/><br /></span>
+                            <p class="para3">Austin is the capital of the US state of Texas and the seat of Travis County. Located in Central Texas,
+                                Austin is the 11th-most populous city in the United States and the fourth-most populous city in Texas.
+                                It was the third-fastest-growing large city in the nation from 2000 to 2006. Austin is also the second
+                                largest state capital in the United States.[4] Austin had a July 1, 2013 population of 885,400
+                                (U.S. Census Bureau estimate). The city is the cultural and economic center of the Austin–Round Rock
+                            </p>
+                        </div>
+                        <div id="tab3">
+                            <span><img src="http://www.skylinescenes.com/gallery/albums/city_galleries/dallas/thumb_dallas_skyline_004_4879.jpg" alt="picture of the city of Dallas" class="wrap"/><br /></span>
+                            <p class="para3">
+                                Dallas is a major city in Texas and is one of the two urban centers of the fourth most populous metropolitan
+                                area in the United States, along with Fort Worth. The city proper ranks ninth in the U.S. and third in Texas
+                                after Houston and San Antonio. The city's prominence arose from its historical importance as a center for the
+                                oil and cotton industries, and its position along numerous railroad lines. The bulk of the city is in Dallas
+                                County, of which it is the county seat. However, sections of the city are located in Collin, Denton, Kaufman,
+                                and Rockwall counties. According to the 2010 United States Census, the city had a population of 1,197,816.
+                                The United States Census Bureau's estimate for the city's population increased to 1,257,676 as of 2013.
+                            </p>
+                        </div>
+                        <div id="tab4">
+                            <span><img src="http://www.skylinescenes.com/gallery/albums/city_galleries/houston/thumb_houston_skyline_001_9792.jpg" alt="picture of the city of Houston" class="wrap"/><br /></span>
+                            <p class="para3">
+                                Houston is the most populous city in Texas, the largest city in the Southern United States, and the fourth most
+                                populous city in the United States. According to the 2012 U.S. Census estimates, the city had a population of
+                                2.16 million people within a land area of 599.6 square miles (1,553 km2). Houston is the seat of Harris County,
+                                and its metropolitan area is the fifth-most populated in the U.S., with over 6 million people
+                            </p>
+                        </div>
+                        <div id="tab5">
+                            <span><img src="http://www.skylinescenes.com/gallery/albums/city_galleries/sanantonio/thumb_sanantonio_skyline_002_6105.jpg" alt="picture of the city of San Antonio" class="wrap"/><br /></span>
+                            <p class="para3">
+                                San Antonio officially the City of San Antonio, is the seventh most populous city in the United States of America
+                                and the second most populous city in the state of Texas, with a population of 1,409,019. It was the fastest growing
+                                of the top 10 largest cities in the United States from 2000 to 2010, and the second from 1990 to 2000.
+                                The city is located in the American Southwest, the south–central part of Texas, and the southwestern corner of an
+                                urban region known as the Texas Triangle.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--#5.	Include three textboxes with the appropriate labels (First Name, Home City, Favorite Sport).
+                        Include a tooltip for each of the textboxes that advises the user with something like
+                        “Please enter your first name.” -->
+                <div id="test5" class="hidden">
+                    <p class="para2">
+                        5.   Include three textboxes with the appropriate labels (First Name, Home City, Favorite Sport).
+                            Include a tooltip for each of the textboxes that advises the user with something like
+                            “Please enter your first name.”
+                    </p>
+
+                    <div class = "form-group">
+                        <div class="col-sm-3"></div>
+                        <label for="tooltip1" class="col-sm-2 control-label">First Name</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" name=tooltip1 id="tooltip1" title="Please your first name"/>
+                        </div>
+                        <div class="col-sm-5"></div><br />
+                    </div>
+
+                    <div class = "form-group">
+                        <div class="col-sm-3"></div>
+                        <label for="tooltip2" class="col-sm-2 control-label">Home City: </label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" name=tooltip2 id="tooltip2" title="Please your home city"/>
+                        </div>
+                        <div class="col-sm-5"></div><br />
+                    </div>
+
+                    <div class = "form-group">
+                        <div class="col-sm-3"></div>
+                        <label for="tooltip3" class="col-sm-2 control-label">Favorite Sport</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" name=tooltip3 id="tooltip3" title="Please your favorite sport"/>
+                        </div>
+                        <div class="col-sm-5"></div><br />
+                    </div>
+                </div>
+            </div> <!--starter-template-->
+        </div><!-- /.container -->
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        &copy; 2014 Raul Zuniga | <a href="mailto:raul.zuniga@g.austincc.edu">raul.zuniga@g.austincc.edu</a>
+                        <!-- external javascript for validation -->
+                        <script type="text/javascript" src="../js/validation.js"></script>
+                    </div> <!--col-12-->
+                </div><!--row-->
+            </div><!--container-->
+        </footer>
+    </body>
+</html>

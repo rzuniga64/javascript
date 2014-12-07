@@ -1,0 +1,265 @@
+<!DOCTYPE html >
+<html lang="en" >
+    <head>
+        <title>Raul Zuniga ITSE 1394 jQuery</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Raul Zuniga">
+        <!-- Bootstrap CSS -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet"  type="text/css">
+        <link href="http://code.jquery.com/ui/1.11.2/themes/sunny/jquery-ui.css" rel="stylesheet">
+        <link href="css/program-12.css" rel="stylesheet"  type="text/css">
+        <!-- Include Modernizr in the head, before any other Javascript -->
+        <script src="../js/modernizr-2.6.2.min.js"></script>
+        <script type="text/javascript" src="js/program-12.js"></script>
+        <!-- jQuery -->
+        <script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+        <script src="../js/jquery-ui.min.js"></script>
+    </head>
+    <body>
+
+        <div id="navbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapse" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Project 12</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+
+        <aside id="left-panel">
+            <div class="logo">
+                <span>
+                    <img src="assets/acc_logo.png" alt="logo of Austin Community College"/>
+                </span>
+            </div>
+            <div class="btn-group-vertical" id="radio-group">
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option1"  onclick="displayTest()"> Accordian widget
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option2" onclick="displayTest()"> Autocomplete widget
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option3" onclick="displayTest()"> Button widgets
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option4" onclick="displayTest()"> Datepicker widget
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option5" onclick="displayTest()"> Dialog widget
+                </label>
+                <label class="btn-custom btn" >
+                    <input type="radio" name="options" id="option6" onclick="displayTest()"> Menu widget
+                </label>
+            </div>
+        </aside>
+
+        <div class="container" style="margin-top: 30px">
+            <div class="starter-template">
+                <script type="text/javascript">
+                    /* <![CDATA[ */
+                    document.write("<h2 id='mainHeading'></h2>");
+                    document.getElementById("mainHeading").innerHTML = document.getElementsByTagName("title")[0].innerHTML;
+                    /* ]]> */
+                </script>
+
+                <!--#1.	Implement an accordion widget with four Country “tabs”. Include relevant country data
+                        in each of the expandable content sections. Make the content sections collapsible and
+                        the height-style set to “content”.  -->
+                <div id="test1" class="hidden">
+                    <p class="para1">
+                        1.  Implement an accordion widget with four Country “tabs”. Include relevant country data
+                            in each of the expandable content sections. Make the content sections collapsible and
+                            the height-style set to “content”.
+                    </p>
+                    <div id="accordion-1" class="wrap">
+                        <h3>United States</h3>
+                        <div>
+                            <p>
+                                The United States of America (USA or U.S.A.), commonly referred to
+                                as the United States (US or U.S.), America, and sometimes the States,
+                                is a federal republic consisting of 50 states and a federal
+                                district. The 48 contiguous states and Washington, D.C., are in central
+                                North America between Canada and Mexico. The state of Alaska is the
+                                northwestern part of North America and the state of Hawaii is an archipelago
+                                in the mid-Pacific. The country also has five populated and nine unpopulated
+                                territories in the Pacific and the Caribbean
+                            </p>
+                        </div>
+                        <h3>Canada</h3>
+                        <div>
+                            <p>
+                                Canada is a country in North America consisting of ten provinces and three
+                                territories. Located in the northern part of the continent, it extends from
+                                the Atlantic to the Pacific and northward into the Arctic Ocean. At 9.98 million
+                                square kilometres in total, Canada is the world's second-largest country by
+                                total area and the fourth-largest country by land area. Its common border with
+                                the United States forms the world's longest land border.
+                            </p>
+                        </div>
+                        <h3>Mexico</h3>
+                        <div>
+                            <p>
+                                Mexico is a federal republic in North America. It is bordered on the north by
+                                the United States; on the south and west by the Pacific Ocean; on the southeast
+                                by Guatemala, Belize, and the Caribbean Sea; and on the east by the Gulf of Mexico.
+                                Covering almost two million square kilometres (over 760,000 sq mi), Mexico is the
+                                fifth largest country in the Americas by total area and the 13th largest independent
+                                nation in the world. With an estimated population of over 113 million,[15] it is the
+                                eleventh most populous and the most populous Spanish-speaking country in the world
+                                and the second most populous country in Latin America. Mexico is a federation
+                                comprising thirty-one states and a Federal District, its capital and largest city.
+                            </p>
+                        </div>
+                        <h3>Russia</h3>
+                        <div>
+                            <p>
+                                Russia is a country in northern Eurasia. It is a federal semi-presidential republic.
+                                From northwest to southeast, Russia shares land borders with Norway, Finland,
+                                Estonia, Latvia, Lithuania and Poland (both with Kaliningrad Oblast), Belarus,
+                                Ukraine, Georgia, Azerbaijan, Kazakhstan, China, Mongolia, and North Korea.
+                                It shares maritime borders with Japan by the Sea of Okhotsk and the US state
+                                of Alaska across the Bering Strait. At 17,075,400 square kilometres (6,592,800 sq mi),
+                                Russia is the largest country in the world, covering more than one-eighth of the
+                                Earth's inhabited land area. Russia is also the world's ninth most populous nation
+                                with 143 million people as of 2012. Extending across the entirety of northern
+                                Asia and much of Eastern Europe, Russia spans nine time zones and incorporates a
+                                wide range of environments and landforms.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!--#2.	Implement an autocomplete widget using days of the week as the source.  -->
+                <div id="test2" class="hidden">
+                    <p>2.   Implement an autocomplete widget using days of the week as the source.</p>
+                    <p>Type a day of the week</p>
+                    <div class="col-md-offset-4">
+                        <div class="col-md-6">
+                            <label for="automplete-1">Day: </label>
+                            <input id="automplete-1" style="color:black">
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                </div>
+
+                <!--#3. Implement multiple button widgets with the following functionality:
+                            •	simple button
+                            •	toggle button (include a power icon)
+                            •	anchor button
+                            •	buttonset
+                        The benefit of using jQueryUI buttons is the ability to apply themes very efficiently.
+                        Be sure to include a CSS link like that below to see the themes applied. Y
+                        You may substitute another jQueryUI theme for eggplant.
+                        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/eggplant/jquery-ui.css" /> -->
+                <div id="test3" class="hidden">
+                    <p class="para1">3.   Implement multiple button widgets with the following functionality:
+                                •	simple button
+                                •	toggle button (include a power icon)
+                                •	anchor button
+                                •	buttonset
+                                The benefit of using jQueryUI buttons is the ability to apply themes very efficiently.
+                                Be sure to include a CSS link like that below to see the themes applied. Y
+                                You may substitute another jQueryUI theme for eggplant.
+                    </p>
+                    <div class="col-md-offset-4 col-md-4">
+                        <button id="button1">Button</button>
+                        <label for="button2">Toggle</label>
+                        <input type="checkbox" id="button2">
+                        <a id="button3" href="#">Anchor</a><br><br>
+                    </div>
+                    <div class="col-md-4"></div>
+                    <div id="button4" class="col-md-offset-4 col-md-4">
+                        <input type="checkbox" id="check1">
+                        <label for="check1">Left</label>
+                        <input type="checkbox" id="check2">
+                        <label for="check2">Middle</label>
+                        <input type="checkbox" id="check3">
+                        <label for="check3">Right</label>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+
+                <!--#4. Implement a datepicker widget with Saturday and Sunday disabled.  -->
+                <div id="test4" class="hidden">
+                    <p>4.   Implement a datepicker widget with Saturday and Sunday disabled.</p>
+                    <div class="col-md-offset-4 col-md-4">
+                        <label for="datepicker">Enter date:</label>
+                        <input type="text" id="datepicker">
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+
+                <!--#5. Implement a dialog widget that requires a checkbox be checked before the dialog
+                        will close.  -->
+                <div id="test5" class="hidden">
+                    <p>5.	Implement a dialog widget that requires a checkbox be checked before the dialog will close. </p>
+                    <div id="dialog" title="This is a jQuery UI Dialog!">
+                        <label for="textarea">This is a jQuery UI Dialog</label>
+                        <textarea class="ui-state-default" id="textarea">You must check the check box before the dialog will close.</textarea>
+                        <div>
+                            <label for="checkbox">Check the box</label>
+                            <input type="checkbox" id="checkbox">
+                        </div>
+                    </div>
+                    <button id="opener">Open Dialog</button>
+                </div>
+
+                <!--#6. Implement a menu widget with 7 entries. Include a submenu on at least one of the
+                        entries. The submenus should use the ui-icon-circle-triangle-e icon. Produce an
+                        advisory message to the user when the mouse moves over the menu (i.e. when the menu
+                         receives the focus).  -->
+                <div id="test6" class="hidden">
+                    <p class="para1">6.   Implement a menu widget with 7 entries. Include a submenu on at least one of the
+                            entries. The submenus should use the ui-icon-circle-triangle-e icon. Produce an
+                            advisory message to the user when the mouse moves over the menu (i.e. when the menu
+                            receives the focus).
+                    </p>
+                    <ul id="menu" class="wrap">
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">CSS</a></li>
+                        <li><a href="#">JavaScript</a>
+                            <ul>
+                                <li><a href="#">jQuery</a></li>
+                                <li><a href="#">Angular.js</a></li>
+                                <li><a href="#">Backbone.js</a></li>
+                                <li><a href="#">Underscore.js</a></li>
+                                <li><a href="#">Node.js</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">AJAX</a></li>
+                        <li><a href="#">JSON</a></li>
+                        <li><a href="#">PHP</a></li>
+                        <li><a href="#">SQL</a></li>
+                    </ul>
+                    <span id="result"></span>
+                </div>
+            </div> <!--starter-template-->
+        </div><!-- /.container -->
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        &copy; 2014 Raul Zuniga | <a href="mailto:raul.zuniga@g.austincc.edu">raul.zuniga@g.austincc.edu</a>
+                        <!-- external javascript for validation -->
+                        <script type="text/javascript" src="../js/validation.js"></script>
+                    </div> <!--col-12-->
+                </div><!--row-->
+            </div><!--container-->
+        </footer>
+    </body>
+</html>
