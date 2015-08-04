@@ -1,0 +1,291 @@
+﻿/*
+
+My Custom CSS
+=============
+
+Author:  Brad Hussey
+Updated: August 2013
+Notes:	 Hand coded for Udemy.com
+
+*/
+
+/* --------------------------------------
+    Top Header Banner
+   -------------------------------------- */
+#top-banner .header-logo {
+    text-align: center;
+    font-size: 26px;
+}
+#header-background {
+    background-image: url("../../images/wood.jpg");
+}
+#banner {
+    float: left;
+}
+/* --------------------------------------
+   Layout
+   -------------------------------------- */
+#features {
+	text-align: center;
+    margin-top: 15px;
+}
+
+#features img {
+
+	
+}
+footer {
+    background: #333;
+    color: #eee;
+    font-size: 11px;
+    padding: 20px;
+    margin-top: 15px;
+}
+/* --------------------------------------
+   Typography
+   -------------------------------------- */
+body {
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+	
+}
+
+ .well .page-header {
+	margin-top: 0;
+	
+}
+
+.well .page-header {
+	margin-top: 0;
+}
+ul.unstyled {
+    list-style: none;
+    padding: 0;
+}
+/* --------------------------------------
+   Navbar
+   -------------------------------------- */
+
+.navbar {
+    background-color: #40439B;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    
+}
+.navbar-nav a{
+    color: white;
+}
+#navigation-background {
+    background-color: #393A8C;
+}
+/* --------------------------------------
+    navbar-brand 
+   -------------------------------------- */
+
+.navbar-brand {
+    padding: 5px 15px;
+    color: white;
+    float: left;
+    
+
+}
+.navbar-brand:hover,
+.navbar-brand:focus {
+    color: white;
+}
+/* --------------------------------------
+    navbar-nav 
+   -------------------------------------- */
+.navbar-nav > .active >a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+    color: #F0AD4E;
+    background-color: #393A8C;
+}
+.navbar-nav > li > a,
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus {
+    color: white;
+    font-weight: bold;
+}
+/* --------------------------------------
+    navbar-toggle
+   -------------------------------------- */
+.navbar-toggle:hover,
+.navbar-toggle:focus {
+    background-color: #393A8C;
+}
+.navbar-nav .navbar-toggle .icon-bar {
+    background-color: black;
+}
+/* --------------------------------------
+    body
+   -------------------------------------- */
+
+
+/* --------------------------------------
+   Carousel
+   -------------------------------------- */
+#carousel-background {
+    background: #1A0044;
+    margin: 0;
+    padding: 0;
+    
+}
+#myCarousel {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.carousel-caption {
+	font-size: 24px;
+	
+}
+.carousel-caption > h4 {
+	font-size: 32px;
+}
+#myCarousel .item { height: 400px; }
+#slide1 {
+    background: url("../../images/restaurant-building.jpg") top center no-repeat;
+}
+
+#slide2 {
+    background: url("../../images/enchilada-slide.jpg") top center no-repeat;
+}
+
+#slide3 {
+    background: url("../../images/mariachi-slide.jpg") top center no-repeat;
+}
+/* --------------------------------------
+   Menu - Callout
+   -------------------------------------- */
+#menu-callout{
+    color: white;
+    
+}
+#menu-content {
+    background: url("../../images/margarita-background.jpg") top center no-repeat;
+    background-size: 100%;
+    
+}
+#menu-card{
+    background-color: white;
+    opacity: 0.85;
+    margin-top: 40px;
+}
+#menu-text {
+    color: black;
+}
+/* --------------------------------------
+   Contact-page
+   -------------------------------------- */
+#contact-content {
+    background: url("../../images/margarita-background.jpg") top center no-repeat;
+    background-size: 100%;
+}
+/* --------------------------------------
+   Feature panels
+   -------------------------------------- */
+.panel-heading {
+	background-color: #393A8C;
+    color: white;
+    
+	
+}
+/* --------------------------------------
+   Menu Tables
+   -------------------------------------- */
+#schedule {
+    border: medium solid #1A0044;
+    border-collapse: collapse;
+    border-spacing: 0;
+    height: 300px;
+    margin: 30px auto;
+    width: 700px;
+}
+caption {
+    color: #da985a;
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+#schedule td {
+    border-style: none;
+    padding: 1em;
+}
+#schedule tr:first-of-type {
+    background-color: #393A8C;
+    color: #eaeaea;
+}
+#schedule tr:nth-of-type(2n) {
+    background-color: #eaeaea;
+}
+/* --------------------------------------
+   Global Styles
+   -------------------------------------- */
+.well {
+	margin: 20px 0;
+}
+.list-group .list{
+    color: blue;
+}
+hr {
+    color: #393A8C;
+}
+/* --------------------------------------
+   Media Queries
+   -------------------------------------- */
+@media (max-width: 400px){
+    .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: magenta;
+    }
+}
+/* Portrait & landscape phone */
+@media (max-width: 480px) {
+	
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+	#myCarousel .item { height: 310px; }
+	#slide1 {
+	    background: url("../../images/carousel_small_01.jpg") top center no-repeat;
+	}
+	
+	#slide2 {
+	    background: url("../../images/carousel_small_02.jpg") top center no-repeat;
+	}
+	
+	#slide3 {
+	    background: url("../../images/carousel_small_03.jpg") top center no-repeat;
+	}
+	.carousel-caption {
+		font-size: 16px;
+		
+	}
+	.carousel-caption > h4 {
+		font-size: 22px;
+	}
+
+
+	
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+	#myCarousel .item { height: 500px; }
+	#slide1 {
+	    background: url("../../images/restaurant-building.jpg") top center no-repeat;
+	}
+	
+	#slide2 {
+	    background: url("../../images/enchilada-slide.jpg") top center no-repeat;
+	}
+	
+	#slide3 {
+	    background: url("../../images/mariachi-slide.jpg") top center no-repeat;
+	}
+
+}
