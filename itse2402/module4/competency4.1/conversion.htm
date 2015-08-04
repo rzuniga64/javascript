@@ -1,0 +1,94 @@
+<!DOCTYPE html >
+<head>
+    <title>Express Conversion Currency Converter</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="description" content="Project 3 for ITSE 2402 | Login">
+    <meta name="author" content="Raul Zuniga">
+    <!-- Mobile viewport optimized -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet"  type="text/css">
+    <link href="css/competency4_1.css" rel="stylesheet" type="text/css">
+    <!-- Include Modernizr in the head, before any other Javascript -->
+    <script src="../js/modernizr-2.6.2.min.js"></script>
+    <script type = "text/javascript" src="js/competency4_1.js"></script>
+    <script type = "text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var britishPoundConverstionRate = 0.61050;
+        var euroConversioRate = 0.77952;
+        var mexicanPesoConversionRate = 13.2889;
+
+        var formData = location.search;
+        formData = formData.substring(1, formData.length);  // remove the ? at position 0 in the search property
+
+        while (formData.indexOf("+") != -1) {               // convert + back to blank
+            formData = formData.replace("+", " ");
+        }
+        formData = decodeURI(formData);
+
+        var formArray = formData.split("&");                // break the string into array elements at the &
+
+        // get the starting index of the value of each name=value pair
+        startDollarAmount = formArray[0].indexOf("=");
+        startCurrency = formArray[1].indexOf("=");
+        startUsername = formArray[3].indexOf("=");
+
+        dollarAmount = formArray[0].substring(startDollarAmount+1);
+        currency = formArray[1].substring(startCurrency+1);
+        username = formArray[3].substring(startUsername+1);
+        /* ]]> */
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div id="flag"></div>
+    </div>
+    <div class="container">
+        <div class="starter-template">
+            <form onsubmit="return validateCurrencySubmission()" method="get" action="conversion.htm" role="form" class="form">
+                <h1 id="h1">Express Conversion Currency Converter </h1><br />
+                <fieldset class="scheduler-border">
+                    <legend class="scheduler-border">Currency Converter</legend>
+                    <p>
+                        <script>
+                            document.write("Hello " + username +", thank you for using Currency Converter!<br />");
+                            switch(currency){
+                                case "British Pound":
+                                    $(document).ready(function(){
+                                        britishBackground();
+                                    });
+                                    britishPoundamount = (dollarAmount * britishPoundConverstionRate).toFixed(2);
+                                    document.write(dollarAmount+ " US Dollar = " + britishPoundamount + " British Pound");
+                                    break;
+                                case "Euro":
+                                    $(document).ready(function(){
+                                        euroBackground();
+                                    });
+                                    euroAmount = (dollarAmount * euroConversioRate).toFixed(2);
+                                    document.write(dollarAmount+ " US Dollar = " + euroAmount + " Euro");
+                                    break;
+                                case "Peso":
+                                    $(document).ready(function(){
+                                        mexicoBackground();
+                                    });
+                                    mexicanPesoAmount = (dollarAmount * mexicanPesoConversionRate).toFixed(2);
+                                    document.write(dollarAmount+ " US Dollar = " + mexicanPesoAmount+ " Mexican Peso");
+                                    break;
+                                default:
+                                    break;
+                            }
+                        </script>
+                    </p>
+                    <p><a href="login.htm">Login Page</a></p>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div id="footer">
+        &copy; 2014 Raul Zuniga | <a href="mailto:raul.zuniga@g.austincc.edu">raul.zuniga@g.austincc.edu</a>
+        <script type="text/javascript" src="../../js/validation.js"></script>
+    </div>
+</body>
+</html>

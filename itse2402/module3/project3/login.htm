@@ -1,8 +1,8 @@
 <!DOCTYPE html >
 <html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
     <title>Express Conversion Currency Converter</title>
+    <meta charset="UTF-8">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
     <meta name="description" content="Project 3 for ITSE 2402 | Login">
     <meta name="author" content="Raul Zuniga">
@@ -11,13 +11,14 @@
     <!-- Bootstrap CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet"  type="text/css">
     <link href="css/project3.css" rel="stylesheet" type="text/css">
+    <!-- Include Modernizr in the head, before any other Javascript -->
+    <script src="../../js/modernizr-2.6.2.min.js"></script>
+
     <script type = "text/javascript" src="js/project2.js"></script>
     <script type = "text/javascript" src="js/jquery.js"></script>
     <script type = "text/javascript" src="../../js/jquery-1.11.1.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../../js/bootstrap.min.js"></script>
-    <!-- Include Modernizr in the head, before any other Javascript -->
-    <script src="../../js/modernizr-2.6.2.min.js"></script>
 </head>
 <body id="body" onload="getTodayDate()">
     <div class="container">
@@ -44,7 +45,7 @@
                         <div class="col-8"></div>
                     </div>
                     <div class="col-sm-offset-1 col-5" >
-                        <button name="convert" type="button" class="btn btn-sm btn-primary" onclick="location.href = 'currency.htm' + '?' + 'name='+ document.forms[0].username.value;return validateLoginSubmission()">Money Exchange</button>
+                        <button name="convert" type="button" class="btn btn-sm btn-primary" onclick="return validateLoginSubmission()">Money Exchange</button>
                         <button name="convert" type="button" class="btn btn-sm btn-success">Withdraw</button>
                         <button name="convert" type="button" class="btn btn-sm btn-info">Check Balance</button>
                         <button name="convert" type="button" class="btn btn-sm btn-warning">Deposit</button>
@@ -80,7 +81,7 @@
 
     <footer id="footer">
         <div class="col-12" style=color:#000000>
-            &copy; 2013 Raul Zuniga | <a href="mailto:raul.zuniga@g.austincc.edu">raul.zuniga@g.austincc.edu</a>
+            &copy; 2014 Raul Zuniga | <a href="mailto:raul.zuniga@g.austincc.edu">raul.zuniga@g.austincc.edu</a>
             <script type = "text/javascript" src="../../js/validation.js"></script>
         </div> <!--col-12-->
     </footer>

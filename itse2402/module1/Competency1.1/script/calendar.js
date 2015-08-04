@@ -74,7 +74,7 @@ function deleteContact() {
     document.forms[0].contacts.options[i] = null;
 
     if (contactSelected == true) {
-        for (prop in contactList) {
+        for (var prop in contactList) {
             delete contactList[prop]
         }
         for (var i=0; i < document.forms[0].contacts.options.length;++i) {
@@ -103,7 +103,7 @@ function displayCalendar(whichMonth) {
     calendarWin.document.write("<html xmlns='http:\/\/www.w3.org\/1999\/xhtml'>");
     calendarWin.document.write("<head><title>Coast City Windsurfing<\/title>");
     calendarWin.document.write("<meta http-equiv='content-type' content='text\/html;charset=iso-8859-1' \/>");
-    calendarWin.document.write("<link rel='stylesheet' href='../style.css' type='text\/css' \/><\/head><body>");
+    calendarWin.document.write("<link rel='stylesheet' href='../css/style.css' type='text\/css' \/><\/head><body>");
     calendarWin.document.write("<table cellspacing='0' border='1' width='100%'>");
     // This ends step 3 on page 326 -- the closing brace goes at the end of the function
 

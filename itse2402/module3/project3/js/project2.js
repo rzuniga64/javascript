@@ -21,6 +21,7 @@ function validateLoginSubmission() {
         return false;
     } else {
         document.getElementById("para1").innerHTML = "Hello, " + document.forms[0].username.value;
+        location.href = 'currency.htm' + '?' + 'name='+ document.forms[0].username.value;
     }
 
     return retValue;

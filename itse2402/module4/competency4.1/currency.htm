@@ -1,0 +1,91 @@
+<!DOCTYPE html >
+<head>
+    <title>Express Conversion Currency Converter</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="description" content="Project 3 for ITSE 2402 | Login">
+    <meta name="author" content="Raul Zuniga">
+    <!-- Mobile viewport optimized -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet"  type="text/css">
+    <link href="css/competency4_1.css" rel="stylesheet" type="text/css">
+    <!-- Include Modernizr in the head, before any other Javascript -->
+    <script src="../js/modernizr-2.6.2.min.js"></script>
+    <!-- JavaScript -->
+    <script type = "text/javascript" src="js/competency4_1.js"></script>
+    <script type = "text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var formData = location.search;
+        formData = formData.substring(1, formData.length);  // remove the ? at position 0 in the search property
+
+        while (formData.indexOf("+") != -1) {               // convert + back to blank
+            formData = formData.replace("+", " ");
+        }
+        formData = decodeURI(formData);
+
+        var formArray = formData.split("&");                // break the string into array elements at the &
+
+        // get the starting index of the value of each name=value pair
+        startUsername = formArray[0].indexOf("=");
+        username = formArray[0].substring(startUsername+1);
+        /* ]]> */
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div id="flag"></div>
+    </div>
+    <div class="container">
+        <div class="starter-template">
+            <form onsubmit="return validateCurrencySubmission()" method="get" action="conversion.htm" role="form" class="form">
+                <h1 id="h1">Express Conversion Currency Converter </h1><br />
+                <p style="text-align: center">
+                    <span class="dropCap">P</span>
+                    lease enter the amount to convert.
+                </p>
+                <fieldset class="scheduler-border">
+                    <legend class="scheduler-border">Currency Converter</legend>
+                    <p><script>document.write("Hello, " + username +"<br />")</script></p>
+                    <p>Any transaction will be effective with tomorrow's date.</p>
+                    <div class="form-group">
+                        <label class="col-md-12" for="amount">What is the amount of U.S dollars you want to convert?</label>
+                        <br>
+                        <input id="amount" class="col-md-2" type="text" onblur="return checkForNumber(this.value)" value="0" name="amount">
+                        <div class="col-md-10"></div>
+                    </div>
+                    <label class="control-label">To which currency would you like to convert?</label><br />
+                    <div class="radio">
+                        <label>
+                            <input id="currency1" type="radio" value="British Pound" name="optionsRadios" onclick="changeBackground()">British Pound
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input id="currency2" type="radio" value="Euro" name="optionsRadios" onclick="changeBackground()">Euro
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input id="currency3" type="radio" value="Peso" name="optionsRadios" onclick="changeBackground()">Peso
+                        </label>
+                    </div>
+                    <div>
+                        <button class="btn btn-default" type="submit" name="convert">Submit</button>
+                    </div>
+                    <label for='hiddenName' class='col-md-2 hidden'>
+                        <input type='text' class='col-md-2 hidden' name='hiddenName' id='hiddenName'/>
+                    </label>
+                    <script>document.forms[0].hiddenName.value = username;</script>
+                    <div class='col-md-8'></div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div id="footer">
+        &copy; 2014 Raul Zuniga | <a href="mailto:raul.zuniga@g.austincc.edu">raul.zuniga@g.austincc.edu</a>
+        <script type="text/javascript" src="../../js/validation.js"></script>
+    </div>
+</body>
+</html>
