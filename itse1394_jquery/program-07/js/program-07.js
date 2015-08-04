@@ -84,7 +84,7 @@ function hideShowDiv() {
 function toggleDiv() {
     $(document).ready(function(){
         $("#toggle").click(function(){
-            setTimeout(function(){$("#div4, #div5, #div6").toggle()},700);
+            setTimeout(function(){$("#div4, #div5, #div6").toggle()},0);
         });
     });
 }
