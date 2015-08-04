@@ -1,0 +1,104 @@
+<!DOCTYPE html >
+<html lang="en" >
+    <head>
+    <meta charset="UTF-8">
+    <title>Weather Report</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="description" content="Project 3 for ITSE 2402 | Login">
+    <meta name="author" content="Raul Zuniga">
+    <!-- Mobile viewport optimized -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet"  type="text/css">
+    <link href="css/competency4_1.css" rel="stylesheet" type="text/css">
+    <!-- Include Modernizr in the head, before any other Javascript -->
+    <script src="../js/modernizr-2.6.2.min.js"></script>
+    <!-- JavaScript -->
+    <script type = "text/javascript" src="js/competency4_1.js"></script>
+    <script type = "text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+    <style type="text/css">
+        h1 { font-family:Arial, Helvetica, sans-serif; color:navy; }
+        p, td { font-family:Arial, Helvetica, sans-serif; font-size:11px; color:black; }
+    </style>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var httpRequest = false;
+    function getRequestObject() {
+        try {
+            httpRequest = new XMLHttpRequest();
+        }
+        catch (requestError) {
+            try {
+                httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            catch (requestError) {
+                try {
+                    httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                catch (requestError) {
+                    window.alert("Your browser does not support AJAX!");
+                    return false;
+                }
+            }
+        }
+        return httpRequest;
+    }
+
+    function weatherUpdate() {
+        if (!httpRequest)
+            httpRequest = getRequestObject();
+        var zip = document.forms[0].zip.value;
+        httpRequest.abort();
+        httpRequest.open("get", "WeatherReport.php?zip=" + zip, true);
+        httpRequest.send(null);
+        httpRequest.onreadystatechange = setTimeout('fillWeatherInfo()',3000);
+    }
+
+    function fillWeatherInfo() {
+        if (httpRequest.readyState===4 && httpRequest.status === 200) {
+            var weather = httpRequest.responseXML;
+            var weatherItems=weather.getElementsByTagName("item");
+            if (weatherItems.length > 0) {
+                for (var i=0; i<weatherItems.length; ++i) {
+                    var curHeadline = weatherItems[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+                    var curLink = weatherItems[i].getElementsByTagName("link")[0].childNodes[0].nodeValue;
+                    var curPubDate = weatherItems[i].getElementsByTagName("pubDate")[0].childNodes[0].nodeValue;
+                    var curDesc = weatherItems[i].getElementsByTagName("description")[0].childNodes[0].nodeValue;
+                    var weatherSpot = document.getElementById('weatherPara');
+                    var curStory = "<a href='" + curLink + "'>" + curHeadline + "</a><br />";
+                    curStory += "<span style='color: gray'>" + curPubDate + "</span><br />";
+                    curStory += curDesc + "<br />";
+                    weatherSpot.innerHTML= curStory;
+                }
+            }
+            else
+                window.alert("Invalid ZIP code.");
+        }
+    }
+    /* ]]> */
+    </script>
+    </head>
+    <body onload="weatherUpdate()" style="background-color: #2669B0">
+    <div class="container sky">
+        <div class="starter-template" style="background:none">
+            <h1>Weather Report</h1>
+            <form role="form" method="get" action="WeatherReport.php">
+                <p>
+                    <label>Zip Code
+                        <input type="text" name="zip" value="78741" />
+                    </label>
+                    <input type="button" value="Check Weather" onmousedown="weatherUpdate()"  />
+                </p>
+            </form>
+            <p id="weatherPara"></p>
+        </div><!-- starter-template -->
+        <footer>
+            <div class="col-md-12">
+                &copy; 2014 Raul Zuniga | <a href="mailto:raul.zuniga@g.austincc.edu">raul.zuniga@g.austincc.edu</a>
+                <script type = "text/javascript" src="../../js/validation.js"></script>
+            </div> <!--col-12-->
+        </footer>
+    </div><!-- container -->
+    </body>
+</html>
