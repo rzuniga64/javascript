@@ -235,7 +235,7 @@ function startStopClock() {
     }
 }
 
-/*  11.	Display three images on the page five seconds after the page is opened. */
+/*  11.	Display three image on the page five seconds after the page is opened. */
 function displayImages() {
     setTimeout(function(){document.getElementById("test11").setAttribute("class","show" )},5000);
 }

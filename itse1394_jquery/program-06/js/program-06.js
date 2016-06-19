@@ -96,9 +96,9 @@ function changeColor() {
     });
 }
 /*  4.  Implement a button image toggle feature. Include at least four <button> elements that
- *       employ background images for the buttons. Use an HTML element event to call a function
- *       you wrote named buttonImageToggle() that uses jQuery to change the background images of all
- *       buttons on the page. When the event is fired again the images revert back to the default.
+ *       employ background image for the buttons. Use an HTML element event to call a function
+ *       you wrote named buttonImageToggle() that uses jQuery to change the background image of all
+ *       buttons on the page. When the event is fired again the image revert back to the default.
  */
 function buttonImageToggle() {
     $(document).ready(function() {

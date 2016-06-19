@@ -123,8 +123,8 @@ function addToOrderedList() {
     });
 }
 
-/*  6.	Include an image. Include a button to insert two images before the original image and another
- *      button to insert three images after the original image.
+/*  6.	Include an image. Include a button to insert two image before the original image and another
+ *      button to insert three image after the original image.
  */
 function addImagesBefore() {
     $(document).ready(function() {
@@ -143,7 +143,7 @@ function addImagesAfter() {
     });
 }
 
-/* 7. Include a button to remove the three images that were inserted after the original image in item 6.
+/* 7. Include a button to remove the three image that were inserted after the original image in item 6.
  */
 function removeImagesAfter() {
     $(document).ready(function() {
