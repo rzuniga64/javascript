@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Error Handling</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/styles.css" />
+</head>
+<body>
+    <h1>Error handling</h1>
+    <p id="messageX"></p> <!-- this paragraph cannot be found because its name has been changed. -->
+    <script>
+        // set-up variables
+        var cakes = 10;
+        var children = 3;
+        var msg;
+
+
+            if (children > 0) {  // must check for 0 or we get back a NaN
+
+                var cakesEach = Math.floor(cakes / children);
+                var leftOver = cakes % children;
+                msg = "Each child receives " + cakesEach + " cakes, with " + leftOver + " left over";
+            }
+
+        /* to see errors open up the console window in FireBug for FireFox.
+         Wrap code that can generate an exception in a try/catch block. */
+        try {
+            var p = document.getElementById("message");
+            // really no need for try/catch in javascript if we just check if p is not null.
+            if (p) {
+                p.innerHTML = msg;
+            } else {
+                p.innerHTML = "p is invalid";
+            }
+        } catch (e) {
+            console.error(e);
+        } finally {
+            alert("done");
+        }
+    </script>
+</body>
+</html>

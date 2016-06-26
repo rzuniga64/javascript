@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>when does Javascript run?</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/styles.css" />
+</head>
+<body>
+    <div id="container">
+        <div id="page_content">
+            <script type ="text/javascript">
+                document.write("<p>Hello from the top of the page!</p>");
+            </script>
+
+            <script type ="text/javascript">
+                SayHello();
+                function SayHello() { alert("Hello!"); }
+            </script>
+
+            <h1> when does JavaScript run?</h1>
+
+            <script type ="text/javascript">
+                alert("Goodbye!");
+            </script>
+        </div>
+    </div>
+</body>
+</html>
