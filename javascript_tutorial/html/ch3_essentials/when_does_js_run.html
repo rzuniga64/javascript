@@ -8,10 +8,15 @@
 <body>
     <div id="container">
         <div id="page_content">
+
+            <!-- browser loads this script, parses it, and executes all its command
+                 Nothing else is downloaded and the rest of page doesn't appear.-->
             <script type ="text/javascript">
                 document.write("<p>Hello from the top of the page!</p>");
             </script>
 
+            <!-- This code block is separated from the other code blocks.
+                 The function is loaded and then called from this code block.-->
             <script type ="text/javascript">
                 SayHello();
                 function SayHello() { document.write("Hello!"); }
@@ -19,6 +24,7 @@
 
             <h1> when does JavaScript run?</h1>
 
+            <!-- This code block is separated from the other code blocks. -->
             <script type ="text/javascript">
                 document.write("Goodbye!");
             </script>
