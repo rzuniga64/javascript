@@ -8,23 +8,26 @@
 <body>
     <h1>Function scope</h1>
     <script>
+        // variables defined at the top of a JavaScript file have global scope within the file.
         var x = 1;
 
+        // x used in this function has global scope
         function ChangeXto2() {
             x = 2;
         }
 
+        // x used here has local scope
         function ChangeXto3() {
             var x = 3;
         }
 
-        console.log("x = " + x);
+        console.log("x = " + x);    // x = 1
 
         ChangeXto2();
-        console.log("x = " + x);
+        console.log("x = " + x);    // x = 2
 
         ChangeXto3();
-        console.log("x = " + x);
+        console.log("x = " + x);    // x = 2
 
     </script>
 </body>
