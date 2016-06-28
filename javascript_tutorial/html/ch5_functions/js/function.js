@@ -1,6 +1,10 @@
 /**
  *   Functions are treated the same as any other value. they are just a type of object.
  *   We can assign a function to a variable and call it in exactly the same way as a regular function.
+ *   If assigning a function to a variable you must do it before they are called.
+ *
+ *   When the JavaScript program runs the interpreter goes through all the code in the script and works out which
+ *   functions exist and which don't. But you are assigning a function to a variable that can only be done at runtime.
  */
 
 // prompt for number
