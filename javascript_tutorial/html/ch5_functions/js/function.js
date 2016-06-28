@@ -24,12 +24,12 @@ function factorial(num) {
 }
 
 var f = factorial;
+console.log( 10 + "! = " + f(10));
 
 do {
     var num = prompt("Factorial (hit OK to end)", "");
     if (num !== "") {
         msg.textContent = num + "! = " + factorial(num);
-        console.log( num + "! = " + f(10));
     } else {
         msg.textContent = "Finished";
     }
