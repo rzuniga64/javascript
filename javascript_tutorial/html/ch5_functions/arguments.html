@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8" />
     <title>Function arguments</title>
-    <link rel="stylesheet" type="text/css" media="all" href="styles/styles.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/styles.css" />
 </head>
 <body>
     <h1>Function arguments</h1>
     <script>
-        function showMessage() {
+
+        // There is a special variable named arguments. This array is set in JavaScript and it holds all the values that
+        // you pass to the function.
+        function showMessage(a, b, c, d) {
+            a = a || "";
+            b = b || "";
+            c = c || "";
+            d = d || "";
+            console.log( a + " " + b + " " + c + " " + d);
+
             var s = "";
             for (var i = 0; i < arguments.length; i++) {
                 s += arguments[i] + " ";
