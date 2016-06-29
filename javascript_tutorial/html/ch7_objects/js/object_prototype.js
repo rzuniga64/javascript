@@ -20,11 +20,14 @@ String.prototype.display = function () {
 
 s.display();
 
-// Don't extend native objects with your own methods!
-// If another developer came across this code it would fail when it came across a reverse function.
-// That is because it wouldn't know what to do with it. 'hasOwnProperty' returns true if a property
-// method directly belongs to String s.  It does not belong to an object further up the prototypical chain.
-for (var c in s) {
+/**
+ * Don't extend native objects with your own methods!
+ * If another developer came across this code it would fail when it came across a reverse function.
+ * That is because it wouldn't know what to do with it. 'hasOwnProperty' returns true if a property
+ * method directly belongs to String s.  It does not belong to an object further up the prototypical chain.
+ */
+
+ for (var c in s) {
     //if (s.hasOwnProperty(c))
         msg.innerHTML += "<p>" + c + "</p>";
 }
