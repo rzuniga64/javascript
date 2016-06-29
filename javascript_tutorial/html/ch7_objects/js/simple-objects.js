@@ -13,23 +13,21 @@
  */
 
 var msg = document.getElementById("message");
-
 // create a new empty object and add properties or methods
-var mycar = mycar || {};
-
+var mycar = mycar || {};    // if the mycar variable exists then use it else create a new object.
 mycar.make = "Ford";		// alternate syntax is mycar["make"] = "Ford";
 mycar.model = "Mustang";
-mycar.color = "Blue";
+mycar.color = "blue";
 
 mycar.display = function() {
 	msg.innerHTML += "<p>Your car is a "+this.color+" "+this.make+" "+this.model+"</p>";
 };
 
-// or use object literal notation
+// OBJECT LITERAL NOTATION
 var car = car || {
 	make: "Ford",
 	model: "Mustang",
-	color: "blue",
+	color: "red",
 	display: function() {
 		msg.innerHTML += "<p>Your car is a "+this.color+" "+this.make+" "+this.model+".</p>";
 	}
@@ -49,6 +47,9 @@ for (var prop in car) {
 car2.color = "pink";
 car2.model = "GTO";
 
-// display car and car2
-car.display();
+var myprop = "color";
+car[myprop] = "purple";
+
+mycar.display();
+car["display"]();
 car2.display();
