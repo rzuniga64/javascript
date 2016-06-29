@@ -11,7 +11,7 @@ function Car(make, model, color) {
 	}
 }
 
-// create ch7_objects
+// create objects
 var c1 = new Car("Ford", "Mustang", "blue");
 var c2 = new Car("Ford", "GTO", "white");
 var c3 = new Car();

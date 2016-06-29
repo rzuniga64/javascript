@@ -7,6 +7,7 @@ var mycar = mycar || {};
 mycar.make = "Ford";		// alternate syntax is mycar["make"] = "Ford";
 mycar.model = "Mustang";
 mycar.color = "Blue";
+
 mycar.display = function() {
 	msg.innerHTML += "<p>Your car is a "+this.color+" "+this.make+" "+this.model+"</p>";
 };
