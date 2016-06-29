@@ -3,12 +3,9 @@ function ShowFlags() {
 
 	var pole = document.getElementById("pole"), newImg, i;
 	for (i = 0; i < fl; i++) {
-
 		newImg = CreateImage(flags[i]);
 		pole.appendChild(newImg);
-
 	}
-
 }
 
 // create flag image
@@ -18,7 +15,6 @@ function CreateImage(name) {
 	img.src = "image/" + name + ".png";
 	img.title = name.substr(0,1).toUpperCase() + name.substr(1).toLowerCase();
 	return img;
-
 }
 
 // start of application
