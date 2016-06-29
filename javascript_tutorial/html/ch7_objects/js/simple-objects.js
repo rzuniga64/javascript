@@ -13,6 +13,7 @@
  */
 
 var msg = document.getElementById("message");
+
 // create a new empty object and add properties or methods
 var mycar = mycar || {};    // if the mycar variable exists then use it else create a new object.
 mycar.make = "Ford";		// alternate syntax is mycar["make"] = "Ford";

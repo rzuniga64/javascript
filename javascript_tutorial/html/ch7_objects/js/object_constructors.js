@@ -1,9 +1,9 @@
 // JavaScript Object Constructors
 var msg = document.getElementById("message");
 
-// car constructor
+// Car constructor. We can make any number of car instances from this constructor.
 function Car(make, model, color) {
-	this.make = make || "unknown";
+	this.make = make || "unknown";  // default value if user forgets to specify it
 	this.model = model || "model";
 	this.color = color || "unpainted";
 	this.display = function() {
@@ -11,12 +11,12 @@ function Car(make, model, color) {
 	}
 }
 
-// create objects
+// Create instances of a car object from its constructor
 var c1 = new Car("Ford", "Mustang", "blue");
 var c2 = new Car("Ford", "GTO", "white");
 var c3 = new Car();
 
-// change properties and run methods
+// Change properties and run methods
 c2.color = "red";
 c1.display();
 c2.display();
