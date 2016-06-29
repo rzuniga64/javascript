@@ -19,10 +19,9 @@ msg.innerHTML += "<p><strong>High to Low sorting:</strong> [" + v1 + "]<p>";
 var v2 = ["dog", "buffalo", "cat", "zebra", "frog", "antelope", "aardvark", "elephant"];
 
 msg.innerHTML += "<p><strong>Original order:</strong> [" + v2 + "]<p>";
-v2.sort()
 
+v2.sort();
 msg.innerHTML += "<p><strong>Alphabetical order:</strong> [" + v2 + "]<p>";
-v2.sort(function(a,b) {return a.length - b.length;});
 
+v2.sort(function(a,b) {return a.length - b.length;});
 msg.innerHTML += "<p><strong>String length sort:</strong> [" + v2 + "]<p>";
-v2.sort
