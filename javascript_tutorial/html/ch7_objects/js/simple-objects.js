@@ -33,11 +33,10 @@ var car = car || {
 	}
 };
 
-var car2 = car2 || {};              // clone to car2
-for (var prop in car) {             // clone the car object
-	if (car.hasOwnProperty(prop)) {
-		car2[prop] = car[prop];
-	}
+var car2 = car2 || {};             // clone to car2
+for (var prop in car) {            // clone the car object
+	if (car.hasOwnProperty(prop))  // the property must be part of standard car object
+		car2[prop] = car[prop];    // copy by value(not reference) so a true copy instead of reference to original value
 }
 
 // change car2 properties
