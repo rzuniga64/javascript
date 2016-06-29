@@ -17,7 +17,3 @@ for (var c in s) {
         console.log(c);
     }
 }
-
-
-
-
