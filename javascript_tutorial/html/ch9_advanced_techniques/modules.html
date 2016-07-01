@@ -15,7 +15,8 @@
         Lib.Output.$("This is my second message.");
         Lib.Output.SetColor("#C00");
         Lib.Output.$("Modules are great!");
-//        var x = Lib.Output.FormatMessage("test"); // this will fail
+        // this will fail because we haven't returned FormatMessage(msg) in the module
+//        var x = Lib.Output.FormatMessage("test");
 //        Lib.Output.$(x);
     </script>
 </body>
