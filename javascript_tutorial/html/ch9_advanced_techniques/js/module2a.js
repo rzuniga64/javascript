@@ -29,9 +29,11 @@ Lib.Output = (function() {
 
         // If all parameters check out do the following
 		start = Math.max(0, Math.min(start, msg.length-1)); // normalizes the value since 0 < start < msg.length - 1
+
         // if 'end' is defined normalize it otherwise set it to length of array minus 1
 		end = (end ? Math.max(0, Math.min(end, msg.length-1)) : msg.length-1);
-		color = color || "#000";
+
+        color = color || "#000";
 		element.innerHTML += '<p style="color:'+color+'">'+msg.slice(start,end+1).join(" ")+'</p>';
 	}
 
