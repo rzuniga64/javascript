@@ -1,6 +1,12 @@
-// window object
+/**
+ *  Window Object
+ *
+ */
 
-// show message
+/**
+ *  Returns an object which points to the functions that we want available outside the code.
+ *  @return An alias name and the function name (kept the same here)
+ */
 function ShowMessage(msg) {
 	document.getElementById("message").innerHTML += "<p>"+msg+"</p>";
 }
