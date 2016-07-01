@@ -47,11 +47,10 @@ Lib.Output = (function() {
 		opt.element.innerHTML += '<p style="color:'+opt.color+'">'+opt.msg.slice(opt.start,opt.end+1).join(" ")+'</p>';
 	}
 
-    /**
-     *  This method loops through every property in the object we passed and if it finds one it appends it to the
-     *  default set.
-     *  @return obj1: the set of properties in the object.
-     */
+	/**
+	 *  Returns an object which points to the functions that we want available outside the code.
+	 *  @return An alias name and the function name (kept the same here)
+	 */
 	function Extend(obj1, obj2) {
 	
 		for (var prop in obj2) {

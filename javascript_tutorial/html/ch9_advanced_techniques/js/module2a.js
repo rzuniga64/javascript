@@ -38,9 +38,9 @@ Lib.Output = (function() {
 	}
 
     /**
-     *  Returns an object which points to the functions that we want available outside the code.
-     *  @return An alias name and the function name (kept the same here)
-     */
+	 *  Returns an object which points to the functions that we want available outside the code.
+	 *  @return An alias name and the function name (kept the same here)
+	 */
 	return {
 		Write: Write,
 		$: Write
