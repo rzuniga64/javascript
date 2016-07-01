@@ -3,20 +3,31 @@
 <head>
 <meta charset="UTF-8" />
 <title>Styling elements</title>
-<link rel="stylesheet" type="text/css" media="all" href="styles/styles.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/styles11.css" />
 </head>
 <body>
+    <header>
+        <h1>An Introduction to JavaScript</h1>
+        <p>Dynamic Styling</p>
+    </header>
 
-<header>
-	<h1>An Introduction to JavaScript</h1>
-	<p>Dynamic Styling</p>
-</header>
+    <article>
+        <p id="myelement">A paragraph.</p>
+    </article>
+    <script>
+        console.clear();
+        var e = document.getElementById("myelement");
+        console.log(e);
 
-<article>
+        // This is how most animated effects are implemented on the web
+        e.style.textAlign = "center";
+        e.style.color = "#00f";
+        e.style.backgroundColor = "#ff0";
+        e.style.border = "5px solid #f00";
 
-	<p id="myelement">A paragraph.</p>
+        //e.setAttribute("class", "animate");
+        e.className = "animate";
 
-</article>
-
+    </script>
 </body>
 </html>
