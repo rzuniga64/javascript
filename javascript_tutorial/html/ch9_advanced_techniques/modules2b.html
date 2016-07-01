@@ -11,7 +11,8 @@
     <script src="js/module2b.js"></script>
     <script>
         Lib.Output.Write("Hello world 1");
-        <!-- allow object literal to be passed -->
+        // allow object literal to be passed. It is a lot easier to read since it is more obvious what each parameter
+        // does. In this case we can omit parameters we don't need.
         Lib.Output.Write({
             msg: ["Hello", "world", 2, "from", "JavaScript"],
             end: 2,

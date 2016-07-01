@@ -1,17 +1,26 @@
-// My JavaScript Module
+/**
+ *	Passing arguments to functions
+ *	Make functions arguments as flexible as possible. this version of the Write function is far easier to use. The
+ *  Extend function can be used by any other function within the module.
+ *
+ *  @author Raul Zuniga
+ */
 var Lib = Lib || {};
 
 Lib.Output = (function() {
-
-	// write message
+    /**
+     *  This method writes message to the screen in the HTML element's location
+     *  @param msg
+     */
 	function Write(opt) {
-		// check if object has been passed, if not then it's a string
-        // so create a new object literal and set the message property to our opt parameter
+
+		// Check if object has been passed. If not then it's a string so create a new object literal and set the message
+		// property to our opt parameter
 		if (opt.constructor != Object) opt = { msg: opt };
 
-        // set our default values within another object literal
-        // this is passed to an Extend function with our 'opt' object literal
-        // any of the parameters can be overridden by a value within 'opt'
+        // Set our default values within another object literal.
+        // This is passed to an Extend function with our 'opt' object literal.
+        // Any of the parameters can be overridden by a value within 'opt'.
 		opt = Extend({
 			element: "message",
 			msg: [],
@@ -21,18 +30,28 @@ Lib.Output = (function() {
 		}, opt);
 
         // Now we can address each argument
-		if (opt.msg.constructor != Array) opt.msg = [opt.msg];
-		opt.element = opt.element || "message";
-		if (!opt.element.nodeType) opt.element = document.getElementById(opt.element);
-		if (!opt.element || opt.msg.length == 0) return;
+		if (opt.msg.constructor != Array)
+            opt.msg = [opt.msg];
+
+        opt.element = opt.element || "message";
+
+        if (!opt.element.nodeType)
+            opt.element = document.getElementById(opt.element);
+
+        if (!opt.element || opt.msg.length == 0)
+            return;
 		
 		opt.start = Math.max(0, Math.min(opt.start, opt.msg.length));
 		opt.end = (opt.end ? Math.max(0, Math.min(opt.end, opt.msg.length)) : opt.msg.length);
 	
 		opt.element.innerHTML += '<p style="color:'+opt.color+'">'+opt.msg.slice(opt.start,opt.end+1).join(" ")+'</p>';
 	}
-	
-	// extend default parameters
+
+    /**
+     *  This method loops through every property in the object we passed and if it finds one it appends it to the
+     *  default set.
+     *  @return obj1: the set of properties in the object.
+     */
 	function Extend(obj1, obj2) {
 	
 		for (var prop in obj2) {
@@ -41,10 +60,12 @@ Lib.Output = (function() {
 		
 		return obj1;
 	}
-
+    /**
+     *  Returns an object which points to the functions that we want available outside the code.
+     *  @return An alias name and the function name (kept the same here)
+     */
 	return {
 		Write: Write,
 		$: Write
 	};
-
 }());
