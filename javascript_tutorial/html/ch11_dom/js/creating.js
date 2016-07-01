@@ -1,3 +1,14 @@
+/**
+ * Document Object Model
+ * One of the window Objects core properties. It is responsible for handling all content update requests.
+ * Used to parse HTML and store HTML documents in memory.
+ * Browsers internal representation of an HTML document is a tree. The 'html' tag is the root element. It has child
+ * nodes 'head' and 'body'. Any node can have any number of child nodes but it can only have one parents, except for
+ * the 'html' node.
+ *
+ * Selectors
+ */
+
 // Creating new nodes
 var article = document.getElementsByTagName("article")[0];
 
