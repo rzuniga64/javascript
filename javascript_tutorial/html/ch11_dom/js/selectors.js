@@ -7,10 +7,14 @@
  * the 'html' node.
  *
  * Selectors
+ * document.getElementById("element");
+ * document.getElementsByTagName("element");
+ * document.getElementsByClassName("element");
+ * document.querySelector("element");
+ * document.querySelectorAll("element");
  */
 
 console.log( "intro ID", document.getElementById("intro") );
-
 console.log( "p tags", document.getElementsByTagName("p") );
 
 // not supported by IE8-IE6
@@ -23,4 +27,5 @@ console.log( "ul > li", document.querySelectorAll("ul > li") );
 // supported by all browsers regardless of age
 var header = document.getElementsByTagName("header")[0];
 var ptags = header.getElementsByTagName("p");
+
 console.log( "header p", ptags );
