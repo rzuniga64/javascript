@@ -1,6 +1,6 @@
 /**
  // Closure
- // the value of the message is local to the function 'function'
+ // the value of the 'message' variable is local to the function 'function'
  // Once the code block ends the value of 'message' is lost
  // JavaScript retains a reference to the 'message' variable because of the inner anonymous function.
  */
