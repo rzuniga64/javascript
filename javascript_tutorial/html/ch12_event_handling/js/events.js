@@ -36,7 +36,6 @@ var link = document.getElementsByTagName("a")[0]; // find first link on the page
  */
  link.addEventListener( "click", MyEventHandler );
 
-
 /**
  *  event handler
  *  e contains properties about the methods and events that we can run.
