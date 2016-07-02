@@ -1,7 +1,7 @@
 /**
  *  Form Events
  *
- *  Client-side JavaScript form validation is not a substitue for server-side data validation.  That's because
+ *  Client-side JavaScript form validation is not a substitute for server-side data validation.  That's because
  *  JavaScript can be disabled in the browser.
  *
  *  Use HTML5 form controls which provide JavaScript-less form validation. Input types:
@@ -39,7 +39,7 @@ function NoSpaces(event) {  // stop spaces being entered
 	if (event.charCode == 32) event.preventDefault();
 }
 
-var reEmail = /^[a-z0-9._%-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;    // form submit validation
+var reEmail = /^[a-z0-9._%-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;    // email form submit validation
 
 /**
  *  Always run when a submit occurs. Won't be run on Chrome, Safari, Opera or Firefox until the data is actually valid.
