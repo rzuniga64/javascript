@@ -6,14 +6,13 @@
  * nodes 'head' and 'body'. Any node can have any number of child nodes but it can only have one parents, except for
  * the 'html' node.
  *
- * Selectors
+ * Removing nodes.
  */
 
 var p1 = document.getElementById("p1");
 var p2 = document.getElementById("p2");
 
 //p1.parentNode.removeChild(p1);
-//p2.parentNode.removeChild(p2);
 
 //var article = document.getElementsByTagName("article")[0];
 
@@ -21,7 +20,8 @@ var p2 = document.getElementById("p2");
 //    article.removeChild(article.lastChild);
 //}
 
-// new node, then node we want to replace
+// New node, then node we want to replace.
 // p2 can't exist in two places so the original copy is removed from the DOM
 // the result is that p1 disappears and p2 moves into it's place
-var article = document.getElementsByTagName(p2, p1);
+var article = document.getElementsByTagName("article")[0];
+article.replaceChild(p2, p1);
