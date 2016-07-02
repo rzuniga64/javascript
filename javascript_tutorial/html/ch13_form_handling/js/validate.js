@@ -28,15 +28,15 @@ var form = {    // DOM nodes
 form.register.addEventListener( "submit", CheckForm );
 
 // check email field when its changed, inline anonymous function
-form.email.addEventListener( "change", function(e) {
-	if (e.target.value == "") alert("You forgot the email!");
+form.email.addEventListener( "change", function(event) {
+	if (event.target.value == "") alert("You forgot the email!");
 } );
 
 form.pass1.addEventListener( "keypress", NoSpaces );        // stop space character
 form.pass2.addEventListener( "keypress", NoSpaces );
 
-function NoSpaces(e) {  // stop spaces being entered
-	if (e.charCode == 32) e.preventDefault();
+function NoSpaces(event) {  // stop spaces being entered
+	if (event.charCode == 32) event.preventDefault();
 }
 
 var reEmail = /^[a-z0-9._%-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;    // form submit validation
@@ -47,15 +47,16 @@ var reEmail = /^[a-z0-9._%-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;    // form submit valid
  */
  function CheckForm(event) {
 
-	var msg = "";
+	var msg = "";   // variable to hold error messages
 
 	// check email
 	if (!reEmail.test(form.email.value)) msg += "\nyour email address";
+
 	// check passwords aren't empty and match each other
 	if (form.pass1.value == "" || form.pass1.value != form.pass2.value) msg += "\nyour passwords";
 
 	// complete message
     msg = (msg != "" ? "Please check: " + msg : "Form is valid!\nSubmitting...");
 	alert(msg);
-	event.preventDefault();
+	event.preventDefault();     // the form will not be submitted whether the data is valid or not
 }
