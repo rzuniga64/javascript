@@ -25,6 +25,15 @@
  *    the DOM, perhaps in the head of the page.  The huge benefit is that you can load scripts from any domain.
  *  - iframes, plugins, etc.
  *  - HTML5 web sockets and server-sent events. These allow communication techniques that go beyond AJAX.
+ *
+ * 	Date Formats
+ * 	- text
+ * 	- html
+ * 	- xml
+ *  - JSON is JavaScript object wrapped inside a String. JavaScript can parse it very quickly.
+ *  - JSONP - JSON with padding. Used with script injection method of JavaScript. JSONP takes an object in JSON format
+ *    and passes it to a function. Function name is defined in the URL in the callback parameter. When the scripts loads
+ *    it runs the function and parses the JSON object.
  */
 // Script insertion
 var Lib = Lib || {};

@@ -100,6 +100,6 @@ switch (strtolower(fetch('format'))) {
 	// output JSON
 	default:
 		header('Content-Type: application/json; charset=UTF-8');
-		echo json_encode($out);
+		//echo json_encode($out);
 		break;
 }
