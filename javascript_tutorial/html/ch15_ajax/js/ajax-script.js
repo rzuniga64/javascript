@@ -49,8 +49,8 @@ Lib.Ajax = (function() {
 	}
 
     /**
-     *  Call web service. We only require the URL and the arguments since we are calling a script by its URL.
-     *  We can't use POST. GET parameters are our only option. JSONP automatically calls our callback function.
+     *  Call web service. We only require the URL and the arguments. Since we are calling a script by its URL
+     *  we can't use POST. GET parameters are our only option. JSONP automatically calls our callback function.
 	 */
      function Call(url, args) {
 
