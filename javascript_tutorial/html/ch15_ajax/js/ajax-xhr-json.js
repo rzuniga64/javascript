@@ -58,6 +58,7 @@ Lib.Ajax = (function() {
 		// open request
 		xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=UTF-8");
 		xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+		xhr.("Access-Control-Allow-Origin", "*" );
 		xhr.send(arglist);
 	}
 	return {
