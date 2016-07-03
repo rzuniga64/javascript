@@ -108,6 +108,7 @@ Lib.Ajax = (function() {
         // defined by most AJAX libraries. If necessary, the web service can detect that it is an AJAX call and if it
         // not there it can output an HTML page instead.
 		xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+        xhr.("Access-Control-Allow-Origin", "*" );
         // send method calls the web service
 		xhr.send(arglist);
 	}
