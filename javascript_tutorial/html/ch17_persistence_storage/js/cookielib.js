@@ -1,8 +1,13 @@
-// Cookie library
-var Cookie = Cookie || (function() {
+/**
+ * Cookie library
+ */
 
-    // Extract individual cookies from document.cookie
-	// parse cookies
+/**
+ * This method extracts individual cookies from document.cookie  and parses cookies
+ */
+ var Cookie = Cookie || (function() {
+
+    // extract individual cookies from document.cookie
 	var
 		cookieList = {},
 		ac = document.cookie.split(";"),
@@ -15,53 +20,55 @@ var Cookie = Cookie || (function() {
 		}
 	}
 
-
-	// set cookie
+    /**
+     * This method defines and updates cookies
+     */
 	function Set(name, value, expiry, path) {
 
 		var cookieExpiry = cookiePath = "";
 
 		if (expiry) {
 			var date = new Date();
-			date.setTime(date.getTime() + expiry * 60000);
+			date.setTime(date.getTime() + expiry * 60000); // add number of minutes defined in ms
 			cookieExpiry = "; expires=" + date.toGMTString();
 		}
 
-		if (path) {
-			cookiePath = "; path=" + path;
-		}
+		if (path) cookiePath = "; path=" + path;
 
 		// store cookie
 		document.cookie = name + "=" + escape(value) + cookieExpiry + cookiePath;
 
 		// update cookieList
-		if (expiry && expiry < 0) {
-			// delete cookie
-			delete cookieList[name];
-		}
-		else {
-			// add cookie
-			cookieList[name] = value;
-		}
-
+		if (expiry && expiry < 0)
+			delete cookieList[name]; // delete cookie
+		else
+			cookieList[name] = value; // add cookie
 	}
 
-
-	// delete a cookie
+    /**
+     * This method deletes a cookie
+     * @type: Delete
+     */
 	function Delete(name) {
 		Set(name, "", -1);
 	}
 
 
-	// get cookie
+    /**
+     * This method retrieves a cookie
+     * @type: Get
+     */
 	function Get(name) {
 		return cookieList[name] || undefined;
 	}
 
+    /**
+     * Public methods
+     * @type: Get, Delete, Set
+     */
 	return {
 		Set: Set,
 		Delete: Delete,
 		Get: Get
 	};
-
 }());
