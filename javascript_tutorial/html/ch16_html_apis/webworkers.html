@@ -14,10 +14,10 @@
 		<h1 id="output">Working&hellip;</h1>
 	</article>
 <script>
-    // load web worker
-    var worker = new Worker("scripts/ch16_html_apis/webworker.js");
+    // load web worker that points to the web worker script
+    var worker = new Worker("js/webworker.js");
 
-    // message received from web worker
+    // function that runs when a message is received from web worker
     worker.onmessage = function(e) {
         document.getElementById("output").textContent = e.data;
     };
