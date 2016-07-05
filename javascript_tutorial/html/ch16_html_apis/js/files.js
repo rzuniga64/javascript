@@ -1,18 +1,31 @@
-// output information
+/**
+ *  File Handling (doesn't work for <= IE9)
+ *  HTML5 API that allows the user to browse to a file and upload it.
+ *  Allows you to react when one or more files are dragged to the browser window.
+ *  It can also check for file types and read them into memory.
+ *  You could allow the user to drag dozens of image files, load them onto a hidden Canvas element, resize them all,
+ *  convert them to the correct image type, show a preview, and upload them one by one to the server using AJAX.
+ */
 function Output(msg) {
     var m = document.getElementById("output");
     m.innerHTML = msg + m.innerHTML;
 }
 
-// drop box hover effect
+/**
+ * Drop box hover effect
+ */
 function FileHover(e) {
     e.preventDefault();
     e.target.className = (e.type == "dragover" ? "hover" : "");
 }
 
-// file selection
+/**
+ * File selection
+ */
 function FileSelect(e) {
-    FileHover(e);
+    FileHover(e); // will remove styling if its been applied
+    // obtain a list of files via either a file select box or drop file element has a data transfer file list.
+    // Return a collection retaining one or more file references.
     var files = e.target.files || e.dataTransfer.files;
 
     // process all files
@@ -21,10 +34,12 @@ function FileSelect(e) {
     }
 }
 
-// output file information
+/**
+ * Output file information
+ */
 function ParseFile(file) {
 
-    // file information
+    // examine file name, type, and size
     Output(
         "<p>File information: <strong>" + file.name +
         "</strong> type: <strong>" + file.type +
@@ -35,6 +50,8 @@ function ParseFile(file) {
     // display an image
     if (file.type.indexOf("image") == 0) {
         var reader = new FileReader();
+        // when file is loaded into memory it outputs the file with its name and an image tag.
+        // 'result' property is a data encoded string representation of our graphic
         reader.onload = function(e) {
             Output(
                 "<p><strong>" + file.name + ":</strong><br />" +
@@ -42,7 +59,7 @@ function ParseFile(file) {
                 '" /></p>'
             );
         }
-        reader.readAsDataURL(file);
+        reader.readAsDataURL(file); // get the binary data
     }
 
     // display text
