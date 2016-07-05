@@ -13,53 +13,10 @@
 	</header>
 
 	<article>
-        // This is one of the most practical ways of adding svg
-        // because it allows you to change it using JavaScript
+		<!--This is one of the most practical ways of adding svg because it allows you to change it using JavaScript-->
 		<object id="mysvg" type="image/svg+xml" data="images/image.svg"></object>
 	</article>
 
-<script>
-    // Vector graphics better than bitmaps
-    // SVGs can be shown at any size and won't lose their quality
-    // SVGs are simply an XML document containing drawing commands
-    // You can draw them outside of JavaScript with programs such as InkScape
-    // or you can manipulate them on the server using php, etc.
-    // it exposes a document object model.
-    var mysvg = document.getElementById("mysvg");
-    //we need to get the content which allows us to manipulate the DOM nodes
-    var svg = mysvg.contentDocument;
-    // find the black line by its id
-    var line = svg.getElementById("line");
-
-    // let's change the y1 coordinate to be 290
-    // we are using a namespace that is different than our HTML
-    // the first argument is normally the namespace but we can use
-    // null because we've already referenced our SVG.
-    // line.setAttributeNS(null, "y1", 290);
-
-    // let's do some animation with JavaScript using a
-    // self executing anonymous function
-    // use arguments.callee to reference the anonymous function
-    // animate line
-    var y = 10;
-    (function() {
-        y += 2;
-        line.setAttributeNS(null,"y1",y);
-        line.setAttributeNS(null,"y2",300-y);
-        if (y < 290) setTimeout(arguments.callee, 20);
-    }());
-
-    // create rectangle
-    // createElementNS must be passed the svg namespace
-    var rect = svg.createElementNS("http://www.w3.org/2000/svg", "rect");
-
-    rect.setAttributeNS(null,"x",100);
-    rect.setAttributeNS(null,"y",125);
-    rect.setAttributeNS(null,"width",100);
-    rect.setAttributeNS(null,"height",50);
-    rect.setAttributeNS(null,"fill","#393");
-
-    svg.getElementById("main").appendChild(rect);
-</script>
 </body>
+<script src="js/svg.js"></script>
 </html>
