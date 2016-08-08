@@ -38,40 +38,6 @@ label {
     .row.content {height:auto;}
 }
 
-.sidenav li a{
-    color:#dfd4c3;
-    background-color: #c00;
-    width: 100%;
-    text-decoration: none;
-}
-
-
-.sidenav li a:hover {
-    color: #c00;
-    text-decoration: none;
-    background-color: #dfd4c3;
-}
-
-.sidenav li a:visited {
-    color: cornflowerblue;
-}
-
-
-/* Remove the navbar's default margin-bottom and rounded borders */
-.navbar {
-    margin-bottom: 0;
-    background: #ffc000
-}
-/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-.row.content {height: 450px}
-
-.sidenav {
-    background-color: #c00;
-    padding-top: 20px;
-    height: 100%;
-    color: white;
-}
-
 .btn {
     font-size:12px;
     text-align:left
@@ -95,34 +61,10 @@ label {
     color:white
 }
 
-.logo {
-    border: 3px solid white
-}
-
 .dropcap {
     font-size: 25px;
     line-height: 55%;
     padding-top: 2px;
-}
-
-.starter-template {
-    text-align: center
-}
-
-#mainHeading {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-}
-
-#form1, #form2, #form3, #form4, #form5, #form6 {
-    text-align: left;
-}
-
-
-#test6 h2 {
-    font-weight: bold;
-    color: blue
 }
 
 .elemClass {
@@ -131,6 +73,65 @@ label {
     background-color: #b9cd6d;
 }
 
+#form1, #form2, #form3, #form4, #form5, #form6 {
+    text-align: left;
+}
+
+.logo {
+    border: 3px solid white
+}
+
+#mainHeading {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
 .myClass {
     font-size: 40px; background-color: #ccc; color: white;
 }
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+    margin-bottom: 0;
+    background: #ffc000
+}
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 450px}
+
+.sidenav {
+    background-color: #c00;
+    padding-top: 20px;
+    height: 100%;
+    color: white;
+}
+
+.sidenav li a{
+    color:#dfd4c3;
+    background-color: #c00;
+    width: 100%;
+    text-decoration: none;
+}
+
+
+.sidenav li a:hover {
+    color: #c00;
+    text-decoration: none;
+    background-color: #dfd4c3;
+}
+
+.sidenav li a:visited {
+    color: cornflowerblue;
+}
+
+.starter-template {
+    text-align: center
+}
+
+#test6 h2 {
+    font-weight: bold;
+    color: blue
+}
+
+
+

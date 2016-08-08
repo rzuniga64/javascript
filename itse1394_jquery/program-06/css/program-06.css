@@ -72,35 +72,35 @@ td, th { padding:5px }
 }
 
 .button1 {
-    background: url('../assets/white_button.png') no-repeat; width:103px; height: 31px; color: black
+    background: url('../../images/white_button.png') no-repeat; width:103px; height: 31px; color: black
 }
 
 .button2 {
-    background: url('../assets/polkadot_button.png') no-repeat; width:103px; height: 31px; color: black
+    background: url('../../images/polkadot_button.png') no-repeat; width:103px; height: 31px; color: black
 }
 
 .button3 {
-    background: url('../assets/black_button.png') no-repeat; width:103px; height: 31px; color: white
+    background: url('../../images/black_button.png') no-repeat; width:103px; height: 31px; color: white
 }
 
 .button4 {
-    background: url('../assets/green_button.png') no-repeat; width:103px; height: 31px; color: black
+    background: url('../../images/green_button.png') no-repeat; width:103px; height: 31px; color: black
 }
 
 .button5 {
-    background: url('../assets/psychodelic_button.png') no-repeat; width:103px; height: 31px; color: black
+    background: url('../../images/psychodelic_button.png') no-repeat; width:103px; height: 31px; color: black
 }
 
 .button6 {
-    background: url('../assets/silver_button.png') no-repeat; width:103px; height: 31px; color: black
+    background: url('../../images/silver_button.png') no-repeat; width:103px; height: 31px; color: black
 }
 
 .button7 {
-    background: url('../assets/brown_button.png') no-repeat; width:103px; height: 31px; color: white
+    background: url('../../images/brown_button.png') no-repeat; width:103px; height: 31px; color: white
 }
 
 .button8 {
-    background: url('../assets/orange_button.png') no-repeat; width:103px; height: 31px; color: black
+    background: url('../../images/orange_button.png') no-repeat; width:103px; height: 31px; color: black
 }
 
 #navbar {

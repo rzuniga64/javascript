@@ -31,7 +31,7 @@ textarea { display: inline-block; width: 100%; margin-bottom: 10px; }
 .header1 { width: 400px; text-align:center; background-color:#FFC; color:black; display:block; margin:0 auto 0 auto }
 .logo {  border: 3px solid white }
 .sky {
-    background: url('../assets/sky.png') repeat-x;
+    background: url('../../images/sky.png') repeat-x;
     min-height: 179px;
     min-width: 1140px;
     color: black;
