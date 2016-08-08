@@ -46,14 +46,14 @@
 
 		<!-- Include Modernizr in the head, before any other Javascript -->
         <!-- Plugin that allows older browser to recognize HTML5 elements. Put before any HTML is rendered. -->
-		<script src="js/modernizr-2.6.2.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
         <!-- Custom JS -->
         <script src="js/project4.js"></script>
         <!-- jQuery -->
         <script type="text/javascript" src="../../js/jquery-1.11.1.min.js"></script>
         <!-- Bootstrap JS -->
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <script type="text/javascript">
             /* <![CDATA[ */
