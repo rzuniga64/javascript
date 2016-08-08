@@ -1,0 +1,136 @@
+body {
+    background: #003d79;
+    color:white;
+}
+
+footer{
+    background-color: #008000;
+    color: white;
+    font-size:12px;
+    padding:20px
+}
+footer a:link {
+    color: blue; text-decoration: underline
+}
+footer a:visited {
+    color: #28AACA; text-decoration: underline
+}
+
+img {
+    background: #003d79;
+}
+
+h1 {
+    font-size: 22px;
+}
+
+label {
+    margin: 0;
+    max-width: 100%;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+    .row.content {height:auto;}
+}
+
+.sidenav li a{
+    color:#dfd4c3;
+    background-color: #c00;
+    width: 100%;
+    text-decoration: none;
+}
+
+
+.sidenav li a:hover {
+    color: #c00;
+    text-decoration: none;
+    background-color: #dfd4c3;
+}
+
+.sidenav li a:visited {
+    color: cornflowerblue;
+}
+
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+    margin-bottom: 0;
+    background: #ffc000
+}
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 450px}
+
+.sidenav {
+    background-color: #c00;
+    padding-top: 20px;
+    height: 100%;
+    color: white;
+}
+
+.btn {
+    font-size:12px;
+    text-align:left
+}
+
+.btn-custom {
+    background-color: #c00;
+    border-color: #c00;
+    margin: 0;
+    padding:0;
+    font-size: 12px;
+    text-align:left
+}
+
+.btn-custom:hover,
+.btn-custom:focus,
+.btn-custom:active,
+.btn-custom.active {
+    background-color: #b30000;
+    border-color: #990000;
+    color:white
+}
+
+.logo {
+    border: 3px solid white
+}
+
+.dropcap {
+    font-size: 25px;
+    line-height: 55%;
+    padding-top: 2px;
+}
+
+.starter-template {
+    text-align: center
+}
+
+#mainHeading {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#form1, #form2, #form3, #form4, #form5, #form6 {
+    text-align: left;
+}
+
+
+#test6 h2 {
+    font-weight: bold;
+    color: blue
+}
+
+.elemClass {
+    width: 200px;
+    height: 50px;
+    background-color: #b9cd6d;
+}
+
+.myClass {
+    font-size: 40px; background-color: #ccc; color: white;
+}
