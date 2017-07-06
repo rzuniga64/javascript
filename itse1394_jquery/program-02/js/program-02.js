@@ -246,7 +246,7 @@ function randomRun() {
     document.forms[4][0].value = Math.floor((Math.random() * 50) + 25);
 }
 
-// #12.	HTML element event which calls a function you wrote named setMyDate() which creates a Date object and sets the date to 01Jan2020.
+// #12.	HTML element event which calls a function you wrote named setMyDate() which creates a Date object and set the date to 01Jan2020.
 // Display the day of the week (e.g. Monday) of that date using the Date object get method(s) and an array containing the day names.
 function setMyDate() {
     var dayArray = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Firday", "Saturday");

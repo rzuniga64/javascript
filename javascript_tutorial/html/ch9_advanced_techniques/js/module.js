@@ -27,7 +27,7 @@ Lib.Output = (function() {  // self executing function which will run as soon as
 	}
 
     /**
-     *  This method sets the color of a message written to an HTML element
+     *  This method set the color of a message written to an HTML element
      *  @param col the color
      */
 	function SetColor(col) {
