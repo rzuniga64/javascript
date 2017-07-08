@@ -1,0 +1,12 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "A Weather applicaton",
+  "main": "app.js",
+  "scripts": {
+    "dev": "lite-server"
+  },
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
+}
