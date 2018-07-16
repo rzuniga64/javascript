@@ -5,7 +5,7 @@ class Person{
     }
 
     greet() {
-        console.log('Hello, my name is ' + this.name + ' and I am ' + this.age);
+        console.log('Hello, my name is ' + this.name + ' and I am greeting you from the Person class');
     }
 }
 
@@ -21,9 +21,12 @@ class Roy extends Person {
         this.age = age;
     }
 
+    greet() {
+        console.log('Hello, my name is ' + this.name + ' and I am ' + this.age);
+    }
+
     greetTwice() {
         // Use this class
-        this.greet();
         this.greet();
         // Use parent class
         super.greet();
@@ -39,8 +42,8 @@ roy.greet();
 
 roy.greetTwice();
 
-// What is the prototype of Roy?
-console.log(roy.__proto__);
-console.log(roy.__proto__ === Roy.prototype);
+// What is the' prototype of Roy?
+console.log('roy.__proto__', roy.__proto__);
+console.log('roy.__proto__ === Roy.prototype is', roy.__proto__ === Roy.prototype);
 // The prototype of Roy is Roy.prototype though we are inheriting everything from the Person class
-console.log(roy.__proto__ === Person.prototype);
+console.log('roy.__proto__ === Person.prototype is', roy.__proto__ === Person.prototype);
