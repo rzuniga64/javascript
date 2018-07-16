@@ -16,9 +16,15 @@
     </script>
 </head>
 <body>
+    <p>Hello World!</p>
     <script>
+        // System.config({
+        //     baseURL: './',
+        //     // or 'traceur' or 'typescript'
+        //     transpiler: 'traceur',
+        // });
         <!--point to script file that will start importing everything. script.js will be the file that system.js will load for us and then it will look at which module this file requires to also load those.-->
-        System.import("./script.js");
+        System.import("script.js");
     </script>
 </body>
 </html>
