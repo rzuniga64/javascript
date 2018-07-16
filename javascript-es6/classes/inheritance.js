@@ -9,8 +9,10 @@ class Person{
     }
 }
 
-// 'extends' allows use to use all the properties and methods of the parent class.
-// Can now add my own properties or methods or override the parent properties and functions.
+/**
+ *  'extends' allows use to use all the properties and methods of the parent class.
+ *  I can now add my own properties or methods or override the parent properties and functions.
+ */
 class Roy extends Person {
 
     // To use the constructor of a class that extends another class you have to call the constructor in parent class.
