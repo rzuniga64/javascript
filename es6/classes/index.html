@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="style.css">
-    <script data-require="traceur@*" data-semver="0.0.0-20140302"
-            src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
-    <script data-require="systemjs@*" data-semver="0.18.2-dev"
-            src="https://cdn.rawgit.com/systemjs/systemjs/master/dist/system.js"></script>
+    <!-- traceur compiles ES6 code to ES5 -->
+    <script data-require="traceur@*"
+            data-semver="0.0.0-20140302"
+            src="https://google.github.io/traceur-compiler/bin/traceur.js">
+    </script>
+    <!-- systemjs is a module loader -->
+    <script data-require="systemjs@*"
+            data-semver="0.18.2-dev"
+            src="https://cdn.rawgit.com/systemjs/systemjs/master/dist/system.js">
+    </script>
 </head>
 <body>
     <script>
+        <!--point to script file that will start importing everything. script.js will be the file that system.js will load for us and then it will look at which module this file requires to also load those.-->
         System.import("./script.js");
     </script>
 </body>
