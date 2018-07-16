@@ -1,6 +1,9 @@
-// Static means you can access it without instantiating the class.]
-// Great for helper classes where you want to bundle certain functionalities
+/**
+ *  Static means you can access it without instantiating the class.
+ *  Great for helper classes where you want to bundle certain functionalities
+ */
 class Helper {
+
    static log(message) {
         console.log(message);
     }

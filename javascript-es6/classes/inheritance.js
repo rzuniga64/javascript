@@ -5,7 +5,7 @@ class Person{
     }
 
     greet() {
-        console.log('Hello, my name is ' + this.name + ' and I am greeting you from the Person class');
+        console.log('Hello, my name is ' + this.name + ' and I am ' + this.age);
     }
 }
 
@@ -22,7 +22,7 @@ class Roy extends Person {
     }
 
     greet() {
-        console.log('Hello, my name is ' + this.name + ' and I am ' + this.age);
+        console.log('Hello, my name is ' + this.name + ' and I am greeting you from the Roy class');
     }
 
     greetTwice() {
